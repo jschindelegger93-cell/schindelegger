@@ -1,6 +1,6 @@
 ---
 titel: eCommerce
-reihenfolge: 3
+reihenfolge: 5
 hauptleistung: true
 kurz: "Shopify, Klaviyo und Conversion-Rate-Optimierung: vom Store-Setup bis zur automatisierten Customer Journey, die aus Besuchern Käufer macht."
 h1: Mehr Umsatz aus dem Traffic, der schon da ist.

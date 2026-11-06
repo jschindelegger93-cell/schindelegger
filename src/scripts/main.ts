@@ -232,18 +232,3 @@ if (cookie) {
 }
 document.querySelectorAll('[data-cookie-settings]').forEach((b) => b.addEventListener('click', () => cookie?.classList.add('show')));
 
-// ---------- Situations-Auswahl ----------
-document.querySelectorAll<HTMLElement>('[data-sit]').forEach((root) => {
-  const tabs = [...root.querySelectorAll<HTMLButtonElement>('[role=tab]')];
-  const show = (i: number) => tabs.forEach((t, j) => {
-    t.setAttribute('aria-selected', String(i === j)); t.tabIndex = i === j ? 0 : -1;
-    (document.getElementById(t.getAttribute('aria-controls')!) as HTMLElement).hidden = i !== j;
-  });
-  tabs.forEach((t, i) => {
-    t.addEventListener('click', () => show(i));
-    t.addEventListener('keydown', (e) => {
-      const d = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0;
-      if (d) { e.preventDefault(); const n = (i + d + tabs.length) % tabs.length; show(n); tabs[n].focus(); }
-    });
-  });
-});

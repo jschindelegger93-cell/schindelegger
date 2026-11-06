@@ -1,6 +1,6 @@
 ---
 titel: Dynamic Ads & Feed-Management
-reihenfolge: 5
+reihenfolge: 9
 kurz: "Produktfeeds, die Google, Meta und TikTok saubere Daten liefern, und dynamische Anzeigen, die jedem das passende Produkt zum aktuellen Preis zeigen."
 h1: Gute Shopping-Kampagnen beginnen bei sauberen Produktdaten.
 intro: "Feed-Optimierung und dynamische Werbemittel für Google Shopping, Performance Max, Meta und TikTok, gesteuert nach Marge statt nach Umsatz."

@@ -1,6 +1,6 @@
 ---
 titel: eCommerce & Retail
-reihenfolge: 1
+reihenfolge: 4
 icon: cart
 kurz: "Profitabel skalieren über Google, Meta und Co.: Bidding nach Ertrag, sauberes Tracking und E-Mail-Automation für wiederkehrenden Umsatz."
 h1: Profitabel skalieren statt Umsatz kaufen.

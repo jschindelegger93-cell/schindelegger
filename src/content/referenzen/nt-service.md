@@ -1,7 +1,7 @@
 ---
 kunde: NT Service GmbH
 titel: Leadgenerierung in der B2B-Industrie
-reihenfolge: 7
+reihenfolge: 4
 kategorie: B2B · Industrie
 branche: Industrie & B2B
 kurz: "Qualifizierte B2B-Anfragen für komplexe Industriedienstleistungen wie PFAS-Dekontamination: +35 % mehr Anfragen bei 20 % weniger Werbebudget."

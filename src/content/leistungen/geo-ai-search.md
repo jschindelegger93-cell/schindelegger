@@ -1,6 +1,6 @@
 ---
 titel: GEO & AI Search
-reihenfolge: 9
+reihenfolge: 4
 hauptleistung: true
 kurz: "Generative Engine Optimization für ChatGPT, Perplexity und Google AI Overviews, damit Ihr Unternehmen dort genannt wird, wo Kaufentscheidungen heute beginnen."
 h1: Sichtbar dort, wo Antworten entstehen.

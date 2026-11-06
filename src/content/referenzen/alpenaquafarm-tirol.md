@@ -1,7 +1,7 @@
 ---
 kunde: Alpenaquafarm Tirol (Alpengarnelen.at)
 titel: Skalierung einer Tiroler eCommerce-Marke
-reihenfolge: 2
+reihenfolge: 3
 kategorie: eCommerce · Food & Frische
 branche: eCommerce & Retail
 kurz: "Modernisierter Onlineshop und eine profitable Marketingstrategie für frische Lebensmittel, mit einem Return on Ad Spend von 22 bei Google."
@@ -19,7 +19,7 @@ galerie:
   - /images/case-studies/alpenaquafarm-tirol/alpenaquafarm-tirol-ecommerce-3.webp
   - /images/case-studies/alpenaquafarm-tirol/alpenaquafarm-tirol-ecommerce-4.webp
 zitat: { text: "Ein verlässlicher Partner, der mitdenkt. Die laufenden Impulse zur Optimierung bringen uns spürbar weiter, und die Zahlen dahinter sind jederzeit nachvollziehbar.", name: Daniel Flock, rolle: "Geschäftsführer, Alpenaquafarm Tirol", bild: /images/testimonials/daniel-flock-alpengarnelen.webp }
-featured: true
+featured: false
 seo:
   title: "Case Study Alpengarnelen: ROAS 22 | Schindelegger"
   description: "Wie eine Tiroler Garnelenzucht mit neuem Shop, Klaviyo und Google Ads +53 % Online-Umsatz und einen ROAS von 22 erreicht."

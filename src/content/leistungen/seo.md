@@ -1,6 +1,6 @@
 ---
 titel: SEO
-reihenfolge: 8
+reihenfolge: 3
 hauptleistung: true
 kurz: "Suchmaschinenoptimierung mit technischem Fundament, echter Themenautorität und Inhalten, die in Google und in der KI-Suche ranken und verkaufen."
 h1: Organische Reichweite, die planbar wächst.

@@ -1,7 +1,7 @@
 ---
 kunde: lounge8 AG
 titel: Leadgenerierung im Premium-Gesundheitsmarkt
-reihenfolge: 6
+reihenfolge: 5
 kategorie: Gesundheit · Premium-Leads
 branche: KMU & Fachbetriebe
 kurz: "Skalierbare B2C- und B2B-Leads für eine innovative Premium-Schwingungsliege, mit über 3,3 Mio. Impressionen und +140 % mehr Anfragen pro Monat."

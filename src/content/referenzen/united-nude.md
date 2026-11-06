@@ -1,7 +1,7 @@
 ---
 kunde: United Nude
 titel: eCommerce für eine High-Fashion-Marke
-reihenfolge: 4
+reihenfolge: 6
 kategorie: Fashion · eCommerce
 branche: eCommerce & Retail
 kurz: "Eine eigene Shopify-Plus-Plattform für 14 europäische Märkte: 30 % mehr wiederkehrende Käufer bei +6,5 % Conversion Rate."

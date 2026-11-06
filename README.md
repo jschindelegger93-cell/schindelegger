@@ -1,6 +1,6 @@
 # schindelegger.
 
-Website von Julian Schindelegger – eCommerce Performance Marketing aus Wien.
+Website von Julian Schindelegger – Performance Marketing aus Wien.
 Astro + Sveltia CMS (unter `/admin`), gehostet auf Netlify.
 
 ## Lokal

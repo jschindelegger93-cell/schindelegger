@@ -1,6 +1,6 @@
 ---
 titel: E-Mail-Marketing & Automation
-reihenfolge: 4
+reihenfolge: 7
 kurz: "Automatisierte Flows, präzise Segmente und Kampagnen mit messbarem Umsatzbeitrag: E-Mail und SMS auf Klaviyo als Kanal ohne Klickkosten."
 h1: Wiederkehrender Umsatz aus Kontakten, die Sie schon haben.
 intro: "E-Mail- und SMS-Marketing auf Klaviyo: Flows, die automatisch verkaufen, und Kampagnen mit Plan, gemessen am Umsatz pro Empfänger."

@@ -1,7 +1,7 @@
 ---
 kunde: EVRVEST
 titel: Von „2 Minuten 2 Millionen“ zur skalierenden Trainingsmarke
-reihenfolge: 3
+reihenfolge: 7
 kategorie: eCommerce · Sport & Fitness
 branche: eCommerce & Retail
 kurz: "UGC-Content, Soft-Launch und Kampagnen rund um die TV-Ausstrahlung, die FIBO und Hyrox-Events, plus ein conversionstarker Shopify-Shop."

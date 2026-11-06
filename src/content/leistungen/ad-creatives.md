@@ -1,6 +1,6 @@
 ---
 titel: Ad Creatives & UGC
-reihenfolge: 6
+reihenfolge: 8
 kurz: "Performance-Creatives und UGC für Meta, TikTok, YouTube, Pinterest und LinkedIn, entwickelt aus Kontodaten und laufend gegen CPA und ROAS getestet."
 h1: Das Creative entscheidet, wen eine Anzeige erreicht.
 intro: "Performance-Creatives und UGC-Videos, entwickelt aus den Daten des Werbekontos und an Hook-Rate, CTR und CPA gemessen."

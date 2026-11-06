@@ -1,6 +1,6 @@
 ---
 titel: Landingpages
-reihenfolge: 7
+reihenfolge: 6
 kurz: "Schnelle, messbare Kampagnen-Landingpages mit einem Ziel: den Klick aus der Anzeige in eine Anfrage oder einen Kauf zu verwandeln."
 h1: Eine Zielseite, die hält, was die Anzeige verspricht.
 intro: "Kampagnen-Landingpages mit klarem Ziel, kurzer Ladezeit und vollständigem Tracking ab dem ersten Besuch."

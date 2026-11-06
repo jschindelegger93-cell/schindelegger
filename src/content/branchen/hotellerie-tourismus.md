@@ -1,6 +1,6 @@
 ---
 titel: Hotellerie & Tourismus
-reihenfolge: 2
+reihenfolge: 1
 icon: building
 kurz: "Mehr Direktbuchungen statt Provisionen an Buchungsplattformen: Sichtbarkeit für Häuser und Regionen, die Anfragen ins eigene Buchungssystem bringt."
 h1: Direktbuchungen statt Provisionen.

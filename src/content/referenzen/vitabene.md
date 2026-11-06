@@ -1,7 +1,7 @@
 ---
 kunde: Vitabene
 titel: Leadgenerierung in der Pflegebranche
-reihenfolge: 5
+reihenfolge: 2
 kategorie: Pflege · Leadgenerierung
 branche: KMU & Fachbetriebe
 kurz: "Eine skalierbare Pipeline für Pflegeanfragen und gezielte Fachkräftegewinnung: +350 % mehr Anfragen bei 70 % niedrigerem Klickpreis."
@@ -19,7 +19,7 @@ galerie:
   - /images/case-studies/vitabene/vitabene_mockup_1080x1080.webp
   - /images/case-studies/vitabene/vitabene-24h-betreuung.webp
 zitat: { text: "Unsere Sichtbarkeit online hat sich seit Beginn der Zusammenarbeit deutlich verbessert. Wir schätzen vor allem das Fachwissen und die persönliche Betreuung, die man so selten findet.", name: Günther Huber, rolle: "Geschäftsführer, Vitabene", bild: /images/testimonials/guenther-huber-vitabene.webp }
-featured: false
+featured: true
 seo:
   title: "Case Study Vitabene: +350 % Pflegeanfragen | Schindelegger"
   description: "Leadgenerierung für 24-Stunden-Betreuung: +350 % mehr Anfragen, 200 qualifizierte Leads pro Monat und 70 % niedrigerer Klickpreis."

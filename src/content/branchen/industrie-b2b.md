@@ -1,6 +1,6 @@
 ---
 titel: Industrie & B2B
-reihenfolge: 4
+reihenfolge: 2
 icon: layers
 kurz: "Lange Entscheidungswege und erklärungsbedürftige Produkte: Kampagnen, die technische Entscheider erreichen und den Vertrieb mit qualifizierten Anfragen versorgen."
 h1: Anfragen, die der Vertrieb ernst nimmt.
