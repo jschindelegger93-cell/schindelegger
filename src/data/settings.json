@@ -1,0 +1,144 @@
+{
+  "firma": "Schindelegger",
+  "rechtsform": "Einzelunternehmen",
+  "inhaber": "Julian Schindelegger, BA",
+  "inhaberKurz": "Julian Schindelegger",
+  "inhaberRolle": "Gründer · eCommerce & Performance",
+  "inhaberBild": "/images/brand/julian-schindelegger.webp",
+  "slogan": "Shop-Wachstum, das sich nachrechnen lässt.",
+  "beschreibung": "Julian Schindelegger ist Performance-Marketing-Partner aus Wien für Online-Shops und D2C-Marken im DACH-Raum: Tracking, Google Shopping & Meta Ads, Shopify und Klaviyo als ein gemeinsam gesteuertes System.",
+  "email": "office@schindelegger.at",
+  "telefon": "+43 000 0000000",
+  "whatsapp": "430000000000",
+  "strasse": "[PLATZHALTER Straße + Nr.]",
+  "plz": "1070",
+  "ort": "Wien",
+  "land": "Österreich",
+  "uid": "[PLATZHALTER UID]",
+  "gisa": "[PLATZHALTER GISA-Zahl]",
+  "antwortzeit": "innerhalb von 24 Stunden",
+  "region": "Wien · Österreich · DACH",
+  "seitJahr": "2018",
+  "social": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/"
+    }
+  ],
+  "announcement": {
+    "aktiv": true,
+    "botschaften": [
+      {
+        "text": "Kostenlose Shop-Analyse: ehrliche Einschätzung innerhalb von 24 Stunden",
+        "link": "#beratung"
+      },
+      {
+        "text": "Shop-Kunden erzielen im Schnitt +20 % Umsatz bei −30 % Werbekosten",
+        "link": "/referenzen/"
+      },
+      {
+        "text": "Shopify, Klaviyo & Google Shopping aus einer Hand",
+        "link": "/leistungen/ecommerce/"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "wert": "2,5",
+      "einheit": "Mio. €",
+      "label": "Verwaltetes Werbebudget"
+    },
+    {
+      "wert": "16",
+      "einheit": "Mio. €",
+      "label": "Generierter Kundenumsatz"
+    },
+    {
+      "wert": "120",
+      "einheit": "Mio.",
+      "label": "Erreichte Personen"
+    },
+    {
+      "wert": "7,6",
+      "einheit": "",
+      "label": "Durchschnittlicher ROAS"
+    }
+  ],
+  "ergebnis": {
+    "umsatz": "20",
+    "kosten": "30"
+  },
+  "partner": [
+    {
+      "name": "Google Partner",
+      "logo": "/images/partners/google-partner.webp"
+    },
+    {
+      "name": "Meta Business Partner",
+      "logo": "/images/partners/meta-business-partner.webp"
+    },
+    {
+      "name": "Shopify Partner",
+      "logo": "/images/partners/shopify-partner.webp"
+    },
+    {
+      "name": "Klaviyo Partner",
+      "logo": "/images/partners/klaviyo-partner.webp"
+    },
+    {
+      "name": "Trusted Shops Partner",
+      "logo": "/images/partners/trusted-shops-partner.webp"
+    },
+    {
+      "name": "WKO KMU Digital",
+      "logo": "/images/partners/wko-kmu-digital.webp"
+    }
+  ],
+  "stimmen": [
+    {
+      "text": "Unsere Sichtbarkeit online hat sich seit Beginn der Zusammenarbeit deutlich verbessert. Wir schätzen vor allem das Fachwissen und die persönliche Betreuung, die man so selten findet.",
+      "name": "Günther Huber",
+      "rolle": "Geschäftsführer, Vitabene",
+      "bild": "/images/testimonials/guenther-huber-vitabene.webp"
+    },
+    {
+      "text": "Ein verlässlicher Partner, der mitdenkt. Die laufenden Impulse zur Optimierung bringen uns spürbar weiter, und die Zahlen dahinter sind jederzeit nachvollziehbar.",
+      "name": "Daniel Flock",
+      "rolle": "Geschäftsführer, Alpenaquafarm Tirol (Alpengarnelen.at)",
+      "bild": "/images/testimonials/daniel-flock-alpengarnelen.webp"
+    },
+    {
+      "text": "Aus unserem Shop ist ein planbarer Wachstumstreiber geworden. Klare Strategie, offene Zahlen und Ergebnisse, die man messen kann.",
+      "name": "ARB Nutrition",
+      "rolle": "eCommerce, Schweiz",
+      "bild": ""
+    }
+  ],
+  "verlaengerung": "90 %",
+  "navigation": [
+    {
+      "label": "eCommerce",
+      "url": "/leistungen/ecommerce/"
+    },
+    {
+      "label": "Leistungen",
+      "url": "/leistungen/"
+    },
+    {
+      "label": "Referenzen",
+      "url": "/referenzen/"
+    },
+    {
+      "label": "Preise",
+      "url": "/preise/"
+    },
+    {
+      "label": "Über mich",
+      "url": "/ueber-uns/"
+    }
+  ]
+}

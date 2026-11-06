@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import s from '../data/settings.json';
+---
+<Base title="Danke für Ihre Anfrage | Schindelegger" description="Ihre Anfrage ist angekommen." noindex>
+  <section class="section not-found">
+    <div class="wrap" style="max-width:640px">
+      <img class="avatar" src={s.inhaberBild} alt={s.inhaberKurz} width="96" height="96" style="width:96px;height:96px;margin:0 auto 20px" />
+      <h1 style="font-size:clamp(2rem,1.5rem+2vw,3rem)">Danke, die Anfrage ist da.</h1>
+      <p class="lead">{s.inhaberKurz} meldet sich persönlich {s.antwortzeit}. Dringend? <a href={`tel:${s.telefon.replace(/\s/g, '')}`}>{s.telefon}</a></p>
+      <div class="btn-row" style="justify-content:center;margin-top:24px"><a class="btn btn-dark" href="/referenzen/">Case Studies ansehen <Icon name="arrow" /></a><a class="link-arrow" href="/">Zur Startseite</a></div>
+    </div>
+  </section>
+</Base>

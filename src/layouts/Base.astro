@@ -1,0 +1,202 @@
+---
+import '../styles/global.css';
+import { getCollection } from 'astro:content';
+import Icon from '../components/Icon.astro';
+import Modal from '../components/Modal.astro';
+import s from '../data/settings.json';
+import { DUMMY_MODE } from '../config';
+
+interface Crumb { name: string; url: string }
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  canonical?: string;
+  schema?: Record<string, unknown>[];
+  crumbs?: Crumb[];
+  ogType?: string;
+}
+const { title, description, image = '/og-default.jpg', noindex = false, canonical, schema = [], crumbs = [], ogType = 'website' } = Astro.props;
+
+
+const site = Astro.site!.toString().replace(/\/$/, '');
+const url = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+const img = image.startsWith('http') ? image : site + image;
+const tel = s.telefon.replace(/\s/g, '');
+const path = Astro.url.pathname;
+const branchenNav = (await getCollection('branchen')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
+const leistungen = (await getCollection('leistungen')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
+
+const org = {
+  '@context': 'https://schema.org',
+  '@type': ['ProfessionalService', 'LocalBusiness'],
+  '@id': site + '/#organization',
+  name: s.firma,
+  url: site + '/',
+  logo: site + '/brand/schindelegger-icon-512.png',
+  image: site + '/og-default.jpg',
+  description: s.beschreibung,
+  email: s.email,
+  telephone: s.telefon,
+  founder: { '@type': 'Person', name: s.inhaberKurz, jobTitle: s.inhaberRolle, image: site + s.inhaberBild },
+  address: { '@type': 'PostalAddress', streetAddress: s.strasse, postalCode: s.plz, addressLocality: s.ort, addressCountry: 'AT' },
+  areaServed: [{ '@type': 'Country', name: 'Österreich' }, { '@type': 'Country', name: 'Deutschland' }, { '@type': 'Country', name: 'Schweiz' }],
+  knowsAbout: ['eCommerce Marketing', 'Shopify Marketing', 'Performance Marketing', 'Google Ads', 'Meta Ads', 'SEO', 'Generative Engine Optimization', 'Server-Side-Tracking', 'Shopify', 'Klaviyo', 'Google Shopping', 'Performance Max', 'Feed-Management'],
+  sameAs: s.social.map((x) => x.url),
+};
+const bc = crumbs.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [{ name: 'Startseite', url: '/' }, ...crumbs].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: site + c.url })),
+    }
+  : null;
+const ld = [org, ...(bc ? [bc] : []), ...schema];
+const active = (u: string) => (path === u || (u !== '/' && path.startsWith(u)) ? 'page' : undefined);
+---
+<!doctype html>
+<html lang="de-AT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={url} />
+  {(noindex || DUMMY_MODE) && <meta name="robots" content="noindex, nofollow" />}<!-- BEI GO-LIVE ENTFERNEN (DUMMY_MODE) -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content={s.firma} />
+  <meta property="og:locale" content="de_AT" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={img} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={img} />
+  <meta name="theme-color" content="#0d0f14" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <slot name="head" />
+  {ld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+  <!-- Google Tag Manager: nach Einwilligung laden (Consent Mode v2). GTM-ID eintragen und auskommentieren.
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  -->
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  {s.announcement.aktiv && (
+    <div class="announce" role="region" aria-label="Hinweise">
+      <div class="wrap">
+        <div class="announce-track">
+          {s.announcement.botschaften.map((m, i) => (
+            <a class={`announce-msg${i === 0 ? ' on' : ''}`} href={m.link} data-track="announcement_click"><i class="announce-dot"></i><span>{m.text}</span></a>
+          ))}
+        </div>
+        <span class="announce-side">{s.region}</span>
+        <button class="announce-x" type="button" aria-label="Hinweis schließen">×</button>
+      </div>
+    </div>
+  )}
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="Schindelegger – Startseite"><img src="/brand/schindelegger-logo-schwarz.svg" alt="schindelegger." width="185" height="30" /></a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        {s.navigation.map((n) => <a href={n.url} aria-current={active(n.url)}>{n.label}</a>)}
+      </nav>
+      <a class="head-tel" href={`tel:${tel}`} data-track="header"><Icon name="phone" />{s.telefon}</a>
+      <a class="btn btn-primary head-cta" href="#beratung" data-modal data-track="header_cta">Potenzial analysieren <Icon name="arrow" /></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobile-menu">
+    {s.navigation.map((n) => <a class="m-link" href={n.url}>{n.label}</a>)}
+    <a class="m-link" href="/branchen/">Branchen</a>
+    <a class="m-link" href="/ratgeber/">Ratgeber</a>
+    <a class="m-link" href="/kontakt/">Kontakt</a>
+    <a class="btn btn-outline" href={`tel:${tel}`} data-track="menu"><Icon name="phone" /> {s.telefon}</a>
+    <a class="btn btn-primary" href="#beratung" data-modal data-track="menu_cta">Potenzial analysieren <Icon name="arrow" /></a>
+  </div>
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="logo" href="/" aria-label="Schindelegger – Startseite"><img src="/brand/schindelegger-logo-weiss.svg" alt="schindelegger." width="222" height="36" loading="lazy" /></a>
+          <p style="margin-top:18px;max-width:34ch">{s.beschreibung}</p>
+          <p><a href={`mailto:${s.email}`}>{s.email}</a><br /><a href={`tel:${tel}`} data-track="footer">{s.telefon}</a></p>
+        </div>
+        <div class="foot-col">
+          <details open><summary>Leistungen</summary>
+            <ul>
+              <li><a href="/growth-system/">Growth System</a></li>
+              {leistungen.map((l) => <li><a href={`/leistungen/${l.id}/`}>{l.data.titel}</a></li>)}
+            </ul>
+          </details>
+        </div>
+        <div class="foot-col">
+          <details open><summary>Unternehmen</summary>
+            <ul>
+              <li><a href="/ueber-uns/">Über mich</a></li>
+              <li><a href="/referenzen/">Referenzen</a></li>
+              <li><a href="/preise/">Preise & Ablauf</a></li>
+              <li><a href="/ratgeber/">Ratgeber</a></li>
+              <li><a href="/branchen/">Branchen</a></li>
+              {branchenNav.map((b) => <li><a href={`/branchen/${b.id}/`}>{b.data.titel}</a></li>)}
+              <li><a href="/kontakt/">Kontakt</a></li>
+            </ul>
+          </details>
+        </div>
+        <div class="foot-col">
+          <details open><summary>Kontakt</summary>
+            <ul>
+              <li>{s.inhaber}</li>
+              <li>{s.strasse}</li>
+              <li>{s.plz} {s.ort}, {s.land}</li>
+              <li><a href="#beratung" data-modal data-track="footer_cta">Potenzialanalyse anfragen →</a></li>
+            </ul>
+          </details>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© {new Date().getFullYear()} {s.inhaber} · {s.rechtsform}</span>
+        <nav aria-label="Rechtliches">
+          <a href="/impressum/">Impressum</a>
+          <a href="/datenschutz/">Datenschutz</a>
+          <button type="button" data-cookie-settings>Cookie-Einstellungen</button>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mbar" aria-label="Schnellkontakt">
+    <a href={`tel:${tel}`} data-track="sticky"><Icon name="phone" />Anrufen</a>
+    <a href={`https://wa.me/${s.whatsapp}`} target="_blank" rel="noopener" data-track="sticky"><Icon name="chat" />WhatsApp</a>
+    <button class="go" type="button" data-modal data-track="sticky_cta">Analyse <Icon name="arrow" /></button>
+  </div>
+
+  <Modal />
+
+  <div class="cookie" role="dialog" aria-label="Datenschutz-Einstellungen">
+    <h2 style="font-size:1.1rem">Datenschutz-Einstellungen</h2>
+    <p>Notwendige Cookies halten die Seite am Laufen. Analyse- und Marketing-Cookies (Google, Meta) setze ich nur mit Ihrer Einwilligung. Details in der <a href="/datenschutz/">Datenschutzerklärung</a>.</p>
+    <div class="btn-row"><button class="btn btn-outline" type="button" data-reject>Nur notwendige</button><button class="btn btn-dark" type="button" data-accept>Alle akzeptieren</button></div>
+  </div>
+
+  <div class="tlog" aria-live="off"><button type="button">Tracking-Log <b>0</b></button><ol></ol></div>
+
+  <script src="../scripts/main.ts"></script>
+</body>
+</html>

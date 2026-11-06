@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection } from 'astro:content';
+const all = (await getCollection('leistungen')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
+const haupt = all.filter((l) => l.data.hauptleistung);
+const weitere = all.filter((l) => !l.data.hauptleistung);
+const crumbs = [{ name: 'Leistungen', url: '/leistungen/' }];
+const schema = [{ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: all.map((l, i) => ({ '@type': 'ListItem', position: i + 1, name: l.data.titel, url: `https://schindelegger.at/leistungen/${l.id}/` })) }];
+---
+<Base title="Leistungen: Performance Marketing aus Wien | Schindelegger" description="Tracking, Google & Meta Ads, SEO, GEO, eCommerce, Creatives, Landingpages und E-Mail-Automation: alle Leistungen von Schindelegger im Überblick." crumbs={crumbs} schema={schema}>
+  <PageHero eyebrow="Leistungen" h1="Alle Leistungen. Ein System." intro="Jede Leistung ist ein Baustein des Growth Systems. Einzeln stark, zusammen deutlich wirksamer, weil alle auf denselben Daten aufbauen." antwort="Schindelegger bietet Performance Marketing aus einer Hand: Tracking & Analytics als Fundament, dazu Paid Advertising, SEO, GEO, eCommerce, Landingpages, E-Mail-Automation, Creatives sowie Programmatic, Native und Display-Werbung. Gesteuert wird alles über ein gemeinsames Dashboard." bild="/images/heroes/leistungen-hero.webp" bildAlt="Website- und Shop-Projekte auf verschiedenen Geräten" crumbs={crumbs}>
+    <div class="btn-row"><a class="btn btn-primary" href="#beratung" data-modal data-track="leistungen_hero">Potenzial analysieren <Icon name="arrow" /></a><a class="link-arrow" href="/growth-system/">Wie alles zusammenspielt <Icon name="arrow" /></a></div>
+  </PageHero>
+  <section class="section alt">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Kernleistungen</span><h2>Die fünf Module im Detail.</h2></div>
+      <div class="grid g2">
+        {haupt.map((l) => (
+          <a class="card case-card reveal" href={`/leistungen/${l.id}/`}>
+            <div class="img"><img src={l.data.bild} alt={l.data.bildAlt} width="800" height="500" loading="lazy" /></div>
+            <div class="body">{l.data.fundament && <span class="cat" style="color:var(--accent)">Das Fundament</span>}<h3 style="margin-top:6px">{l.data.titel}</h3><p class="muted">{l.data.kurz}</p><ul class="chips">{l.data.schwerpunkte.map((t) => <li>{t}</li>)}</ul><span class="link-arrow">Mehr erfahren <Icon name="arrow" /></span></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Weitere Leistungen</span><h2>Spezialisierte Bausteine.</h2><p class="lead">Für Kampagnen, die mehr brauchen als Standardformate: von Creatives über Feeds bis zu Programmatic und Promotions.</p></div>
+      <div class="grid g3">
+        {weitere.map((l) => (
+          <a class="card reveal" href={`/leistungen/${l.id}/`}><h3>{l.data.titel}</h3><p class="muted">{l.data.kurz}</p><span class="link-arrow">Mehr erfahren <Icon name="arrow" /></span></a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CtaBand />
+</Base>

@@ -1,0 +1,15 @@
+---
+import s from '../data/settings.json';
+---
+<div class="grid g3">
+  {s.stimmen.map((q) => (
+    <figure class="card quote reveal" style="margin:0">
+      <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+      <blockquote>„{q.text}“</blockquote>
+      <figcaption class="who">
+        {q.bild ? <img class="avatar" src={q.bild} alt={q.name} width="44" height="44" loading="lazy" /> : <span class="initials">{q.name.split(' ').map((w) => w[0]).join('').slice(0, 2)}</span>}
+        <span><b>{q.name}</b>{q.rolle}</span>
+      </figcaption>
+    </figure>
+  ))}
+</div>

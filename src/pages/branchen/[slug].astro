@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+import Faq from '../../components/Faq.astro';
+import CaseCard from '../../components/CaseCard.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  const all = await getCollection('branchen');
+  const refs = await getCollection('referenzen');
+  const leis = await getCollection('leistungen');
+  return all.map((e) => ({ params: { slug: e.id }, props: { e, refs, leis } }));
+}
+const { e, refs, leis } = Astro.props;
+const d = e.data;
+const { Content } = await render(e);
+const cases = d.referenzen.map((r: string) => refs.find((x: any) => x.id === r)).filter(Boolean);
+const leistungen = d.leistungen.map((r: string) => leis.find((x: any) => x.id === r)).filter(Boolean);
+const crumbs = [{ name: 'Branchen', url: '/branchen/' }, { name: d.titel, url: `/branchen/${e.id}/` }];
+const schema = [{ '@context': 'https://schema.org', '@type': 'Service', name: `Performance Marketing für ${d.titel}`, description: d.antwort, provider: { '@id': 'https://schindelegger.at/#organization' }, audience: { '@type': 'BusinessAudience', name: d.titel }, areaServed: ['AT', 'DE', 'CH'] }];
+---
+<Base title={d.seo.title || `${d.titel} | Schindelegger`} description={d.seo.description || d.kurz} image={d.bild} crumbs={crumbs} schema={schema}>
+  <PageHero eyebrow={d.titel} h1={d.h1} intro={d.intro} antwort={d.antwort} bild={d.bild} bildAlt={d.bildAlt} crumbs={crumbs}>
+    <div class="btn-row"><a class="btn btn-primary" href="#beratung" data-modal data-track={`branche_${e.id}`}>Potenzial analysieren <Icon name="arrow" /></a></div>
+  </PageHero>
+  <section class="section alt">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Die typischen Bremsen</span><h2>Woran Wachstum meist hängt.</h2></div>
+      <div class="grid g4">{d.probleme.map((p: any) => <div class="card reveal"><h3>{p.titel}</h3><p class="muted">{p.text}</p></div>)}</div>
+    </div>
+  </section>
+  <section class="section dark">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Growth System für {d.titel}</span><h2>Fünf Hebel, auf die Branche zugeschnitten.</h2></div>
+      <div class="grid g3">{d.hebel.map((h: any, i: number) => <div class="card reveal"><span class="num">0{i + 1}</span><h3 style="margin-top:10px">{h.titel}</h3><p class="muted">{h.text}</p></div>)}</div>
+      {d.ergebnisse.length > 0 && <div style="margin-top:40px"><h3>Was das konkret bringt</h3><ul class="checks cols-2" style="display:block;margin-top:16px">{d.ergebnisse.map((x: string) => <li style="display:flex;gap:12px"><span class="check"><Icon name="check" /></span>{x}</li>)}</ul></div>}
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap layout-aside">
+      <article class="prose"><Content /></article>
+      <aside class="aside-card"><div class="card"><h3>Passende Leistungen</h3><ul class="checks" style="margin-top:12px">{leistungen.map((l: any) => <li><span class="check"><Icon name="check" /></span><a href={`/leistungen/${l.id}/`}>{l.data.titel}</a></li>)}</ul><a class="btn btn-primary" href="#beratung" data-modal data-track={`branche_aside_${e.id}`} style="margin-top:20px;width:100%">Anfrage starten <Icon name="arrow" /></a></div></aside>
+    </div>
+  </section>
+  {cases.length > 0 && <section class="section alt"><div class="wrap"><div class="head"><span class="eyebrow">Referenzen</span><h2>Ergebnisse aus der Praxis.</h2></div><div class="grid g3">{cases.map((c: any) => <CaseCard c={c} />)}</div></div></section>}
+  {d.faq.length > 0 && <section class="section"><div class="wrap"><div class="head"><span class="eyebrow">Häufige Fragen</span><h2>Fragen aus der Branche.</h2></div><Faq items={d.faq} /></div></section>}
+  <CtaBand />
+</Base>

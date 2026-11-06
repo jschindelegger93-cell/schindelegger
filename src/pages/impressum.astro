@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import s from '../data/settings.json';
+---
+<Base title="Impressum | Schindelegger" description="Impressum und Offenlegung gemäß § 5 ECG, § 14 UGB und § 25 MedienG." noindex>
+  <section class="section"><div class="wrap prose">
+    <h1 style="font-size:clamp(2rem,1.5rem+2vw,3rem)">Impressum</h1>
+    <p><em>Informationspflicht gemäß § 5 ECG, § 14 UGB, § 63 GewO und Offenlegung gemäß § 25 MedienG. [PLATZHALTER – vor Go-live rechtlich prüfen]</em></p>
+    <p><b>{s.firma}</b><br />{s.inhaber}<br />{s.rechtsform}<br />{s.strasse}<br />{s.plz} {s.ort}, {s.land}</p>
+    <p>E-Mail: <a href={`mailto:${s.email}`}>{s.email}</a><br />Telefon: {s.telefon}</p>
+    <p>UID-Nummer: {s.uid}<br />GISA-Zahl: {s.gisa}<br />Gewerbe: [PLATZHALTER Gewerbewortlaut]<br />Gewerbebehörde: [PLATZHALTER Magistratisches Bezirksamt]<br />Mitglied der Wirtschaftskammer Wien</p>
+    <p>Anwendbare Rechtsvorschriften: Gewerbeordnung, abrufbar unter www.ris.bka.gv.at</p>
+    <h2>Online-Streitbeilegung</h2>
+    <p>Verbraucher haben die Möglichkeit, Beschwerden an die Online-Streitbeilegungsplattform der EU zu richten. Sie können allfällige Beschwerden auch an die oben angegebene E-Mail-Adresse richten.</p>
+    <h2>Haftung für Inhalte und Links</h2>
+    <p>Die Inhalte dieser Website wurden sorgfältig erstellt. Für Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen. Für Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+    <h2>Bildnachweise</h2>
+    <p>Projektbilder mit freundlicher Genehmigung der jeweiligen Kunden. [PLATZHALTER weitere Bildrechte]</p>
+  </div></section>
+</Base>

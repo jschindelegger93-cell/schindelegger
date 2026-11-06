@@ -1,0 +1,67 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import CaseCard from '../../components/CaseCard.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  const all = (await getCollection('referenzen')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
+  return all.map((e) => ({ params: { slug: e.id }, props: { e, all } }));
+}
+const { e, all } = Astro.props;
+const d = e.data;
+const { Content } = await render(e);
+const weitere = all.filter((x: any) => x.id !== e.id).slice(0, 3);
+const crumbs = [{ name: 'Referenzen', url: '/referenzen/' }, { name: d.kunde, url: `/referenzen/${e.id}/` }];
+const schema = [{ '@context': 'https://schema.org', '@type': 'Article', headline: d.titel, description: d.kurz, image: `https://schindelegger.at${d.bild}`, author: { '@type': 'Person', name: 'Julian Schindelegger' }, publisher: { '@id': 'https://schindelegger.at/#organization' }, about: d.kunde }];
+---
+<Base title={d.seo.title || `${d.titel} | Schindelegger`} description={d.seo.description || d.kurz} image={d.bild} crumbs={crumbs} schema={schema} ogType="article">
+  <section class="page-hero" data-hero>
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen"><a href="/">Startseite</a><span>/</span><a href="/referenzen/">Referenzen</a><span>/</span><span aria-current="page">{d.kunde}</span></nav>
+      <span class="eyebrow">{d.kategorie}</span>
+      <h1 style="max-width:18ch">{d.titel}</h1>
+      <p class="lead">{d.kurz}</p>
+      <ul class="chips">{d.tags.map((t: string) => <li>{t}</li>)}</ul>
+      <div class="rounded-img" style="margin-top:36px;aspect-ratio:16/8"><img src={d.bild} alt={d.bildAlt} width="1600" height="800" fetchpriority="high" /></div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="split top" style="margin-bottom:40px"><div><span class="eyebrow">Auf einen Blick</span><h2>Das Projekt in Zahlen.</h2></div><p class="lead"><b style="color:var(--ink)">Ziel:</b> {d.ziel}</p></div>
+      <div class="kpi-grid">{d.kennzahlen.map((k: any) => <div class="card reveal"><b>{k.wert}</b><span class="muted">{k.label}</span></div>)}</div>
+      {d.vorgehen.length > 0 && <div class="card" style="margin-top:24px"><h3>So bin ich vorgegangen</h3><ul class="checks cols-2" style="display:block;margin-top:14px">{d.vorgehen.map((v: string) => <li style="display:flex;gap:12px"><span class="check"><Icon name="check" /></span>{v}</li>)}</ul></div>}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap layout-aside">
+      <article class="prose"><Content /></article>
+      <aside class="aside-card">
+        {d.zitat && (
+          <figure class="card quote" style="margin:0 0 20px">
+            <span class="stars">★★★★★</span>
+            <blockquote>„{d.zitat.text}“</blockquote>
+            <figcaption class="who">{d.zitat.bild ? <img class="avatar" src={d.zitat.bild} alt={d.zitat.name} width="44" height="44" loading="lazy" /> : <span class="initials">{d.zitat.name.slice(0, 2)}</span>}<span><b>{d.zitat.name}</b>{d.zitat.rolle}</span></figcaption>
+          </figure>
+        )}
+        <div class="card"><h3>Ähnliches Ziel?</h3><p class="muted">Eine kurze Potenzialanalyse zeigt, ob ein vergleichbarer Hebel bei Ihnen möglich ist.</p><a class="btn btn-primary" href="#beratung" data-modal data-track={`case_${e.id}`} style="width:100%">Potenzial analysieren <Icon name="arrow" /></a></div>
+      </aside>
+    </div>
+  </section>
+
+  {d.galerie.length > 0 && <section class="section tight alt"><div class="wrap"><div class="gallery">{d.galerie.map((g: string) => <img src={g} alt={`${d.kunde}: Projekteindruck`} width="600" height="600" loading="lazy" />)}</div></div></section>}
+
+  {d.videos.length > 0 && (
+    <section class="section tight">
+      <div class="wrap"><div class="head"><span class="eyebrow">Videos</span><h2>Einblicke aus dem Projekt.</h2></div>
+        <div class="videos">{d.videos.map((v: any) => <figure style="margin:0"><video controls playsinline preload="none" poster={v.poster}><source src={v.src} type="video/mp4" /></video>{v.titel && <figcaption class="muted" style="font-size:.85rem;margin-top:8px">{v.titel}</figcaption>}</figure>)}</div>
+      </div>
+    </section>
+  )}
+
+  <section class="section alt"><div class="wrap"><div class="head"><span class="eyebrow">Weitere Case Studies</span><h2>Mehr Ergebnisse.</h2></div><div class="grid g3">{weitere.map((c: any) => <CaseCard c={c} />)}</div></div></section>
+  <CtaBand />
+</Base>

@@ -1,0 +1,108 @@
+{
+  "seo": {
+    "title": "Growth System: Performance Marketing als System | Schindelegger",
+    "description": "Tracking, Ads, SEO & GEO, Conversion und Retention als ein gesteuertes System statt fünf Einzelleistungen. Mit Audit-Garantie. Schindelegger, Wien."
+  },
+  "hero": {
+    "eyebrow": "Growth System",
+    "h1": "Fünf Hebel. Eine Steuerung.",
+    "intro": "Für Unternehmen, die wissen wollen, was ihr Marketingbudget tatsächlich leisten kann: messbar, offen gelegt und am Ergebnis ausgerichtet.",
+    "antwort": "Das Growth System von Schindelegger bündelt Tracking, Paid Advertising, SEO & GEO, Conversion-Optimierung und Retention in einer gemeinsamen Steuerung. Statt fünf Anbietern gibt es einen Verantwortlichen, ein Dashboard und eine Budgetentscheidung pro Quartal, auf Basis echter Daten.",
+    "bild": "/images/heroes/growth-engine-hero.webp"
+  },
+  "problem": {
+    "eyebrow": "Das eigentliche Problem",
+    "h2": "Kanäle werden eingekauft. Ergebnisse nicht.",
+    "text": [
+      "In vielen Unternehmen läuft jeder Kanal für sich: Eine Agentur macht SEO, eine andere die Ads, Social Media passiert intern. Jeder optimiert seinen Bereich, niemand verantwortet das Gesamtergebnis.",
+      "Genau an diesen Übergaben verliert Budget seine Wirkung. Deshalb behandle ich Marketing nicht als Liste von Disziplinen, sondern als ein System, das sich als Ganzes steuern lässt."
+    ]
+  },
+  "module": [
+    {
+      "id": "tracking",
+      "titel": "Tracking & Analytics",
+      "rolle": "Das Fundament",
+      "nutzen": "Zeigt, was jeder eingesetzte Euro tatsächlich zurückbringt.",
+      "punkte": ["Jede Anfrage, Buchung und Bestellung wird dem richtigen Kanal zugeordnet", "Ein Live-Dashboard ersetzt Bauchgefühl und Excel-Exporte"],
+      "zusammenspiel": "Liefert allen anderen Modulen die Daten. Ohne sauberes Tracking optimiert jeder Kanal ins Blaue.",
+      "tags": ["Server-Side-Tracking", "Attribution", "Echtzeit-Dashboard"],
+      "link": "/leistungen/tracking-analytics/"
+    },
+    {
+      "id": "paid",
+      "titel": "Paid Advertising",
+      "rolle": "Erzeugt Nachfrage",
+      "nutzen": "Bringt ab dem ersten Tag planbar neue Kundinnen und Kunden.",
+      "punkte": ["Google & Meta Ads, gesteuert nach Ertrag statt nach Klicks", "Was sich rechnet, wird skaliert, was Budget frisst, wird abgeschaltet"],
+      "zusammenspiel": "Schickt kaufbereite Besucher in die Conversion-Strecke, präzise ausgesteuert mit den Tracking-Daten.",
+      "tags": ["Google Ads", "Meta Ads", "Performance Max"],
+      "link": "/leistungen/paid-advertising/"
+    },
+    {
+      "id": "seo",
+      "titel": "SEO & GEO",
+      "rolle": "Fängt Nachfrage ab",
+      "nutzen": "Sichtbar dort, wo gesucht wird: in Google und in KI-Antworten.",
+      "punkte": ["Rankings, die dauerhaft Besucher ohne Klickkosten bringen", "Präsenz in ChatGPT, Perplexity und Google AI Overviews"],
+      "zusammenspiel": "Jede organische Platzierung senkt die Abhängigkeit vom Werbebudget. Ads werden Monat für Monat günstiger.",
+      "tags": ["Technisches SEO", "GEO / AEO", "Content & Autorität"],
+      "link": "/leistungen/seo/"
+    },
+    {
+      "id": "conversion",
+      "titel": "Conversion-Optimierung",
+      "rolle": "Macht aus Besuchern Umsatz",
+      "nutzen": "Holt mehr aus dem Traffic, der ohnehin schon kommt.",
+      "punkte": ["Shop, Buchungsstrecke oder Anfrage-Funnel, konsequent auf Abschluss gebaut", "Mehr Ergebnis aus demselben Traffic, ohne zusätzliches Budget"],
+      "zusammenspiel": "Jeder Prozentpunkt mehr Conversion Rate macht Ads und SEO automatisch rentabler.",
+      "tags": ["Shopify & Checkout", "Landingpages", "A/B-Tests"],
+      "link": "/leistungen/landingpages/"
+    },
+    {
+      "id": "retention",
+      "titel": "Retention & CRM",
+      "rolle": "Wiederholt den Umsatz",
+      "nutzen": "Macht aus Erstkäufern Stammkunden.",
+      "punkte": ["Automatisierte E-Mail-Strecken, die im Hintergrund verkaufen", "Höherer Kundenwert ohne zusätzliche Werbekosten"],
+      "zusammenspiel": "Wiederkehrender Umsatz erlaubt höhere Akquisekosten. So kann mehr investiert werden als beim Wettbewerb.",
+      "tags": ["Klaviyo", "Automatisierte Flows", "CRM"],
+      "link": "/leistungen/email-marketing/"
+    }
+  ],
+  "kreislauf": [
+    { "titel": "Tracking", "text": "misst jeden Euro und jede Conversion" },
+    { "titel": "Ads + SEO", "text": "bringen Besucher mit Kaufabsicht" },
+    { "titel": "Conversion", "text": "macht daraus Anfragen, Buchungen und Bestellungen" },
+    { "titel": "Retention", "text": "macht daraus Stammkunden, und die Daten fließen zurück" }
+  ],
+  "phasen": [
+    {
+      "titel": "Growth-Audit",
+      "zeit": "ca. 2 Wochen",
+      "text": "Ein bezahlter Daten-Check mit klarer Ja/Nein-Empfehlung: Wo liegt der größte ungenutzte Hebel, und rechnet sich eine Zusammenarbeit? Finde ich keinen, gibt es eine ehrliche Absage und das Honorar zurück.",
+      "bild": "/images/process/step-1-growth-report.webp"
+    },
+    {
+      "titel": "System-Aufbau",
+      "zeit": "90 Tage",
+      "text": "Zuerst das Tracking-Fundament, dann die Module mit dem größten Hebel. Ein Projekt mit Enddatum und festgelegten KPIs. Budget wird erst bewegt, wenn alles messbar ist.",
+      "bild": "/images/process/step-2-growth-engine.webp"
+    },
+    {
+      "titel": "Laufender Betrieb",
+      "zeit": "quartalsweise",
+      "text": "Steuerung im laufenden Betrieb, ohne Jahresvertrag. Jedes Quartal liegen die Zahlen auf dem Tisch: was jedes Modul gebracht hat und wohin das Budget als Nächstes fließt.",
+      "bild": "/images/process/step-3-engine-operations.webp"
+    }
+  ],
+  "garantie": "Audit-Garantie: Wenn ich keinen Hebel finde, der eine Zusammenarbeit rechtfertigt, bekommen Sie eine klare Absage und das volle Audit-Honorar zurück. Das Risiko liegt bei mir.",
+  "bremsen": [
+    { "frage": "Viel Traffic, aber kaum Anfragen?", "antwort": "Ich analysiere, an welcher Stelle Interessenten abspringen, und baue Seiten, Buchungs- oder Anfragestrecke auf Abschluss um. Aus dem vorhandenen Traffic entstehen so messbar mehr Anfragen, ohne mehr Werbebudget." },
+    { "frage": "Zu wenig passende Besucher auf der Website?", "antwort": "SEO und GEO bringen dauerhaft Besucher ohne Klickkosten, gezielte Kampagnen sorgen ab Tag eins für planbare Nachfrage. Beides greift ineinander, statt parallel zu laufen." },
+    { "frage": "Bei Google nicht auf Seite 1?", "antwort": "Gute Rankings entstehen aus technischer Sauberkeit, klarer Themenautorität und Inhalten, die eine Suchanfrage vollständig beantworten. Genau diese Substanz baue ich auf, statt auf kurzlebige Tricks zu setzen." },
+    { "frage": "Leadpreise steigen trotz laufender Anzeigen?", "antwort": "Kampagnen werden nach Ertrag gesteuert, nicht nach Klickpreis. Skaliert wird, was sich rechnet, gestoppt wird, was Budget verbrennt. Jedes organische Ranking senkt die Abhängigkeit zusätzlich." },
+    { "frage": "Unklar, was das Budget wirklich bringt?", "antwort": "Lückenloses Tracking ordnet jede Anfrage und jede Bestellung dem richtigen Kanal zu. Entscheidungen fallen dann im Live-Dashboard auf Basis echter Zahlen." },
+    { "frage": "Erstkunden kommen nicht wieder?", "antwort": "Automatisierte E-Mail-Strecken und gepflegte Kundendaten machen aus Erstkäufern Stammkunden. Der wiederkehrende Umsatz kostet kein zusätzliches Werbebudget." }
+  ]
+}

@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+import Faq from '../../components/Faq.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection, render } from 'astro:content';
+import s from '../../data/settings.json';
+
+export async function getStaticPaths() {
+  const all = await getCollection('leistungen');
+  return all.map((e) => ({ params: { slug: e.id }, props: { e, all } }));
+}
+const { e, all } = Astro.props;
+const d = e.data;
+const { Content } = await render(e);
+const themeMap: Record<string, string> = { 'tracking-analytics': 'Tracking', 'paid-advertising': 'Google & Meta', seo: 'SEO', 'geo-ai-search': 'SEO & GEO', ecommerce: 'Shopify', landingpages: 'Landingpage', 'email-marketing': 'E-Mail', 'ad-creatives': 'Creatives', 'online-promotions': 'E-Mail' };
+const theme = themeMap[e.id] || 'Google & Meta';
+const verwandt = d.verwandt.map((v: string) => all.find((x: any) => x.id === v)).filter(Boolean);
+const crumbs = [{ name: 'Leistungen', url: '/leistungen/' }, { name: d.titel, url: `/leistungen/${e.id}/` }];
+const schema = [{
+  '@context': 'https://schema.org', '@type': 'Service', name: d.titel, description: d.antwort, serviceType: d.titel,
+  provider: { '@id': 'https://schindelegger.at/#organization' }, areaServed: ['AT', 'DE', 'CH'], url: `https://schindelegger.at/leistungen/${e.id}/`,
+}];
+---
+<Base title={d.seo.title || `${d.titel} | Schindelegger`} description={d.seo.description || d.kurz} image={d.seo.image || d.bild} noindex={d.seo.noindex} canonical={d.seo.canonical} crumbs={crumbs} schema={schema}>
+  <PageHero eyebrow={d.titel} h1={d.h1} intro={d.intro} antwort={d.antwort} bild={d.bild} bildAlt={d.bildAlt} crumbs={crumbs}>
+    <div class="btn-row"><a class="btn btn-primary" href="#beratung" data-modal data-theme={theme} data-track={`leistung_${e.id}`}>Potenzial analysieren <Icon name="arrow" /></a><a class="link-arrow" href="/preise/">Preise & Ablauf <Icon name="arrow" /></a></div>
+  </PageHero>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Was enthalten ist</span><h2>{d.titel}: die Bausteine.</h2></div>
+      <div class="grid g3">
+        {d.enthalten.map((x: any, i: number) => <div class="card reveal"><span class="num">0{i + 1}</span><h3 style="margin-top:10px">{x.titel}</h3><p class="muted">{x.text}</p></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap layout-aside">
+      <article class="prose"><Content /></article>
+      <aside class="aside-card">
+        <div class="card">
+          <h3>Konkrete Leistungen</h3>
+          <ul class="checks" style="margin-top:12px;font-size:.95rem">{d.leistungen.map((l: string) => <li><span class="check"><Icon name="check" /></span>{l}</li>)}</ul>
+          {d.werkzeuge.length > 0 && <><h3 style="margin-top:24px;font-size:1rem">Werkzeuge</h3><ul class="chips">{d.werkzeuge.map((w: string) => <li>{w}</li>)}</ul></>}
+          <a class="btn btn-primary" href="#beratung" data-modal data-theme={theme} data-track={`aside_${e.id}`} style="margin-top:24px;width:100%">Anfrage starten <Icon name="arrow" /></a>
+          <p class="muted" style="font-size:.85rem;margin:12px 0 0;text-align:center">Antwort {s.antwortzeit}</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  {d.faq.length > 0 && (
+    <section class="section alt">
+      <div class="wrap">
+        <div class="head"><span class="eyebrow">Häufige Fragen</span><h2>Fragen zu {d.titel}.</h2></div>
+        <Faq items={d.faq} />
+      </div>
+    </section>
+  )}
+
+  {verwandt.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <div class="head"><span class="eyebrow">Verwandte Leistungen</span><h2>Greift ineinander.</h2></div>
+        <div class="grid g3">{verwandt.map((v: any) => <a class="card reveal" href={`/leistungen/${v.id}/`}><h3>{v.data.titel}</h3><p class="muted">{v.data.kurz}</p><span class="link-arrow">Mehr erfahren <Icon name="arrow" /></span></a>)}</div>
+      </div>
+    </section>
+  )}
+  <CtaBand theme={theme} />
+</Base>

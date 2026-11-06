@@ -1,0 +1,6 @@
+---
+import s from '../data/settings.json';
+---
+<div class="stats reveal">
+  {s.stats.map((x) => <div class="stat"><div class="v">{x.wert}<small>{x.einheit}</small></div><div class="l">{x.label}</div></div>)}
+</div>

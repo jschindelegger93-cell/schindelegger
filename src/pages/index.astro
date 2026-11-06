@@ -1,0 +1,317 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Partners from '../components/Partners.astro';
+import Stats from '../components/Stats.astro';
+import CaseCard from '../components/CaseCard.astro';
+import Engine from '../components/Engine.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
+import pr from '../data/preise.json';
+import { getCollection } from 'astro:content';
+import h from '../data/home.json';
+import g from '../data/growth.json';
+import s from '../data/settings.json';
+
+const leistungen = (await getCollection('leistungen')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
+const fundament = leistungen.find((l) => l.data.fundament);
+const rest = leistungen.filter((l) => !l.data.fundament);
+const cases = (await getCollection('referenzen')).filter((c) => c.data.featured).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge).slice(0, 2);
+const branchen = (await getCollection('branchen')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
+const artikel = (await getCollection('ratgeber')).sort((a, b) => +b.data.datum - +a.data.datum).slice(0, 3);
+const tel = s.telefon.replace(/\s/g, '');
+const lMap = Object.fromEntries(leistungen.map((l) => [l.id, l]));
+---
+<Base title={h.seo.title} description={h.seo.description}>
+  <section class="hero" data-hero>
+    <div class="hero-bg"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">{h.hero.eyebrow}</span>
+        <h1>{h.hero.h1Vor} <span class="mark">{h.hero.h1Mark}</span> {h.hero.h1Nach}</h1>
+        <p class="sub">{h.hero.sub}</p>
+        <div class="btn-row" style="margin-top:28px">
+          <a class="btn btn-primary" href="#beratung" data-modal data-track="hero_cta">{h.hero.cta} <Icon name="arrow" /></a>
+          <a class="btn btn-outline" href="/referenzen/" data-track="hero_cases">{h.hero.cta2}</a>
+        </div>
+        <ul class="trust-bullets">
+          {h.hero.bullets.map((b) => <li><span class="check"><Icon name="check" /></span>{b}</li>)}
+        </ul>
+      </div>
+      <div class="hero-media">
+        <div class="frame">
+          <video autoplay muted loop playsinline preload="metadata" poster={h.hero.poster} aria-label="Einblick in die Arbeit von Schindelegger in Wien">
+            <source src={h.hero.video} type="video/mp4" />
+          </video>
+        </div>
+        <div class="float-card tr"><span class="icon-bubble"><Icon name="chart" /></span><span><strong>{h.hero.karteOben.titel}</strong>{h.hero.karteOben.text}</span></div>
+        <div class="float-card bl"><img class="avatar" src={s.inhaberBild} alt="" width="44" height="44" /><span><strong>{h.hero.karteUnten.titel}</strong>{h.hero.karteUnten.text}</span></div>
+      </div>
+    </div>
+  </section>
+
+  <Partners />
+
+  <section class="section tight" id="shop-check">
+    <div class="wrap">
+      <div class="shopcheck reveal">
+        <div>
+          <span class="eyebrow">{h.shopcheck.eyebrow}</span>
+          <h2>{h.shopcheck.h2}</h2>
+          <p class="muted">{h.shopcheck.text}</p>
+          <ul class="checks" style="margin-top:20px">{h.shopcheck.beispiele.map((b) => <li><span class="check"><Icon name="check" /></span>{b}</li>)}</ul>
+        </div>
+        <form class="form card shopcheck-form" name="shop-check" method="POST" action="/danke/" data-netlify="true" netlify-honeypot="bot-field" data-ajax>
+          <input type="hidden" name="form-name" value="shop-check" />
+          <p class="hp"><label>Nicht ausfüllen <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <div class="field"><label for="sc-url">Ihre Shop-URL</label><input id="sc-url" name="shop_url" type="url" inputmode="url" placeholder="https://ihr-shop.at" required /></div>
+          <div class="row">
+            <div class="field"><label for="sc-sys">Shopsystem</label><select id="sc-sys" name="shopsystem"><option>Shopify</option><option>WooCommerce</option><option>Shopware</option><option>Anderes</option></select></div>
+            <div class="field"><label for="sc-ums">Online-Umsatz / Monat</label><select id="sc-ums" name="umsatz"><option>unter 20.000 €</option><option>20.000–100.000 €</option><option>100.000–500.000 €</option><option>über 500.000 €</option></select></div>
+          </div>
+          <div class="field"><label for="sc-mail">E-Mail für die Auswertung</label><input id="sc-mail" name="email" type="email" inputmode="email" autocomplete="email" required /></div>
+          <label class="consent"><input type="checkbox" name="datenschutz" required /> Ich stimme der Verarbeitung gemäß <a href="/datenschutz/">Datenschutzerklärung</a> zu.</label>
+          <button class="btn btn-primary" type="submit" data-track="shopcheck_submit">Shop-Check anfordern <Icon name="arrow" /></button>
+          <p class="muted" style="font-size:.82rem;margin:0">Antwort {s.antwortzeit} · SSL-verschlüsselt · DSGVO-konform</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="situation">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">{h.situation.eyebrow}</span>
+        <h2>{h.situation.h2}</h2>
+        <p class="lead">{h.situation.intro}</p>
+      </div>
+      <div class="sit reveal" data-sit>
+        <div class="sit-tabs" role="tablist" aria-label="Situation auswählen">
+          {h.situation.optionen.map((o, i) => <button type="button" role="tab" id={`sit-t-${o.id}`} aria-controls={`sit-p-${o.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-track="situation_select">{o.label}</button>)}
+        </div>
+        {h.situation.optionen.map((o, i) => (
+          <div class="sit-panel" role="tabpanel" id={`sit-p-${o.id}`} aria-labelledby={`sit-t-${o.id}`} hidden={i !== 0}>
+            <p class="lead" style="color:var(--ink)">{o.diagnose}</p>
+            <span class="eyebrow" style="margin:8px 0 14px">Diese Hebel greifen zuerst</span>
+            <div class="grid g3">
+              {o.module.filter((m) => lMap[m]).map((m, j) => (
+                <a class="card" href={`/leistungen/${m}/`}><span class="num">0{j + 1}</span><h3 style="margin-top:8px">{lMap[m].data.titel}</h3><p class="muted" style="font-size:.95rem">{lMap[m].data.kurz}</p><span class="link-arrow">Mehr erfahren <Icon name="arrow" /></span></a>
+              ))}
+            </div>
+            <div class="btn-row" style="margin-top:24px"><a class="btn btn-primary" href="#beratung" data-modal data-theme="Shopify" data-track="situation_cta">Passt, Analyse anfragen <Icon name="arrow" /></a></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="ueber">
+    <div class="wrap">
+      <div class="split top">
+        <div class="head reveal">
+          <span class="eyebrow">{h.ueber.eyebrow}</span>
+          <h2>{h.ueber.h2}</h2>
+        </div>
+        <p class="lead reveal">{h.ueber.text}</p>
+      </div>
+      <Stats />
+      <p class="result-band reveal">Shop-Kunden erzielen im Schnitt <span><b>+{s.ergebnis.umsatz} %</b>mehr Umsatz</span><span><b>−{s.ergebnis.kosten} %</b>weniger Werbeausgaben</span></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px">
+        <div><span class="eyebrow">eCommerce Referenzen</span><h2>Am Ende zählt der Umsatz.</h2></div>
+        <a class="link-arrow" href="/referenzen/">Alle Case Studies <Icon name="arrow" /></a>
+      </div>
+      <div class="grid g2">{cases.map((c) => <CaseCard c={c} />)}</div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="eyebrow">{h.problem.eyebrow}</span>
+        <h2>{h.problem.h2}</h2>
+        <p class="lead">{h.problem.intro}</p>
+        <h3 style="margin-top:28px">{h.problem.h3}</h3>
+        {h.problem.text.map((t) => <p class="muted">{t}</p>)}
+        <a class="link-arrow" href="#system" style="color:var(--accent)">Genau hier setzt das Growth System an <Icon name="arrow" /></a>
+      </div>
+      <div class="leak reveal" aria-label="Illustration: verlorene Bestellungen">
+        <div class="leak-row"><span>Tatsächliche Bestellungen</span><span>100</span></div>
+        <div class="leak-bar"><span style="width:100%;background:#4a5060"></span></div>
+        <div class="leak-row"><span>Was der Standard-Pixel misst</span><span>~{h.problem.gemessen}</span></div>
+        <div class="leak-bar"><span style={`width:${h.problem.gemessen}%`}></span></div>
+        <div class="leak-causes"><span>Apple ITP / ATT</span><span>Cookie-Blocking</span><span>DSGVO-Consent</span><span>Adblocker</span></div>
+        <p class="muted" style="font-size:.82rem;margin:12px 0 0">{h.problem.hinweis}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="system" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Das Growth System</span>
+        <h2>Ein System. Fünf Module.</h2>
+        <p class="lead">Tracking, Ads, Shop, E-Mail und Sichtbarkeit: Was Online-Shops sonst bei fünf Dienstleistern einkaufen, läuft hier als ein System, in dem jedes Modul die anderen stärker macht.</p>
+      </div>
+      <Engine />
+      <p class="muted reveal" style="margin-top:32px">Einzeln sind das fünf Dienstleistungen. Zusammen ein System, das jeden Monat effizienter wird. <a href="/growth-system/" style="color:var(--paper)">So greift alles ineinander →</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">{h.leistungen.eyebrow}</span>
+        <h2>{h.leistungen.h2}</h2>
+        <p class="lead">{h.leistungen.intro}</p>
+      </div>
+      {fundament && (
+        <a class="card reveal" href={`/leistungen/${fundament.id}/`} style="margin-bottom:20px;background:var(--ink);color:var(--paper);border-color:var(--ink)">
+          <span class="eyebrow">Das Fundament</span>
+          <h3>{fundament.data.titel}</h3>
+          <p style="color:var(--muted-dark);max-width:70ch">{fundament.data.kurz}</p>
+          <span class="link-arrow">Mehr erfahren <Icon name="arrow" /></span>
+        </a>
+      )}
+      <div class="grid g3">
+        {rest.map((l) => (
+          <a class="card reveal" href={`/leistungen/${l.id}/`}>
+            <h3>{l.data.titel}</h3>
+            <p class="muted">{l.data.kurz}</p>
+            <ul class="chips">{l.data.schwerpunkte.slice(0, 3).map((t) => <li>{t}</li>)}</ul>
+            <span class="link-arrow">Mehr erfahren <Icon name="arrow" /></span>
+          </a>
+        ))}
+      </div>
+      <div class="btn-row" style="margin-top:32px"><a class="btn btn-primary" href="#beratung" data-modal data-track="leistungen_cta">Jetzt starten <Icon name="arrow" /></a><a class="link-arrow" href="/leistungen/">Alle Leistungen im Überblick <Icon name="arrow" /></a></div>
+    </div>
+  </section>
+
+  <section class="section" id="preise">
+    <div class="wrap">
+      <div class="head center reveal"><span class="eyebrow">{h.pakete.eyebrow}</span><h2>{h.pakete.h2}</h2><p class="lead">{h.pakete.intro}</p></div>
+      <div class="tiers">
+        {pr.stufen.map((t) => (
+          <div class:list={['card tier reveal', { featured: t.featured }]}>
+            {t.featured && <span class="badge">Empfohlen</span>}
+            <h3>{t.name}</h3>
+            <p class="muted" style="margin:0">{t.untertitel}</p>
+            <div class="price">{t.preis.startsWith('auf') ? t.preis : <>ab {t.preis}</>} <small>{t.einheit}</small></div>
+            <p class="muted" style="font-size:.9rem">{t.passend}</p>
+            <ul class="checks">{t.punkte.map((x) => <li><span class="check"><Icon name="check" /></span>{x}</li>)}</ul>
+            <a class:list={['btn', t.featured ? 'btn-primary' : 'btn-dark']} href="#beratung" data-modal data-theme="Growth System" data-track={`tier_${t.name}`}>Stufe besprechen <Icon name="arrow" /></a>
+          </div>
+        ))}
+      </div>
+      <p class="center" style="margin-top:28px"><a class="link-arrow" href="/preise/">Alle Details zu Preisen &amp; Ablauf <Icon name="arrow" /></a></p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">{h.onboarding.eyebrow}</span>
+        <h2>{h.onboarding.h2}</h2>
+        <p class="lead">{h.onboarding.intro}</p>
+      </div>
+      <div class="steps" style="--n:3">
+        {g.phasen.map((p, i) => (
+          <div class="step reveal">
+            <div class="img"><img src={p.bild} alt={p.titel} width="600" height="450" loading="lazy" /></div>
+            <span class="num">0{i + 1} / 03</span>
+            <h3 style="margin-top:8px">{p.titel}</h3>
+            <p class="muted">{p.text}</p>
+            <span class="time">{p.zeit}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px">
+        <div><span class="eyebrow">Kundenstimmen</span><h2>Was Kunden sagen.</h2><p class="lead">Die wichtigste Kennzahl ist der tatsächliche Unternehmenserfolg.</p></div>
+        <div style="font:800 2.6rem/1 var(--font-head)">{s.verlaengerung}<span class="muted" style="display:block;font:600 .9rem var(--font-body)">verlängerte Mandate</span></div>
+      </div>
+      <Testimonials />
+    </div>
+  </section>
+
+  <section class="section alt" id="faq">
+    <div class="wrap split top">
+      <div class="head reveal"><span class="eyebrow">{h.faq.eyebrow}</span><h2>{h.faq.h2}</h2><p class="lead">Ihre Frage ist nicht dabei? Im kostenlosen Shop-Check klären wir sie persönlich.</p><a class="link-arrow" href="/preise/#faq">Weitere Fragen zu Preisen &amp; Ablauf <Icon name="arrow" /></a></div>
+      <div class="reveal"><Faq items={h.faq.items} /></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">{h.branchen.eyebrow}</span>
+        <h2>{h.branchen.h2}</h2>
+        <p class="lead">{h.branchen.intro}</p>
+      </div>
+      <div class="grid g3">
+        {branchen.map((b) => (
+          <a class="card reveal" href={`/branchen/${b.id}/`}><span class="icon-bubble" style="margin-bottom:16px"><Icon name={b.data.icon} /></span><h3>{b.data.titel}</h3><p class="muted">{b.data.kurz}</p><span class="link-arrow">Zum Playbook <Icon name="arrow" /></span></a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {artikel.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <div class="head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px">
+          <div><span class="eyebrow">Ratgeber</span><h2>Neu im Ratgeber.</h2></div>
+          <a class="link-arrow" href="/ratgeber/">Alle Artikel <Icon name="arrow" /></a>
+        </div>
+        <div class="grid g3">
+          {artikel.map((a) => (
+            <a class="card case-card reveal" href={`/ratgeber/${a.id}/`}>
+              <div class="img"><img src={a.data.bild} alt={a.data.bildAlt} width="800" height="500" loading="lazy" /></div>
+              <div class="body"><span class="cat">{a.data.kategorie} · {a.data.lesezeit} Min.</span><h3 style="margin-top:8px">{a.data.titel}</h3><p class="muted" style="font-size:.95rem">{a.data.kurz}</p><span class="link-arrow">Lesen <Icon name="arrow" /></span></div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">{h.leitfaden.eyebrow}</span>
+        <h2>{h.leitfaden.h2}</h2>
+        <p class="lead">{h.leitfaden.intro}</p>
+      </div>
+      <div class="grid g2">
+        {h.leitfaden.abschnitte.map((a) => <article class="reveal"><h3>{a.h3}</h3><p class="muted">{a.text}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kontakt">
+    <div class="wrap split top">
+      <div class="reveal">
+        <span class="eyebrow">Kontakt</span>
+        <h2>{h.kontakt.h2}</h2>
+        <p class="lead">{h.kontakt.text}</p>
+        <ul class="checks" style="margin:24px 0">
+          {h.kontakt.punkte.map((p) => <li><span class="check"><Icon name="check" /></span>{p}</li>)}
+        </ul>
+        <p><a href={`mailto:${s.email}`}>{s.email}</a><br /><a href={`tel:${tel}`} data-track="kontakt">{s.telefon}</a><br />{s.plz} {s.ort}</p>
+      </div>
+      <div class="reveal"><ContactForm /></div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

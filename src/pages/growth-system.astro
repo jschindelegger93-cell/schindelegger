@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+import Engine from '../components/Engine.astro';
+import Stats from '../components/Stats.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import g from '../data/growth.json';
+const crumbs = [{ name: 'Growth System', url: '/growth-system/' }];
+---
+<Base title={g.seo.title} description={g.seo.description} image={g.hero.bild} crumbs={crumbs}>
+  <PageHero eyebrow={g.hero.eyebrow} h1={g.hero.h1} intro={g.hero.intro} antwort={g.hero.antwort} bild={g.hero.bild} bildAlt="Ineinandergreifende Zahnräder" crumbs={crumbs}>
+    <div class="btn-row"><a class="btn btn-primary" href="#beratung" data-modal data-theme="Growth System" data-track="growth_hero">Potenzial analysieren <Icon name="arrow" /></a><a class="link-arrow" href="/preise/">Preise ansehen <Icon name="arrow" /></a></div>
+  </PageHero>
+
+  <section class="section alt">
+    <div class="wrap split top">
+      <div><span class="eyebrow">{g.problem.eyebrow}</span><h2>{g.problem.h2}</h2></div>
+      <div>{g.problem.text.map((t) => <p class="lead">{t}</p>)}</div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Die Module</span><h2>Ein System. Fünf Module.</h2><p class="lead">Jedes Modul hat eine klare Aufgabe, und jedes macht die anderen stärker.</p></div>
+      <Engine />
+      <p class="muted" style="margin-top:32px">Einzeln buchbar? Nein, genau das ist der Punkt. Der Wert entsteht im Zusammenspiel. Einzelleistungen gibt es trotzdem, als Projekt mit Fixpreis.</p>
+    </div>
+  </section>
+
+  <section class="section dark" style="padding-top:0">
+    <div class="wrap"><div class="head"><span class="eyebrow">Zahlen</span><h2>Zahlen, die sich prüfen lassen.</h2></div><Stats /></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Ablauf</span><h2>Drei Phasen. Ein System.</h2><p class="lead">Jede Phase senkt das Risiko der nächsten: erst eine Zahl, dann ein Projekt mit Enddatum, dann der laufende Betrieb.</p></div>
+      <div class="steps" style="--n:3">
+        {g.phasen.map((p, i) => (
+          <div class="step reveal"><div class="img"><img src={p.bild} alt={p.titel} width="600" height="450" loading="lazy" /></div><span class="num">0{i + 1} / 03</span><h3 style="margin-top:8px">{p.titel}</h3><p class="muted">{p.text}</p><span class="time">{p.zeit}</span></div>
+        ))}
+      </div>
+      <p class="answer" style="margin-top:40px">{g.garantie}</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Kommt Ihnen das bekannt vor?</span><h2>Die häufigsten Bremsen, direkt beantwortet.</h2></div>
+      <Faq items={g.bremsen} />
+    </div>
+  </section>
+  <CtaBand theme="Growth System" />
+</Base>

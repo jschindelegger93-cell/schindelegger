@@ -1,0 +1,19 @@
+---
+import Icon from './Icon.astro';
+import s from '../data/settings.json';
+interface Props { h2?: string; text?: string; theme?: string }
+const { h2 = 'Marketing als Investition, nicht als Kostenstelle.', text = 'Eine kurze Potenzialanalyse zeigt, wo der größte ungenutzte Hebel liegt. Kostenlos, unverbindlich und mit einer ehrlichen Antwort, auch wenn sie „nein“ lautet.', theme } = Astro.props;
+---
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <span class="eyebrow">Nächster Schritt</span>
+      <h2>{h2}</h2>
+      <p class="lead" style="color:var(--muted-dark)">{text}</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn-primary" href="#beratung" data-modal data-theme={theme} data-track="cta_band">Potenzial analysieren <Icon name="arrow" /></a>
+        <a class="big-tel" href={`tel:${s.telefon.replace(/\s/g, '')}`} data-track="cta_band">{s.telefon}</a>
+      </div>
+    </div>
+  </div>
+</section>

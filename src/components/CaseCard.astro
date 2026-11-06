@@ -1,0 +1,16 @@
+---
+import Icon from './Icon.astro';
+interface Props { c: any; h?: 'h2' | 'h3' }
+const { c, h = 'h3' } = Astro.props;
+const H = h;
+---
+<a class="card case-card reveal" href={`/referenzen/${c.id}/`}>
+  <div class="img"><img src={c.data.bild} alt={c.data.bildAlt || c.data.titel} width="800" height="500" loading="lazy" /></div>
+  <div class="body">
+    <span class="cat">{c.data.kategorie}</span>
+    <H style="margin-top:8px">{c.data.titel}</H>
+    <div class="kpis">{c.data.kennzahlen.slice(0, 2).map((k: any) => <div><b>{k.wert}</b><span>{k.label}</span></div>)}</div>
+    <p class="muted" style="font-size:.95rem">{c.data.kunde}</p>
+    <span class="link-arrow">Case ansehen <Icon name="arrow" /></span>
+  </div>
+</a>

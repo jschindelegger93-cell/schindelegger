@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection } from 'astro:content';
+const arts = (await getCollection('ratgeber')).sort((a, b) => +b.data.datum - +a.data.datum);
+const crumbs = [{ name: 'Ratgeber', url: '/ratgeber/' }];
+const fmt = (d: Date) => d.toLocaleDateString('de-AT', { day: '2-digit', month: 'short', year: 'numeric' });
+---
+<Base title="Ratgeber: Performance Marketing, SEO & Tracking | Schindelegger" description="Leitfäden zu GEO, Server-Side-Tracking, Google Ads und eCommerce. Kompakt, praxisnah und mit konkreten Zahlen." crumbs={crumbs}>
+  <PageHero eyebrow="Ratgeber" h1="Wissen, das sich in Zahlen auszahlt." intro="Kompakte Leitfäden zu Tracking, Ads, SEO, GEO und eCommerce. Ohne Floskeln, mit konkreten Schritten." crumbs={crumbs} />
+  <section class="section alt"><div class="wrap"><div class="grid g3">
+    {arts.map((a) => (
+      <a class="card case-card reveal" href={`/ratgeber/${a.id}/`}>
+        <div class="img"><img src={a.data.bild} alt={a.data.bildAlt} width="800" height="500" loading="lazy" /></div>
+        <div class="body"><span class="cat">{a.data.kategorie} · {fmt(a.data.datum)} · {a.data.lesezeit} Min.</span><h2 style="font-size:1.3rem;margin-top:8px">{a.data.titel}</h2><p class="muted" style="font-size:.95rem">{a.data.kurz}</p><span class="link-arrow">Lesen <Icon name="arrow" /></span></div>
+      </a>
+    ))}
+  </div></div></section>
+  <CtaBand />
+</Base>

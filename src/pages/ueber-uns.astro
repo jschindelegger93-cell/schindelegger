@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Stats from '../components/Stats.astro';
+import Partners from '../components/Partners.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CtaBand from '../components/CtaBand.astro';
+import u from '../data/ueber.json';
+import s from '../data/settings.json';
+const crumbs = [{ name: 'Über mich', url: '/ueber-uns/' }];
+const schema = [{ '@context': 'https://schema.org', '@type': 'ProfilePage', mainEntity: { '@type': 'Person', name: u.person.name, jobTitle: u.person.rolle, image: `https://schindelegger.at${u.person.bild}`, worksFor: { '@id': 'https://schindelegger.at/#organization' }, address: { '@type': 'PostalAddress', addressLocality: 'Wien', addressCountry: 'AT' } } }];
+---
+<Base title={u.seo.title} description={u.seo.description} image={u.person.bild} crumbs={crumbs} schema={schema}>
+  <section class="page-hero" data-hero>
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen"><a href="/">Startseite</a><span>/</span><span aria-current="page">Über mich</span></nav>
+      <div class="page-hero-grid">
+        <div>
+          <span class="eyebrow">{u.hero.eyebrow}</span>
+          <h1>{u.hero.h1}</h1>
+          <p class="lead">{u.hero.intro}</p>
+          <div class="btn-row" style="margin-top:24px"><a class="btn btn-primary" href="#beratung" data-modal data-track="about_hero">Kennenlernen <Icon name="arrow" /></a></div>
+        </div>
+        <div class="img" style="aspect-ratio:4/5;max-width:440px;justify-self:end"><img src={u.person.bild} alt={`${u.person.name}, ${u.person.rolle}`} width="800" height="1000" fetchpriority="high" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap split top">
+      <div><span class="eyebrow">Warum Schindelegger</span><h2>{u.geschichte.h2}</h2></div>
+      <div>{u.geschichte.text.map((t) => <p class="lead">{t}</p>)}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div class="rounded-img" style="aspect-ratio:16/10"><video controls playsinline preload="none" poster={u.video.poster} aria-label="Einblick in den Arbeitsalltag"><source src={u.video.src} type="video/mp4" /></video></div>
+      <div>
+        <span class="eyebrow">Die Person dahinter</span>
+        <h2>{u.person.name}</h2>
+        <p class="muted" style="font-weight:600">{u.person.rolle}</p>
+        <p>{u.person.bio}</p>
+        <blockquote class="answer" style="font-style:italic">„{u.person.zitat}“</blockquote>
+        <ul class="checks">{u.person.fakten.map((f) => <li><span class="check"><Icon name="check" /></span>{f}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Prinzipien</span><h2>Vier Prinzipien, an denen ich mich messen lasse.</h2></div>
+      <div class="grid g4">{u.prinzipien.map((p, i) => <div class="card reveal"><span class="num">0{i + 1}</span><h3 style="margin-top:10px">{p.titel}</h3><p class="muted">{p.text}</p></div>)}</div>
+      <div style="margin-top:48px"><Stats /></div>
+    </div>
+  </section>
+
+  <Partners />
+
+  <section class="section">
+    <div class="wrap split">
+      <div><span class="eyebrow">Wien</span><h2>{u.lokal.h2}</h2><p class="lead">{u.lokal.text}</p><ul class="checks" style="margin-top:20px">{u.lokal.punkte.map((p) => <li><span class="check"><Icon name="check" /></span>{p}</li>)}</ul></div>
+      <div class="card"><h3>{s.firma}</h3><p>{s.inhaber}<br />{s.strasse}<br />{s.plz} {s.ort}</p><p><a href={`mailto:${s.email}`}>{s.email}</a><br /><a href={`tel:${s.telefon.replace(/\s/g, '')}`} data-track="about">{s.telefon}</a></p></div>
+    </div>
+  </section>
+
+  <section class="section alt"><div class="wrap"><div class="head"><span class="eyebrow">Kundenstimmen</span><h2>Was Kunden sagen.</h2></div><Testimonials /></div></section>
+  <CtaBand />
+</Base>

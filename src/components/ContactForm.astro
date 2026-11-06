@@ -1,0 +1,23 @@
+---
+import Icon from './Icon.astro';
+const themen = ['Growth System', 'Google & Meta Ads', 'ChatGPT Ads', 'SEO & GEO', 'eCommerce', 'Tracking & Analytics', 'E-Mail & Klaviyo', 'Förderung', 'Noch unklar'];
+---
+<form class="form card" name="kontakt" method="POST" action="/danke/" data-netlify="true" netlify-honeypot="bot-field" data-ajax>
+  <input type="hidden" name="form-name" value="kontakt" />
+  <p class="hp"><label>Nicht ausfüllen <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+  <div class="row">
+    <div class="field"><label for="k-name">Name</label><input id="k-name" name="name" required autocomplete="name" /></div>
+    <div class="field"><label for="k-firma">Unternehmen <small>(optional)</small></label><input id="k-firma" name="unternehmen" autocomplete="organization" /></div>
+  </div>
+  <div class="row">
+    <div class="field"><label for="k-mail">E-Mail</label><input id="k-mail" name="email" type="email" required autocomplete="email" inputmode="email" /></div>
+    <div class="field"><label for="k-tel">Telefon <small>(optional)</small></label><input id="k-tel" name="telefon" type="tel" autocomplete="tel" inputmode="tel" /></div>
+  </div>
+  <fieldset style="border:0;padding:0;margin:0">
+    <legend class="field" style="font-weight:600;font-size:.92rem;margin-bottom:8px">Worum geht es?</legend>
+    <div class="pills">{themen.map((t) => <label class="pill"><input type="checkbox" name="themen" value={t} /><span>{t}</span></label>)}</div>
+  </fieldset>
+  <div class="field"><label for="k-msg">Nachricht <small>(optional)</small></label><textarea id="k-msg" name="nachricht"></textarea></div>
+  <label class="consent"><input type="checkbox" name="datenschutz" required /> Ich stimme der Verarbeitung meiner Angaben gemäß <a href="/datenschutz/">Datenschutzerklärung</a> zu.</label>
+  <div><button class="btn btn-primary" type="submit" data-track="contact_submit">Nachricht senden <Icon name="arrow" /></button></div>
+</form>

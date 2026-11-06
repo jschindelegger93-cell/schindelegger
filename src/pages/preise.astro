@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+import Faq from '../components/Faq.astro';
+import CaseCard from '../components/CaseCard.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { getCollection } from 'astro:content';
+import p from '../data/preise.json';
+const cases = (await getCollection('referenzen')).filter((c) => ['arb-nutrition', 'nt-service'].includes(c.id));
+const crumbs = [{ name: 'Preise & Ablauf', url: '/preise/' }];
+const schema = [{ '@context': 'https://schema.org', '@type': 'Service', name: 'Growth System', provider: { '@id': 'https://schindelegger.at/#organization' }, offers: { '@type': 'Offer', priceCurrency: 'EUR', price: '2400', priceSpecification: { '@type': 'UnitPriceSpecification', price: '2400', priceCurrency: 'EUR', unitText: 'MONTH', valueAddedTaxIncluded: false } } }];
+---
+<Base title={p.seo.title} description={p.seo.description} image={p.hero.bild} crumbs={crumbs} schema={schema}>
+  <PageHero eyebrow={p.hero.eyebrow} h1={p.hero.h1} intro={p.hero.intro} antwort={p.hero.antwort} bild={p.hero.bild} bildAlt="Zwei Frauen arbeiten am Laptop vor hohen Altbaufenstern" crumbs={crumbs} />
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="head center"><span class="eyebrow">Drei Stufen</span><h2>Ein System. Drei Geschwindigkeiten.</h2><p class="lead">Jede Stufe enthält alle fünf Module. Der Unterschied liegt darin, wie oft und wie tief gesteuert wird.</p></div>
+      <div class="tiers">
+        {p.stufen.map((t) => (
+          <div class:list={['card tier reveal', { featured: t.featured }]}>
+            {t.featured && <span class="badge">Empfohlen</span>}
+            <h3>{t.name}</h3>
+            <p class="muted" style="margin:0">{t.untertitel}</p>
+            <div class="price">{t.preis.startsWith('auf') ? t.preis : <>ab {t.preis}</>} <small>{t.einheit}</small></div>
+            <p class="muted" style="font-size:.9rem">{t.passend}</p>
+            <ul class="checks">{t.punkte.map((x) => <li><span class="check"><Icon name="check" /></span>{x}</li>)}</ul>
+            <a class:list={['btn', t.featured ? 'btn-primary' : 'btn-dark']} href="#beratung" data-modal data-theme="Growth System" data-track={`tier_${t.name}`}>Stufe besprechen <Icon name="arrow" /></a>
+          </div>
+        ))}
+      </div>
+      <p class="muted center" style="margin-top:20px;font-size:.9rem">Alle Preise netto zzgl. USt. Werbebudget wird direkt an die Plattformen bezahlt.</p>
+      <div class="card" style="margin-top:28px"><h3>In jeder Stufe enthalten</h3><ul class="chips">{p.inklusive.map((x) => <li>{x}</li>)}</ul><p class="muted" style="margin-top:14px">Dazu immer: Echtzeit-Dashboard · Quartals-Reallokation · Quartals-Commitment</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Vergleich</span><h2>Mehr Wirkung pro Euro. Weniger Schnittstellen.</h2></div>
+      <div class="table-scroll"><table class="compare"><thead><tr>{p.vergleich.spalten.map((c) => <th scope="col">{c}</th>)}</tr></thead><tbody>{p.vergleich.zeilen.map((r) => <tr>{r.map((c, i) => (i === 0 ? <th scope="row">{c}</th> : <td>{c}</td>))}</tr>)}</tbody></table></div>
+      <p class="table-hint">← Tabelle seitlich wischen →</p>
+      <p class="muted" style="font-size:.85rem;margin-top:12px">{p.vergleich.hinweis}</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap"><div class="head"><span class="eyebrow">Ergebnisse</span><h2>Zahlen statt Versprechen.</h2></div><div class="grid g2">{cases.map((c) => <CaseCard c={c} />)}</div></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Ablauf</span><h2>Vom ersten Gespräch zum laufenden System.</h2><p class="lead">Vier klar definierte Schritte. Budget fließt erst, wenn alles messbar ist.</p></div>
+      <div class="steps" style="--n:4">{p.ablauf.map((a, i) => <div class="step reveal"><div class="img"><img src={a.bild} alt={a.titel} width="600" height="450" loading="lazy" /></div><span class="num">0{i + 1}</span><h3 style="margin-top:8px">{a.titel}</h3><p class="muted">{a.text}</p></div>)}</div>
+    </div>
+  </section>
+
+  <section class="section alt"><div class="wrap"><div class="head"><span class="eyebrow">Kundenstimmen</span><h2>Was Kunden sagen.</h2></div><Testimonials /></div></section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Zusagen</span><h2>Vier Zusagen. Ohne Kleingedrucktes.</h2></div>
+      <div class="grid g4">{p.zusagen.map((z) => <div class="card reveal"><span class="icon-bubble" style="margin-bottom:14px"><Icon name="shield" /></span><h3>{z.titel}</h3><p class="muted">{z.text}</p></div>)}</div>
+    </div>
+  </section>
+
+  <section class="section alt" id="faq"><div class="wrap"><div class="head"><span class="eyebrow">FAQ</span><h2>Häufige Fragen zu Preisen.</h2></div><Faq items={p.faq} /></div></section>
+  <CtaBand />
+</Base>

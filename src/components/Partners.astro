@@ -1,0 +1,10 @@
+---
+import s from '../data/settings.json';
+const list = [...s.partner, ...s.partner];
+---
+<div class="partners" aria-label="Zertifizierungen und Plattformen">
+  <p>Zertifizierungen & Plattformen</p>
+  <div class="marquee">
+    {list.map((p, i) => <img src={p.logo} alt={i < s.partner.length ? p.name : ''} aria-hidden={i >= s.partner.length ? 'true' : undefined} width="160" height="44" loading="lazy" />)}
+  </div>
+</div>

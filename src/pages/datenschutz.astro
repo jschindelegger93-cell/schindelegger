@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import s from '../data/settings.json';
+---
+<Base title="Datenschutzerklärung | Schindelegger" description="Informationen zur Verarbeitung personenbezogener Daten auf schindelegger.at gemäß DSGVO." noindex>
+  <section class="section"><div class="wrap prose">
+    <h1 style="font-size:clamp(2rem,1.5rem+2vw,3rem)">Datenschutzerklärung</h1>
+    <p><em>[PLATZHALTER – Struktur, vor Go-live rechtlich prüfen und vervollständigen]</em></p>
+    <h2>1. Verantwortlicher</h2>
+    <p>{s.firma}, {s.inhaber}, {s.strasse}, {s.plz} {s.ort}. E-Mail: {s.email}</p>
+    <h2>2. Hosting</h2>
+    <p>Diese Website wird bei Netlify, Inc. gehostet. [PLATZHALTER: Angaben zu Auftragsverarbeitung, Serverstandort, Drittlandtransfer und Rechtsgrundlage]</p>
+    <h2>3. Kontaktformulare und Anfragen</h2>
+    <p>Angaben aus Formularen (Name, Unternehmen, E-Mail, Telefon, Nachricht, Website) werden zur Bearbeitung der Anfrage verarbeitet und über Netlify Forms übermittelt. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. [PLATZHALTER Speicherdauer]</p>
+    <h2>4. Cookies und Einwilligung</h2>
+    <p>Notwendige Cookies sind für den Betrieb erforderlich. Analyse- und Marketing-Cookies werden nur nach Einwilligung gesetzt (Art. 6 Abs. 1 lit. a DSGVO, § 165 Abs. 3 TKG 2021). Die Einwilligung kann jederzeit über „Cookie-Einstellungen“ im Footer widerrufen werden.</p>
+    <h2>5. Google Tag Manager, Google Analytics 4, Google Ads</h2>
+    <p>[PLATZHALTER: Zweck, Daten, Consent Mode v2, Server-Side-Tagging, Anbieter Google Ireland Ltd., Drittlandtransfer, Speicherdauer]</p>
+    <h2>6. Meta Pixel und Conversions API</h2>
+    <p>[PLATZHALTER: Zweck, Daten, Anbieter Meta Platforms Ireland Ltd., gemeinsame Verantwortlichkeit, Drittlandtransfer]</p>
+    <h2>7. Ihre Rechte</h2>
+    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Beschwerden können an die Österreichische Datenschutzbehörde gerichtet werden.</p>
+  </div></section>
+</Base>

@@ -1,0 +1,22 @@
+---
+interface Props { eyebrow?: string; h1: string; intro?: string; antwort?: string; bild?: string; bildAlt?: string; crumbs?: { name: string; url: string }[] }
+const { eyebrow, h1, intro, antwort, bild, bildAlt = '', crumbs = [] } = Astro.props;
+---
+<section class="page-hero" data-hero>
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    {crumbs.length > 0 && (
+      <nav class="crumbs" aria-label="Brotkrumen"><a href="/">Startseite</a>{crumbs.map((c, i) => <><span aria-hidden="true">/</span>{i === crumbs.length - 1 ? <span aria-current="page">{c.name}</span> : <a href={c.url}>{c.name}</a>}</>)}</nav>
+    )}
+    <div class:list={['page-hero-grid', { noimg: !bild }]}>
+      <div>
+        {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+        <h1>{h1}</h1>
+        {intro && <p class="lead">{intro}</p>}
+        {antwort && <p class="answer">{antwort}</p>}
+        <slot />
+      </div>
+      {bild && <div class="img"><img src={bild} alt={bildAlt} width="1200" height="900" fetchpriority="high" /></div>}
+    </div>
+  </div>
+</section>

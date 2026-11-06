@@ -1,0 +1,194 @@
+{
+  "seo": {
+    "title": "eCommerce Performance Marketing Wien | Schindelegger",
+    "description": "Performance Marketing für Online-Shops: Google Shopping & Meta Ads, Shopify, Klaviyo und Server-Side-Tracking als ein System. Im Schnitt +20 % Umsatz bei −30 % Werbekosten."
+  },
+  "hero": {
+    "eyebrow": "eCommerce Performance Marketing · Wien",
+    "h1Vor": "Mehr Umsatz für Ihren Shop,",
+    "h1Mark": "messbar",
+    "h1Nach": "ab dem ersten Euro.",
+    "sub": "Ich verbinde Tracking, Google Shopping & Meta Ads, Shopify-Optimierung und Klaviyo-Automation zu einem System. Für Online-Shops und D2C-Marken, die profitabel skalieren wollen, statt nur Reichweite zu kaufen.",
+    "cta": "Shop-Potenzial analysieren",
+    "cta2": "eCommerce Cases ansehen",
+    "bullets": [
+      "Antwort innerhalb von 24 Stunden",
+      "Kein Jahresvertrag",
+      "Konten bleiben bei Ihnen"
+    ],
+    "video": "/videos/buero.mp4",
+    "poster": "/videos/buero-poster.webp",
+    "karteOben": {
+      "titel": "ROAS ⌀ 7,6",
+      "text": "über alle betreuten Konten"
+    },
+    "karteUnten": {
+      "titel": "Julian Schindelegger",
+      "text": "Gründer · eCommerce & Performance"
+    }
+  },
+  "ueber": {
+    "eyebrow": "Über mich",
+    "h2": "Shop-Wachstum ist kein Glück, sondern eine Kennzahl.",
+    "text": "Ich steuere Online-Shops nach Deckungsbeitrag, nicht nach Klicks. Saubere Daten entscheiden, welche Produkte, Kampagnen und Zielgruppen Budget bekommen. Das Ergebnis: höherer ROAS, mehr Wiederkäufe und Wachstum, das sich jeden Monat nachrechnen lässt."
+  },
+  "problem": {
+    "eyebrow": "Das Problem",
+    "h2": "Ein großer Teil des Shop-Budgets wirkt im Blindflug.",
+    "intro": "Nicht, weil die Kampagnen schlecht wären. Sondern weil viele Bestellungen nie im Werbekonto ankommen.",
+    "h3": "Viele Käufe kommen nie im Tracking an.",
+    "text": [
+      "Apple ITP und ATT, Adblocker und Consent-Banner sorgen dafür, dass ein beträchtlicher Teil der Bestellungen in keinem Werbekonto auftaucht. Google Shopping und Meta optimieren dann auf ein unvollständiges Bild und schieben Budget auf die falschen Produkte.",
+      "Die Folge: steigende Klickpreise, ein ROAS, dem niemand traut, und Skalierung nach Bauchgefühl. Ohne sauberes Tracking bleibt Shop-Marketing ein teures Ratespiel."
+    ],
+    "gemessen": 36,
+    "hinweis": "Werte illustrativ. Den tatsächlichen Verlust ermittelt das Audit."
+  },
+  "leistungen": {
+    "eyebrow": "Leistungen",
+    "h2": "Alles, was ein Shop zum Wachsen braucht.",
+    "intro": "Jede Leistung ist ein Baustein des Growth Systems für Online-Shops. Das Fundament ist immer lückenloses Tracking: erst darauf bauen Ads, Shop-Optimierung und E-Mail-Automation auf."
+  },
+  "onboarding": {
+    "eyebrow": "Zusammenarbeit",
+    "h2": "Erst Daten, dann Budget.",
+    "intro": "Kein Kaltstart: Der Einstieg ist standardisiert, damit es wenig Reibung und volle Transparenz gibt, bevor der erste Euro Werbebudget fließt."
+  },
+  "branchen": {
+    "eyebrow": "Branchen",
+    "h2": "Spezialisiert auf eCommerce. Erprobt in jeder Branche.",
+    "intro": "Der Schwerpunkt liegt auf Online-Shops und D2C-Marken. Dasselbe System funktioniert aber auch für Leadgenerierung, mit angepassten Hebeln."
+  },
+  "leitfaden": {
+    "eyebrow": "Leitfaden",
+    "h2": "eCommerce Marketing in Österreich: kurz erklärt.",
+    "intro": "Welche Kanäle für Online-Shops funktionieren, was sie realistisch kosten und wie aus Einmalkäufern Stammkunden werden.",
+    "abschnitte": [
+      {
+        "h3": "Was ist eCommerce Performance Marketing?",
+        "text": "Online-Marketing, bei dem jede Maßnahme an einem Kauf hängt. Gesteuert wird über ROAS, Deckungsbeitrag und Customer Lifetime Value, nicht über Reichweite. Budget fließt zu den Produkten und Kampagnen, die nachweisbar profitabel verkaufen, und wird umgeschichtet, sobald die Daten einen besseren Hebel zeigen."
+      },
+      {
+        "h3": "Welche Kanäle funktionieren für Shops?",
+        "text": "Google Shopping und Performance Max fangen kaufbereite Suchanfragen ab. Meta Ads mit Dynamic Ads und UGC-Creatives erschließen neue Zielgruppen und holen Warenkorbabbrecher zurück. TikTok kommt dazu, wenn Produkt und Zielgruppe passen. SEO und GEO bauen Sichtbarkeit ohne Klickkosten auf."
+      },
+      {
+        "h3": "Warum Tracking an erster Stelle steht",
+        "text": "Adblocker, Safari und iOS lassen einen zweistelligen Prozentsatz der Bestellungen aus den Werbekonten verschwinden. Server-Side-Tracking mit Consent Mode v2 und sauberen Purchase-Events ist deshalb das erste Modul jeder Zusammenarbeit, DSGVO-konform und mit eigenem Umsatz-Dashboard."
+      },
+      {
+        "h3": "Shopify, Feed und Conversion Rate",
+        "text": "Mehr Traffic hilft nur, wenn der Shop verkauft. Produktfeed, Produktseiten, Checkout und Ladezeit entscheiden über die Conversion Rate. Ein optimierter Feed senkt die Klickpreise in Google Shopping, eine bessere Produktseite hebt den Umsatz pro Besucher."
+      },
+      {
+        "h3": "Wiederkäufe mit Klaviyo",
+        "text": "Neukunden sind teuer, Stammkunden profitabel. Mit Klaviyo laufen Willkommensstrecke, Warenkorbabbruch, Post-Purchase und Winback automatisch. In gut aufgesetzten Shops kommen so 20 bis 30 Prozent des Umsatzes aus E-Mail und SMS."
+      },
+      {
+        "h3": "Was kostet es und wie lange dauert es?",
+        "text": "Zwei Posten: das Werbebudget, das direkt an Google und Meta geht, und die Steuerung. Der laufende Betrieb startet ab 2.400 Euro pro Monat, mit Quartals- statt Jahresvertrag. Ads zeigen erste Effekte innerhalb weniger Wochen, Feed-, Shop- und E-Mail-Optimierungen wirken dauerhaft."
+      }
+    ]
+  },
+  "kontakt": {
+    "h2": "Wo verliert Ihr Shop Umsatz? Finden wir es heraus.",
+    "text": "Kein Verkaufsgespräch, keine Verpflichtung. Sie bekommen eine ehrliche Einschätzung, auch wenn ich keinen Hebel sehe.",
+    "punkte": [
+      "Antwort innerhalb von 24 Stunden",
+      "Unverbindlich, Ihre Daten bleiben bei mir",
+      "Klare Einschätzung statt Verkaufsmasche"
+    ]
+  },
+  "shopcheck": {
+    "eyebrow": "Gratis Shop-Check",
+    "h2": "Wo verliert Ihr Shop gerade Umsatz?",
+    "text": "Shop-URL eingeben, zwei Fragen beantworten. Sie bekommen innerhalb von 24 Stunden eine persönliche Einschätzung zu Tracking, Ads, Produktfeed und Checkout. Kostenlos, ohne Verkaufsgespräch.",
+    "beispiele": [
+      "Fehlen Purchase-Events in Meta oder Google?",
+      "Ist der Produktfeed sauber für Google Shopping?",
+      "Wo brechen Käufer im Checkout ab?"
+    ]
+  },
+  "situation": {
+    "eyebrow": "Ihre Situation",
+    "h2": "Was trifft auf Ihren Shop zu?",
+    "intro": "Wählen Sie aus, wo es gerade hakt. Sie sehen sofort, welche Hebel zuerst greifen.",
+    "optionen": [
+      {
+        "id": "roas",
+        "label": "Ads laufen, aber der ROAS sinkt",
+        "diagnose": "Meist ist nicht die Kampagne das Problem, sondern das Signal: Fehlen Bestellungen im Werbekonto, optimieren Google und Meta auf das falsche Bild. Zuerst wird das Tracking repariert, dann wird Budget nach Deckungsbeitrag umgeschichtet.",
+        "module": [
+          "tracking-analytics",
+          "paid-advertising",
+          "dynamic-ads"
+        ]
+      },
+      {
+        "id": "conversion",
+        "label": "Viel Traffic, aber wenige Käufe",
+        "diagnose": "Wenn Besucher kommen, aber nicht kaufen, liegt der Hebel im Shop: Produktseiten, Vertrauen, Ladezeit und Checkout. Kleine Änderungen an diesen Stellen heben den Umsatz pro Besucher, ohne mehr Werbebudget.",
+        "module": [
+          "ecommerce",
+          "landingpages",
+          "ad-creatives"
+        ]
+      },
+      {
+        "id": "neukunden",
+        "label": "Neukunden werden zu teuer",
+        "diagnose": "Steigen die Klickpreise, muss jeder Kunde mehr wert sein. Klaviyo-Flows holen Wiederkäufe, SEO und GEO bringen Besucher ohne Klickkosten. So sinken die Kosten pro Kunde über die gesamte Kundenbeziehung.",
+        "module": [
+          "email-marketing",
+          "seo",
+          "geo-ai-search"
+        ]
+      },
+      {
+        "id": "start",
+        "label": "Der Shop startet gerade",
+        "diagnose": "Von Anfang an richtig messen spart später teure Korrekturen. Tracking, ein sauberer Produktfeed und die ersten profitablen Kampagnen bilden das Fundament, auf dem skaliert wird.",
+        "module": [
+          "tracking-analytics",
+          "ecommerce",
+          "paid-advertising"
+        ]
+      }
+    ]
+  },
+  "pakete": {
+    "eyebrow": "Preise",
+    "h2": "Transparente Richtpreise.",
+    "intro": "Jede Stufe enthält alle Module des Growth Systems. Der verbindliche Preis steht im persönlichen Angebot, abhängig von Shop-Größe und Werbebudget."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "h2": "Häufige Fragen von Shop-Betreibern.",
+    "items": [
+      {
+        "frage": "Mit welchen Shopsystemen arbeiten Sie?",
+        "antwort": "Der Schwerpunkt liegt auf Shopify. WooCommerce, Shopware und andere gängige Systeme sind ebenfalls möglich, Tracking, Ads und E-Mail-Marketing funktionieren unabhängig vom Shopsystem."
+      },
+      {
+        "frage": "Ab welcher Shop-Größe lohnt sich die Zusammenarbeit?",
+        "antwort": "Als Richtwert ab etwa 2.000 € Werbebudget pro Monat. Darunter ist meist ein einmaliges Tracking- und Shop-Audit sinnvoller als laufende Betreuung. Im kostenlosen Shop-Check bekommen Sie eine ehrliche Einschätzung."
+      },
+      {
+        "frage": "Wie schnell sehe ich Ergebnisse?",
+        "antwort": "Tracking-Lücken sind meist innerhalb der ersten zwei Wochen geschlossen. Ads zeigen erste Effekte nach wenigen Wochen. Feed-, Shop- und E-Mail-Optimierungen wirken dauerhaft und bauen sich Monat für Monat auf."
+      },
+      {
+        "frage": "Brauche ich wirklich Server-Side-Tracking?",
+        "antwort": "Wenn Sie Werbung schalten: ja. Adblocker, Safari und Consent-Banner lassen einen Teil der Bestellungen aus den Werbekonten verschwinden. Ohne vollständige Daten optimieren Google und Meta auf ein falsches Bild."
+      },
+      {
+        "frage": "Gibt es eine lange Vertragsbindung?",
+        "antwort": "Nein. Statt eines Jahresvertrags gilt ein Quartals-Commitment. Jedes Quartal entscheidet der nachgewiesene Hebel über die Verlängerung."
+      },
+      {
+        "frage": "Gehören die Werbekonten und Daten mir?",
+        "antwort": "Ja, immer. Werbekonten, Tracking, Klaviyo und alle Daten bleiben bei Ihrem Unternehmen. Sie haben jederzeit vollen Zugriff."
+      }
+    ]
+  }
+}

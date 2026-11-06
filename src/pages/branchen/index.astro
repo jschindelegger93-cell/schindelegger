@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection } from 'astro:content';
+const all = (await getCollection('branchen')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
+const crumbs = [{ name: 'Branchen', url: '/branchen/' }];
+---
+<Base title="Branchen: Performance Marketing nach Branche | Schindelegger" description="Hotellerie, Industrie & B2B, KMU, eCommerce, Recht & Finanzen sowie Politik: Wie das Growth System in jeder Branche die richtigen Hebel setzt." crumbs={crumbs}>
+  <PageHero eyebrow="Branchen" h1="Ein System. Sechs Branchen-Playbooks." intro="Jede Branche hat ihre eigene Customer Journey, ihre eigenen Hürden und ihre eigenen Kennzahlen. Das Growth System bleibt gleich, die Hebel werden angepasst." crumbs={crumbs} />
+  <section class="section alt"><div class="wrap"><div class="grid g3">
+    {all.map((b) => (
+      <a class="card reveal" href={`/branchen/${b.id}/`}><span class="icon-bubble" style="margin-bottom:16px"><Icon name={b.data.icon} /></span><h2 style="font-size:1.35rem">{b.data.titel}</h2><p class="muted">{b.data.kurz}</p><span class="link-arrow">Zum Playbook <Icon name="arrow" /></span></a>
+    ))}
+  </div></div></section>
+  <CtaBand />
+</Base>

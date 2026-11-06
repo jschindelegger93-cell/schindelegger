@@ -1,0 +1,27 @@
+---
+import Icon from './Icon.astro';
+import g from '../data/growth.json';
+---
+<div class="engine" data-engine>
+  <div class="engine-tabs" role="tablist" aria-label="Module des Growth Systems" aria-orientation="vertical">
+    {g.module.map((m, i) => (
+      <button class="engine-tab" role="tab" id={`tab-${m.id}`} aria-controls={`panel-${m.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} type="button"><span class="num">0{i + 1}</span>{m.titel}</button>
+    ))}
+  </div>
+  <div>
+    {g.module.map((m, i) => (
+      <div class="engine-panel" role="tabpanel" id={`panel-${m.id}`} aria-labelledby={`tab-${m.id}`} hidden={i !== 0}>
+        <span class="role">{m.rolle}</span>
+        <h3 style="margin-top:10px">{m.titel}</h3>
+        <p style="font-size:1.1rem">{m.nutzen}</p>
+        <ul>{m.punkte.map((p) => <li>{p}</li>)}</ul>
+        <p class="together"><b>Im Zusammenspiel:</b> {m.zusammenspiel}</p>
+        <ul class="chips">{m.tags.map((t) => <li>{t}</li>)}</ul>
+        <a class="link-arrow" href={m.link} style="margin-top:18px">Mehr zu {m.titel} <Icon name="arrow" /></a>
+      </div>
+    ))}
+  </div>
+</div>
+<div class="cycle">
+  {g.kreislauf.map((k) => <div><b>{k.titel}</b>{k.text}</div>)}
+</div>

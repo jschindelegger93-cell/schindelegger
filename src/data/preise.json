@@ -1,0 +1,181 @@
+{
+  "seo": {
+    "title": "Preise & Ablauf: Growth System ab 2.400 € | Schindelegger",
+    "description": "Alle fünf Module zu einem festen Monatspreis ab 2.400 €, ohne Jahresvertrag. Drei Stufen, transparente Leistungen und Audit mit Geld-zurück-Garantie."
+  },
+  "hero": {
+    "eyebrow": "Preise & Ablauf",
+    "h1": "Ein System. Alle Leistungen. Ein Preis.",
+    "intro": "Tracking, Paid Advertising, SEO & GEO, Conversion-Optimierung und CRM in einer Steuerung, zu einem festen Monatspreis. Ab 2.400 € pro Monat, ohne Jahresvertrag.",
+    "antwort": "Das Growth System von Schindelegger kostet ab 2.400 € netto pro Monat bei Quartals-Commitment. Alle drei Stufen enthalten alle fünf Module, sie unterscheiden sich in Steuerungstakt und Umsetzungsumfang. Das Werbebudget zahlen Sie direkt an Google, Meta und Co.",
+    "bild": "/images/pricing/hero.webp"
+  },
+  "stufen": [
+    {
+      "name": "System Start",
+      "preis": "2.400 €",
+      "einheit": "/ Monat",
+      "untertitel": "Das Fundament für planbares Wachstum",
+      "passend": "für bis ca. 5.000 € Werbebudget pro Monat",
+      "punkte": [
+        "Alle fünf Module im Einsatz",
+        "Budget-Reallokation jeden Monat",
+        "Echtzeit-Dashboard über alle Kanäle",
+        "Fester monatlicher Umsetzungsumfang"
+      ],
+      "featured": false
+    },
+    {
+      "name": "System Plus",
+      "preis": "auf Anfrage",
+      "einheit": "",
+      "untertitel": "Für spürbar schnelleres Wachstum",
+      "passend": "für bis ca. 25.000 € Werbebudget pro Monat",
+      "punkte": [
+        "Alles aus System Start",
+        "Steuerung und Optimierung jede Woche",
+        "Creative-Produktion inklusive",
+        "Erweiterter Umsetzungsumfang"
+      ],
+      "featured": true
+    },
+    {
+      "name": "System Pro",
+      "preis": "auf Anfrage",
+      "einheit": "",
+      "untertitel": "Für maximale Skalierung",
+      "passend": "ab ca. 25.000 € Werbebudget pro Monat",
+      "punkte": [
+        "Alles aus System Plus",
+        "Steuerung jeden Tag",
+        "Erweitertes Spezialisten-Netzwerk",
+        "Voller Umsetzungsumfang"
+      ],
+      "featured": false
+    }
+  ],
+  "inklusive": [
+    "Server-Side-Tracking",
+    "Attribution",
+    "Echtzeit-Dashboard",
+    "Google Ads",
+    "Meta Ads",
+    "Performance-Kampagnen",
+    "OnPage-SEO",
+    "GEO / AEO",
+    "Content & Autorität",
+    "Shop & Checkout",
+    "Landingpages & Funnels",
+    "CRO & A/B-Tests",
+    "Klaviyo & E-Mail",
+    "Automatisierte Flows",
+    "CRM"
+  ],
+  "vergleich": {
+    "spalten": [
+      "",
+      "Inhouse-Team",
+      "Mehrere Agenturen",
+      "Growth System"
+    ],
+    "zeilen": [
+      [
+        "Kosten pro Monat",
+        "ab ca. 5.000 € je Stelle",
+        "7.000–10.000 €",
+        "ab 2.400 €"
+      ],
+      [
+        "Gesamtverantwortung",
+        "verteilt",
+        "keine",
+        "ein Ansprechpartner"
+      ],
+      [
+        "Tracking & Dashboard",
+        "selten vorhanden",
+        "je Anbieter getrennt",
+        "inklusive, ein Dashboard"
+      ],
+      [
+        "Vertragsbindung",
+        "Anstellung",
+        "oft 12 Monate",
+        "ein Quartal"
+      ],
+      [
+        "Einarbeitung",
+        "Monate",
+        "pro Anbieter",
+        "90-Tage-Aufbau mit KPIs"
+      ]
+    ],
+    "hinweis": "Richtwerte für den DACH-Raum; Inhouse-Kosten je nach Profil und Tool-Stack."
+  },
+  "ablauf": [
+    {
+      "titel": "Potenzialanalyse",
+      "text": "Im Erstgespräch prüfe ich Ausgangslage, Daten und Ziele. Ergebnis: eine ehrliche Einschätzung und die Empfehlung der passenden Stufe. Kostenlos und unverbindlich.",
+      "bild": "/images/pricing/step-1-analyse.webp"
+    },
+    {
+      "titel": "Onboarding & Tracking",
+      "text": "Zugänge, Konten und Ziele werden eingerichtet, das Tracking sauber aufgesetzt und das Dashboard angebunden. Erst messen, dann skalieren.",
+      "bild": "/images/pricing/step-2-setup.webp"
+    },
+    {
+      "titel": "Launch & Steuerung",
+      "text": "Alle Module gehen live. Gesteuert und optimiert wird im Takt der gewählten Stufe: monatlich, wöchentlich oder täglich.",
+      "bild": "/images/pricing/step-3-betrieb.webp"
+    },
+    {
+      "titel": "Quartals-Review",
+      "text": "Jedes Quartal liegen die Zahlen auf dem Tisch: was jedes Modul gebracht hat und wohin das Budget im nächsten Quartal fließt.",
+      "bild": "/images/pricing/step-4-review.webp"
+    }
+  ],
+  "zusagen": [
+    {
+      "titel": "Kein Jahresvertrag",
+      "text": "Quartals-Commitment statt Mindestlaufzeit. Jedes Quartal entscheidet der nachgewiesene Hebel über die Verlängerung."
+    },
+    {
+      "titel": "Konten bleiben bei Ihnen",
+      "text": "Werbekonten, Tracking und Daten gehören immer Ihrem Unternehmen. Voller Zugriff, jederzeit."
+    },
+    {
+      "titel": "Nur mit echtem Hebel",
+      "text": "Sehe ich kein profitables Potenzial, lehne ich das Mandat ab, statt Budget zu verbrennen."
+    },
+    {
+      "titel": "Volle Transparenz",
+      "text": "Das Dashboard zeigt, was jeder Euro bringt. Dieselben Zahlen, mit denen ich steuere."
+    }
+  ],
+  "faq": [
+    {
+      "frage": "Welche Stufe passt zu mir?",
+      "antwort": "Das hängt vor allem vom monatlichen Werbebudget und dem gewünschten Tempo ab. Als Richtwert: System Start bis ca. 5.000 € Werbebudget pro Monat, System Plus bis ca. 25.000 €, System Pro darüber. Die genaue Empfehlung gibt es nach der Potenzialanalyse."
+    },
+    {
+      "frage": "Ist das nicht zu teuer?",
+      "antwort": "Entscheidend ist der Vergleich: SEO, Ads, Creatives und Tracking einzeln eingekauft kosten in Österreich 7.000 bis 10.000 € pro Monat, ohne Gesamtverantwortung. Eine interne Stelle mit diesem Profil kostet ab 60.000 € im Jahr. System Start liefert alle fünf Module in einer Steuerung."
+    },
+    {
+      "frage": "Wie lange ist die Vertragsbindung?",
+      "antwort": "Ein Quartal. Statt eines Jahresvertrags gilt ein Quartals-Commitment, und jedes Quartal entscheidet der nachgewiesene Hebel über die Verlängerung."
+    },
+    {
+      "frage": "Was ist im Preis enthalten?",
+      "antwort": "Steuerung und Umsetzung aller fünf Module, das Echtzeit-Dashboard und die regelmäßige Budget-Reallokation. Der Umsetzungsumfang wächst mit der Stufe. Das Werbebudget zahlen Sie separat direkt an die Plattformen."
+    },
+    {
+      "frage": "Wir haben schon eine Agentur.",
+      "antwort": "Das spricht nicht gegen ein Gespräch. Die Analyse bewertet auch die bestehende Arbeit, mit Daten statt Meinung. Ist sie gut, haben Sie es danach schwarz auf weiß."
+    },
+    {
+      "frage": "Gibt es eine Garantie auf Platz 1 oder einen bestimmten Umsatz?",
+      "antwort": "Nein, und bei jedem, der das verspricht, ist Vorsicht angebracht. Niemand kontrolliert Google. Zugesagt wird, was kontrollierbar ist: volle Transparenz über jeden Euro und ein Budget, das jedes Quartal dorthin fließt, wo die Daten den größten Hebel zeigen."
+    }
+  ]
+}

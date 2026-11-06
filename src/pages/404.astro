@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+---
+<Base title="Seite nicht gefunden | Schindelegger" description="Diese Seite gibt es nicht (mehr)." noindex>
+  <section class="section not-found">
+    <div class="wrap" style="max-width:640px">
+      <span class="eyebrow">Fehler 404</span>
+      <h1 style="font-size:clamp(2rem,1.5rem+2vw,3rem)">Diese Seite lässt sich nicht messen.</h1>
+      <p class="lead">Sie existiert nämlich nicht. Vielleicht hilft einer dieser Wege weiter:</p>
+      <div class="btn-row" style="justify-content:center;margin-top:24px"><a class="btn btn-primary" href="/">Zur Startseite <Icon name="arrow" /></a><a class="btn btn-outline" href="#beratung" data-modal>Potenzial analysieren</a></div>
+    </div>
+  </section>
+</Base>

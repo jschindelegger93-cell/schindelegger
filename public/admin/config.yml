@@ -1,0 +1,418 @@
+# Sveltia CMS – Schindelegger
+# Aufruf: https://schindelegger.at/admin/  (Anmeldung mit GitHub-Konto)
+backend:
+  name: github
+  repo: jschindelegger93-cell/schindelegger
+  branch: main
+  commit_messages:
+    create: "Inhalt: {{collection}} „{{slug}}“ angelegt"
+    update: "Inhalt: {{collection}} „{{slug}}“ aktualisiert"
+    delete: "Inhalt: {{collection}} „{{slug}}“ gelöscht"
+
+locale: de
+site_url: https://schindelegger.at
+display_url: https://schindelegger.at
+logo_url: /favicon.svg
+media_folder: public/images/uploads
+public_folder: /images/uploads
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  # ---------- Einstellungen & feste Seiten ----------
+  - name: einstellungen
+    label: Einstellungen & Seiten
+    icon: settings
+    files:
+      - name: settings
+        label: Globale Einstellungen (Firma, Kontakt, Announcement Bar, Navigation, Zahlen, Stimmen)
+        file: src/data/settings.json
+        format: json
+        fields:
+          - { label: Firmenname, name: firma, widget: string }
+          - { label: Rechtsform, name: rechtsform, widget: string }
+          - { label: Inhaber (mit Titel), name: inhaber, widget: string }
+          - { label: Inhaber (kurz), name: inhaberKurz, widget: string }
+          - { label: Rolle des Inhabers, name: inhaberRolle, widget: string }
+          - { label: Foto des Inhabers, name: inhaberBild, widget: image }
+          - { label: Slogan, name: slogan, widget: string }
+          - { label: Kurzbeschreibung (für Footer, Google & KI), name: beschreibung, widget: text, hint: "2–3 Sätze: Wer, Was, Wo." }
+          - { label: E-Mail, name: email, widget: string }
+          - { label: Telefon, name: telefon, widget: string, hint: "Format: +43 1 2345678" }
+          - { label: WhatsApp-Nummer (nur Ziffern, mit 43), name: whatsapp, widget: string }
+          - { label: Straße + Nr., name: strasse, widget: string }
+          - { label: PLZ, name: plz, widget: string }
+          - { label: Ort, name: ort, widget: string }
+          - { label: Land, name: land, widget: string }
+          - { label: UID-Nummer, name: uid, widget: string }
+          - { label: GISA-Zahl, name: gisa, widget: string }
+          - { label: Antwortzeit, name: antwortzeit, widget: string }
+          - { label: Region (Announcement Bar rechts), name: region, widget: string }
+          - { label: Tätig seit (Jahr), name: seitJahr, widget: string }
+          - label: Social Links
+            name: social
+            widget: list
+            fields: [{ label: Name, name: name, widget: string }, { label: URL, name: url, widget: string }]
+          - label: Announcement Bar
+            name: announcement
+            widget: object
+            fields:
+              - { label: Anzeigen, name: aktiv, widget: boolean }
+              - label: Botschaften
+                name: botschaften
+                widget: list
+                summary: "{{fields.text}}"
+                fields: [{ label: Text, name: text, widget: string }, { label: "Link (URL, /seite/ oder #beratung)", name: link, widget: string }]
+          - label: Kennzahlen
+            name: stats
+            widget: list
+            fields: [{ label: Wert, name: wert, widget: string }, { label: Einheit, name: einheit, widget: string, required: false }, { label: Beschriftung, name: label, widget: string }]
+          - label: Durchschnittliches Ergebnis
+            name: ergebnis
+            widget: object
+            fields: [{ label: "Mehr Umsatz in %", name: umsatz, widget: string }, { label: "Weniger Kosten in %", name: kosten, widget: string }]
+          - label: Partner & Zertifikate
+            name: partner
+            widget: list
+            fields: [{ label: Name, name: name, widget: string }, { label: Logo, name: logo, widget: image }]
+          - label: Kundenstimmen
+            name: stimmen
+            widget: list
+            summary: "{{fields.name}}"
+            fields: [{ label: Zitat, name: text, widget: text }, { label: Name, name: name, widget: string }, { label: Rolle / Firma, name: rolle, widget: string }, { label: Foto, name: bild, widget: image, required: false }]
+          - { label: Verlängerte Mandate, name: verlaengerung, widget: string }
+          - label: Navigation
+            name: navigation
+            widget: list
+            hint: Maximal 5 Menüpunkte
+            fields: [{ label: Text, name: label, widget: string }, { label: URL, name: url, widget: string }]
+
+      - name: home
+        label: Startseite
+        file: src/data/home.json
+        format: json
+        fields:
+          - label: SEO
+            name: seo
+            widget: object
+            fields: [{ label: "SEO-Titel (max. 60)", name: title, widget: string }, { label: "Meta-Description (max. 155)", name: description, widget: text }]
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "H1 – Teil vor dem Marker", name: h1Vor, widget: string }
+              - { label: "H1 – Marker-Wort", name: h1Mark, widget: string }
+              - { label: "H1 – Teil nach dem Marker", name: h1Nach, widget: string }
+              - { label: Unterzeile, name: sub, widget: text }
+              - { label: Haupt-Button, name: cta, widget: string }
+              - { label: Zweit-Button, name: cta2, widget: string }
+              - { label: Trust-Punkte, name: bullets, widget: list }
+              - { label: Video (mp4), name: video, widget: file }
+              - { label: Video-Vorschaubild, name: poster, widget: image }
+              - { label: Karte oben, name: karteOben, widget: object, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: string }] }
+              - { label: Karte unten, name: karteUnten, widget: object, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: string }] }
+          - { label: Über-Sektion, name: ueber, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Text, name: text, widget: text }] }
+          - label: Problem-Sektion
+            name: problem
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Überschrift, name: h2, widget: string }
+              - { label: Einleitung, name: intro, widget: text }
+              - { label: Zwischenüberschrift, name: h3, widget: string }
+              - { label: Absätze, name: text, widget: list, field: { label: Absatz, name: absatz, widget: text } }
+              - { label: "Gemessene Conversions von 100", name: gemessen, widget: number }
+              - { label: Hinweis, name: hinweis, widget: string }
+          - { label: Leistungen-Sektion, name: leistungen, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Einleitung, name: intro, widget: text }] }
+          - { label: Zusammenarbeit-Sektion, name: onboarding, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Einleitung, name: intro, widget: text }] }
+          - label: Branchen
+            name: branchen
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Überschrift, name: h2, widget: string }
+              - { label: Einleitung, name: intro, widget: text }
+          - label: Leitfaden
+            name: leitfaden
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Überschrift, name: h2, widget: string }
+              - { label: Einleitung, name: intro, widget: text }
+              - { label: Abschnitte, name: abschnitte, widget: list, fields: [{ label: Überschrift, name: h3, widget: string }, { label: Text, name: text, widget: text }] }
+          - label: Shop-Check (Gratis-Tool)
+            name: shopcheck
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Überschrift, name: h2, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Beispiel-Fragen, name: beispiele, widget: list }
+          - label: Situations-Auswahl
+            name: situation
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Überschrift, name: h2, widget: string }
+              - { label: Einleitung, name: intro, widget: text }
+              - label: Optionen
+                name: optionen
+                widget: list
+                fields:
+                  - { label: ID (ohne Leerzeichen), name: id, widget: string }
+                  - { label: Button-Text, name: label, widget: string }
+                  - { label: Diagnose, name: diagnose, widget: text }
+                  - { label: Leistungen, name: module, widget: relation, collection: leistungen, value_field: "{{slug}}", search_fields: [titel], display_fields: [titel], multiple: true }
+          - { label: Preise-Sektion, name: pakete, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Einleitung, name: intro, widget: text }] }
+          - label: FAQ Startseite
+            name: faq
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Überschrift, name: h2, widget: string }
+              - { label: Fragen, name: items, widget: list, fields: [{ label: Frage, name: frage, widget: string }, { label: Antwort, name: antwort, widget: text }] }
+          - { label: Kontakt-Sektion, name: kontakt, widget: object, fields: [{ label: Überschrift, name: h2, widget: string }, { label: Text, name: text, widget: text }, { label: Punkte, name: punkte, widget: list }] }
+
+      - name: growth
+        label: Growth System
+        file: src/data/growth.json
+        format: json
+        fields:
+          - { label: SEO, name: seo, widget: object, fields: [{ label: SEO-Titel, name: title, widget: string }, { label: Meta-Description, name: description, widget: text }] }
+          - { label: Hero, name: hero, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: H1, name: h1, widget: string }, { label: Einleitung, name: intro, widget: text }, { label: "Kurzantwort (2–3 Sätze, für Google & KI)", name: antwort, widget: text }, { label: Bild, name: bild, widget: image }] }
+          - { label: Problem, name: problem, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Absätze, name: text, widget: list, field: { label: Absatz, name: absatz, widget: text } }] }
+          - label: Module
+            name: module
+            widget: list
+            summary: "{{fields.titel}}"
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Titel, name: titel, widget: string }
+              - { label: Rolle, name: rolle, widget: string }
+              - { label: Nutzen, name: nutzen, widget: string }
+              - { label: Punkte, name: punkte, widget: list }
+              - { label: Im Zusammenspiel, name: zusammenspiel, widget: text }
+              - { label: Tags, name: tags, widget: list }
+              - { label: Link, name: link, widget: string }
+          - { label: Kreislauf, name: kreislauf, widget: list, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: string }] }
+          - { label: Phasen, name: phasen, widget: list, fields: [{ label: Titel, name: titel, widget: string }, { label: Dauer, name: zeit, widget: string }, { label: Text, name: text, widget: text }, { label: Bild, name: bild, widget: image }] }
+          - { label: Garantie, name: garantie, widget: text }
+          - { label: Häufige Bremsen (FAQ), name: bremsen, widget: list, fields: [{ label: Frage, name: frage, widget: string }, { label: Antwort, name: antwort, widget: text }] }
+
+      - name: preise
+        label: Preise & Ablauf
+        file: src/data/preise.json
+        format: json
+        fields:
+          - { label: SEO, name: seo, widget: object, fields: [{ label: SEO-Titel, name: title, widget: string }, { label: Meta-Description, name: description, widget: text }] }
+          - { label: Hero, name: hero, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: H1, name: h1, widget: string }, { label: Einleitung, name: intro, widget: text }, { label: Kurzantwort, name: antwort, widget: text }, { label: Bild, name: bild, widget: image }] }
+          - label: Stufen
+            name: stufen
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: "Preis (z. B. 2.400 € oder auf Anfrage)", name: preis, widget: string }
+              - { label: Einheit, name: einheit, widget: string, required: false }
+              - { label: Untertitel, name: untertitel, widget: string }
+              - { label: Passend für, name: passend, widget: string }
+              - { label: Leistungen, name: punkte, widget: list }
+              - { label: Empfohlen, name: featured, widget: boolean }
+          - { label: In jeder Stufe enthalten, name: inklusive, widget: list }
+          - { label: Vergleichstabelle, name: vergleich, widget: object, fields: [{ label: Spalten, name: spalten, widget: list }, { label: Zeilen, name: zeilen, widget: list, field: { label: Zeile, name: zeile, widget: list } }, { label: Hinweis, name: hinweis, widget: string }] }
+          - { label: Ablauf, name: ablauf, widget: list, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: text }, { label: Bild, name: bild, widget: image }] }
+          - { label: Zusagen, name: zusagen, widget: list, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: text }] }
+          - { label: FAQ, name: faq, widget: list, fields: [{ label: Frage, name: frage, widget: string }, { label: Antwort, name: antwort, widget: text }] }
+
+      - name: ueber
+        label: Über mich
+        file: src/data/ueber.json
+        format: json
+        fields:
+          - { label: SEO, name: seo, widget: object, fields: [{ label: SEO-Titel, name: title, widget: string }, { label: Meta-Description, name: description, widget: text }] }
+          - { label: Hero, name: hero, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: H1, name: h1, widget: string }, { label: Einleitung, name: intro, widget: text }] }
+          - { label: Geschichte, name: geschichte, widget: object, fields: [{ label: Überschrift, name: h2, widget: string }, { label: Absätze, name: text, widget: list, field: { label: Absatz, name: absatz, widget: text } }] }
+          - { label: Person, name: person, widget: object, fields: [{ label: Name, name: name, widget: string }, { label: Rolle, name: rolle, widget: string }, { label: Foto, name: bild, widget: image }, { label: Bio, name: bio, widget: text }, { label: Zitat, name: zitat, widget: text }, { label: Fakten, name: fakten, widget: list }] }
+          - { label: Video, name: video, widget: object, fields: [{ label: Video (mp4), name: src, widget: file }, { label: Vorschaubild, name: poster, widget: image }] }
+          - { label: Prinzipien, name: prinzipien, widget: list, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: text }] }
+          - { label: Lokal, name: lokal, widget: object, fields: [{ label: Überschrift, name: h2, widget: string }, { label: Text, name: text, widget: text }, { label: Punkte, name: punkte, widget: list }] }
+
+  # ---------- Leistungen ----------
+  - name: leistungen
+    label: Leistungen
+    label_singular: Leistung
+    icon: work
+    folder: src/content/leistungen
+    create: true
+    slug: "{{slug}}"
+    identifier_field: titel
+    summary: "{{titel}}"
+    sortable_fields: [reihenfolge, titel]
+    fields:
+      - { label: Titel, name: titel, widget: string }
+      - { label: Reihenfolge, name: reihenfolge, widget: number, default: 50 }
+      - { label: Kernleistung (großes Modul), name: hauptleistung, widget: boolean, default: false }
+      - { label: Fundament (Tracking), name: fundament, widget: boolean, default: false }
+      - { label: Kurzbeschreibung (Karten), name: kurz, widget: text }
+      - { label: H1, name: h1, widget: string }
+      - { label: Einleitung, name: intro, widget: text }
+      - { label: "Kurzantwort (2–3 Sätze: Was, für wen, wie lange)", name: antwort, widget: text, hint: "Steht ganz oben – wichtig für Google und KI-Suche." }
+      - { label: Bild, name: bild, widget: image }
+      - { label: Bild-Alternativtext, name: bildAlt, widget: string }
+      - { label: Schwerpunkte, name: schwerpunkte, widget: list }
+      - { label: Was enthalten ist, name: enthalten, widget: list, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: text }] }
+      - { label: Konkrete Leistungen, name: leistungen, widget: list }
+      - { label: Werkzeuge, name: werkzeuge, widget: list, required: false }
+      - label: Häufige Fragen
+        name: faq
+        widget: list
+        required: false
+        summary: "{{fields.frage}}"
+        fields:
+          - { label: Frage, name: frage, widget: string }
+          - { label: Antwort, name: antwort, widget: text }
+      - { label: "Verwandte Leistungen (Dateinamen)", name: verwandt, widget: list, required: false }
+      - label: SEO
+        name: seo
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: "SEO-Titel (max. 60 Zeichen)", name: title, widget: string, required: false, pattern: ['^.{0,60}$', 'Maximal 60 Zeichen'] }
+          - { label: "Meta-Description (max. 155 Zeichen)", name: description, widget: text, required: false, pattern: ['^[\\s\\S]{0,155}$', 'Maximal 155 Zeichen'] }
+          - { label: Fokus-Keyword, name: keyword, widget: string, required: false }
+          - { label: Social-Media-Bild (1200×630), name: image, widget: image, required: false }
+          - { label: Canonical-URL (nur wenn abweichend), name: canonical, widget: string, required: false }
+          - { label: Nicht indexieren (noindex), name: noindex, widget: boolean, default: false, required: false }
+      - { label: Inhalt, name: body, widget: markdown }
+
+  # ---------- Referenzen ----------
+  - name: referenzen
+    label: Referenzen
+    label_singular: Referenz
+    icon: star
+    folder: src/content/referenzen
+    create: true
+    slug: "{{slug}}"
+    identifier_field: kunde
+    summary: "{{kunde}} – {{titel}}"
+    fields:
+      - { label: Kunde, name: kunde, widget: string }
+      - { label: Titel, name: titel, widget: string }
+      - { label: Reihenfolge, name: reihenfolge, widget: number, default: 50 }
+      - { label: Kategorie, name: kategorie, widget: string }
+      - { label: Branche, name: branche, widget: select, options: ["eCommerce & Retail", "KMU & Fachbetriebe", "Industrie & B2B", "Hotellerie & Tourismus", "Recht & Finanzen", "Politik & Public Affairs"] }
+      - { label: Kurzbeschreibung, name: kurz, widget: text }
+      - { label: Tags, name: tags, widget: list }
+      - { label: Ziel, name: ziel, widget: text }
+      - { label: Kennzahlen, name: kennzahlen, widget: list, fields: [{ label: Wert, name: wert, widget: string }, { label: Beschriftung, name: label, widget: string }] }
+      - { label: Vorgehen, name: vorgehen, widget: list }
+      - { label: Hauptbild, name: bild, widget: image }
+      - { label: Bild-Alternativtext, name: bildAlt, widget: string }
+      - { label: Galerie, name: galerie, widget: list, field: { label: Bild, name: bild, widget: image }, required: false }
+      - { label: Videos, name: videos, widget: list, required: false, fields: [{ label: Video (mp4), name: src, widget: file }, { label: Vorschaubild, name: poster, widget: image, required: false }, { label: Titel, name: titel, widget: string, required: false }] }
+      - { label: Kundenzitat, name: zitat, widget: object, required: false, fields: [{ label: Zitat, name: text, widget: text }, { label: Name, name: name, widget: string }, { label: Rolle, name: rolle, widget: string }, { label: Foto, name: bild, widget: image, required: false }] }
+      - { label: Auf Startseite zeigen, name: featured, widget: boolean, default: false }
+      - label: SEO
+        name: seo
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: "SEO-Titel (max. 60 Zeichen)", name: title, widget: string, required: false, pattern: ['^.{0,60}$', 'Maximal 60 Zeichen'] }
+          - { label: "Meta-Description (max. 155 Zeichen)", name: description, widget: text, required: false, pattern: ['^[\\s\\S]{0,155}$', 'Maximal 155 Zeichen'] }
+          - { label: Fokus-Keyword, name: keyword, widget: string, required: false }
+          - { label: Social-Media-Bild (1200×630), name: image, widget: image, required: false }
+          - { label: Canonical-URL (nur wenn abweichend), name: canonical, widget: string, required: false }
+          - { label: Nicht indexieren (noindex), name: noindex, widget: boolean, default: false, required: false }
+      - { label: Inhalt, name: body, widget: markdown }
+
+  # ---------- Ratgeber ----------
+  - name: ratgeber
+    label: Ratgeber
+    label_singular: Artikel
+    icon: article
+    folder: src/content/ratgeber
+    create: true
+    slug: "{{slug}}"
+    identifier_field: titel
+    sortable_fields: [datum, titel]
+    fields:
+      - { label: Titel, name: titel, widget: string }
+      - { label: Kurzbeschreibung, name: kurz, widget: text }
+      - { label: Kategorie, name: kategorie, widget: select, options: [Leitfaden, News, Praxis, Förderung], default: Leitfaden }
+      - { label: Veröffentlicht am, name: datum, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Zuletzt aktualisiert, name: aktualisiert, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: Lesezeit (Minuten), name: lesezeit, widget: number, default: 5 }
+      - { label: Titelbild, name: bild, widget: image }
+      - { label: Bild-Alternativtext, name: bildAlt, widget: string }
+      - label: Häufige Fragen
+        name: faq
+        widget: list
+        required: false
+        summary: "{{fields.frage}}"
+        fields:
+          - { label: Frage, name: frage, widget: string }
+          - { label: Antwort, name: antwort, widget: text }
+      - label: SEO
+        name: seo
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: "SEO-Titel (max. 60 Zeichen)", name: title, widget: string, required: false, pattern: ['^.{0,60}$', 'Maximal 60 Zeichen'] }
+          - { label: "Meta-Description (max. 155 Zeichen)", name: description, widget: text, required: false, pattern: ['^[\\s\\S]{0,155}$', 'Maximal 155 Zeichen'] }
+          - { label: Fokus-Keyword, name: keyword, widget: string, required: false }
+          - { label: Social-Media-Bild (1200×630), name: image, widget: image, required: false }
+          - { label: Canonical-URL (nur wenn abweichend), name: canonical, widget: string, required: false }
+          - { label: Nicht indexieren (noindex), name: noindex, widget: boolean, default: false, required: false }
+      - { label: Inhalt, name: body, widget: markdown, hint: "Mit einer 2–3-Sätze-Kurzantwort beginnen." }
+
+  # ---------- Branchen ----------
+  - name: branchen
+    label: Branchen
+    label_singular: Branche
+    icon: domain
+    folder: src/content/branchen
+    create: true
+    slug: "{{slug}}"
+    identifier_field: titel
+    sortable_fields: [reihenfolge, titel]
+    fields:
+      - { label: Titel, name: titel, widget: string }
+      - { label: Reihenfolge, name: reihenfolge, widget: number, default: 50 }
+      - { label: Icon, name: icon, widget: select, options: [building, layers, map, cart, shield, target, chart, search] }
+      - { label: Kurzbeschreibung, name: kurz, widget: text }
+      - { label: H1, name: h1, widget: string }
+      - { label: Einleitung, name: intro, widget: text }
+      - { label: "Kurzantwort (2–3 Sätze)", name: antwort, widget: text }
+      - { label: Bild, name: bild, widget: image }
+      - { label: Bild-Alternativtext, name: bildAlt, widget: string }
+      - { label: Typische Probleme, name: probleme, widget: list, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: text }] }
+      - { label: Hebel, name: hebel, widget: list, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: text }] }
+      - { label: Ergebnisse, name: ergebnisse, widget: list }
+      - { label: "Referenzen (Dateinamen)", name: referenzen, widget: list, required: false }
+      - { label: "Passende Leistungen (Dateinamen)", name: leistungen, widget: list, required: false }
+      - label: Häufige Fragen
+        name: faq
+        widget: list
+        required: false
+        summary: "{{fields.frage}}"
+        fields:
+          - { label: Frage, name: frage, widget: string }
+          - { label: Antwort, name: antwort, widget: text }
+      - label: SEO
+        name: seo
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: "SEO-Titel (max. 60 Zeichen)", name: title, widget: string, required: false, pattern: ['^.{0,60}$', 'Maximal 60 Zeichen'] }
+          - { label: "Meta-Description (max. 155 Zeichen)", name: description, widget: text, required: false, pattern: ['^[\\s\\S]{0,155}$', 'Maximal 155 Zeichen'] }
+          - { label: Fokus-Keyword, name: keyword, widget: string, required: false }
+          - { label: Social-Media-Bild (1200×630), name: image, widget: image, required: false }
+          - { label: Canonical-URL (nur wenn abweichend), name: canonical, widget: string, required: false }
+          - { label: Nicht indexieren (noindex), name: noindex, widget: boolean, default: false, required: false }
+      - { label: Inhalt, name: body, widget: markdown }

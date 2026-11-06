@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+import ContactForm from '../components/ContactForm.astro';
+import s from '../data/settings.json';
+const crumbs = [{ name: 'Kontakt', url: '/kontakt/' }];
+const tel = s.telefon.replace(/\s/g, '');
+---
+<Base title="Kontakt & Potenzialanalyse | Schindelegger Wien" description="Kostenlose Potenzialanalyse anfragen: ehrliche Einschätzung innerhalb von 24 Stunden. Telefon, WhatsApp, E-Mail oder Formular. Schindelegger, Wien." crumbs={crumbs}>
+  <PageHero eyebrow="Kontakt" h1="In fünf Schritten zur ehrlichen Einschätzung." intro="Kein Verkaufsgespräch, keine Verpflichtung. Sie bekommen innerhalb von 24 Stunden eine klare Einschätzung, auch wenn ich keinen Hebel sehe." crumbs={crumbs}>
+    <div class="btn-row"><a class="btn btn-primary" href="#beratung" data-modal data-track="kontakt_hero">Potenzialanalyse starten <Icon name="arrow" /></a><a class="btn btn-outline" href={`https://wa.me/${s.whatsapp}`} target="_blank" rel="noopener" data-track="kontakt_hero"><Icon name="chat" /> WhatsApp</a></div>
+  </PageHero>
+  <section class="section alt">
+    <div class="wrap split top">
+      <div>
+        <h2>Lieber direkt schreiben?</h2>
+        <p class="lead">Das Formular geht direkt an mich. Antwort {s.antwortzeit}.</p>
+        <div class="grid" style="margin-top:28px">
+          <a class="card" href={`tel:${tel}`} data-track="kontakt_card" style="flex-direction:row;gap:16px;align-items:center"><span class="icon-bubble"><Icon name="phone" /></span><span><b>Telefon</b><br />{s.telefon}</span></a>
+          <a class="card" href={`mailto:${s.email}`} style="flex-direction:row;gap:16px;align-items:center"><span class="icon-bubble"><Icon name="mail" /></span><span><b>E-Mail</b><br />{s.email}</span></a>
+          <div class="card" style="flex-direction:row;gap:16px;align-items:center"><span class="icon-bubble"><Icon name="map" /></span><span><b>Adresse</b><br />{s.strasse}, {s.plz} {s.ort}</span></div>
+        </div>
+      </div>
+      <ContactForm />
+    </div>
+  </section>
+</Base>
