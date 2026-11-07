@@ -1,0 +1,407 @@
+{
+ "/images/case-studies/alpenaquafarm-tirol/alpenaquafarm-hero.webp": {
+  "w": 1600,
+  "v": "/images/case-studies/alpenaquafarm-tirol/alpenaquafarm-hero-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/alpenaquafarm-tirol/alpenaquafarm-tirol-ecommerce-2.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/alpenaquafarm-tirol/alpenaquafarm-tirol-ecommerce-2-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/alpenaquafarm-tirol/alpenaquafarm-tirol-ecommerce-3.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/alpenaquafarm-tirol/alpenaquafarm-tirol-ecommerce-3-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/alpenaquafarm-tirol/alpenaquafarm-tirol-ecommerce-4.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/alpenaquafarm-tirol/alpenaquafarm-tirol-ecommerce-4-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/alpenaquafarm-tirol/alpengarnelen.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/alpenaquafarm-tirol/alpengarnelen-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/arb-nutrition/arb-nutrition-ecommerce-2.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/arb-nutrition/arb-nutrition-ecommerce-2-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/arb-nutrition/arb-nutrition-ecommerce-checkout.webp": {
+  "w": 1024,
+  "v": "/images/case-studies/arb-nutrition/arb-nutrition-ecommerce-checkout-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/arb-nutrition/arb-nutrition-ecommerce-hero.webp": {
+  "w": 1600,
+  "v": "/images/case-studies/arb-nutrition/arb-nutrition-ecommerce-hero-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/arb-nutrition/arb-nutrition-ecommerce-more-nutrition.webp": {
+  "w": 1024,
+  "v": "/images/case-studies/arb-nutrition/arb-nutrition-ecommerce-more-nutrition-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/arb-nutrition/arb-nutrition-ecommerce-storefront.webp": {
+  "w": 1024,
+  "v": "/images/case-studies/arb-nutrition/arb-nutrition-ecommerce-storefront-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/arb-nutrition/service-paid-advertising.webp": {
+  "w": 1000,
+  "v": "/images/case-studies/arb-nutrition/service-paid-advertising-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/evrvest/evrvest-allrounder-m.webp": {
+  "w": 1072,
+  "v": "/images/case-studies/evrvest/evrvest-allrounder-m-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/evrvest/evrvest-models-lineup.webp": {
+  "w": 1600,
+  "v": "/images/case-studies/evrvest/evrvest-models-lineup-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/evrvest/evrvest-perform-training.webp": {
+  "w": 1072,
+  "v": "/images/case-studies/evrvest/evrvest-perform-training-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/evrvest/evrvest-product-render-front.webp": {
+  "w": 1163,
+  "v": "/images/case-studies/evrvest/evrvest-product-render-front-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/evrvest/evrvest-slim-fit-side-lock.webp": {
+  "w": 1348,
+  "v": "/images/case-studies/evrvest/evrvest-slim-fit-side-lock-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/evrvest/evrvest-weight-distribution.webp": {
+  "w": 1348,
+  "v": "/images/case-studies/evrvest/evrvest-weight-distribution-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/evrvest/evrvest-weighted-vest-hero.webp": {
+  "w": 1600,
+  "v": "/images/case-studies/evrvest/evrvest-weighted-vest-hero-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-danubeflats-architektur-1.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/goels-gruppe/goels-danubeflats-architektur-1-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-danubeflats-architektur-2.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/goels-gruppe/goels-danubeflats-architektur-2-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-danubeflats-architektur-3.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/goels-gruppe/goels-danubeflats-architektur-3-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-danubeflats-tower-wien.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/goels-gruppe/goels-danubeflats-tower-wien-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-gruppe-handwerk-1.webp": {
+  "w": 1500,
+  "v": "/images/case-studies/goels-gruppe/goels-gruppe-handwerk-1-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-gruppe-handwerk-2.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/goels-gruppe/goels-gruppe-handwerk-2-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-gruppe-handwerk-3.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/goels-gruppe/goels-gruppe-handwerk-3-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-gruppe-handwerk-4.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/goels-gruppe/goels-gruppe-handwerk-4-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-gruppe-handwerk-5.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/goels-gruppe/goels-gruppe-handwerk-5-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-marmorkalktechnik-1.webp": {
+  "w": 1067,
+  "v": "/images/case-studies/goels-gruppe/goels-marmorkalktechnik-1-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-marmorkalktechnik-2.webp": {
+  "w": 1067,
+  "v": "/images/case-studies/goels-gruppe/goels-marmorkalktechnik-2-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-marmorkalktechnik-3.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/goels-gruppe/goels-marmorkalktechnik-3-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/goels-gruppe/goels-marmorkalktechnik-4.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/goels-gruppe/goels-marmorkalktechnik-4-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/lounge8/lounge8-gesundheit-1.webp": {
+  "w": 1500,
+  "v": "/images/case-studies/lounge8/lounge8-gesundheit-1-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/lounge8/lounge8-gesundheit-2.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/lounge8/lounge8-gesundheit-2-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/lounge8/lounge8-gesundheit-3.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/lounge8/lounge8-gesundheit-3-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/lounge8/lounge8-gesundheit-4.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/lounge8/lounge8-gesundheit-4-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/lounge8/lounge8-gesundheit-5.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/lounge8/lounge8-gesundheit-5-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/lounge8/lounge8-gesundheit-6.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/lounge8/lounge8-gesundheit-6-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/lounge8/lounge8-liege.webp": {
+  "w": 1024,
+  "v": "/images/case-studies/lounge8/lounge8-liege-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/nt-service/nt-service-industrie-2.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/nt-service/nt-service-industrie-2-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/nt-service/nt-service-industrie-3.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/nt-service/nt-service-industrie-3-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/nt-service/nt-service-industrie-4.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/nt-service/nt-service-industrie-4-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/nt-service/nt-service-industrieanlage-dekontamination.webp": {
+  "w": 1600,
+  "v": "/images/case-studies/nt-service/nt-service-industrieanlage-dekontamination-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/nt-service/nt-service-team-spezialreinigung.webp": {
+  "w": 920,
+  "v": "/images/case-studies/nt-service/nt-service-team-spezialreinigung-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/united-nude/united-nude-fashion-2.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/united-nude/united-nude-fashion-2-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/united-nude/united-nude-fashion-3.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/united-nude/united-nude-fashion-3-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/united-nude/united-nude-fashion-4.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/united-nude/united-nude-fashion-4-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/united-nude/united-nude-hero.webp": {
+  "w": 1600,
+  "v": "/images/case-studies/united-nude/united-nude-hero-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/united-nude/united-nude-mockup.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/united-nude/united-nude-mockup-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/vitabene/mockup_vitabene_quer.webp": {
+  "w": 1600,
+  "v": "/images/case-studies/vitabene/mockup_vitabene_quer-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/vitabene/vitabene-24h-betreuung.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/vitabene/vitabene-24h-betreuung-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/vitabene/vitabene-pflege-card.webp": {
+  "w": 1024,
+  "v": "/images/case-studies/vitabene/vitabene-pflege-card-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/vitabene/vitabene.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/vitabene/vitabene-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/vitabene/vitabene2_quadrat.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/vitabene/vitabene2_quadrat-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/vitabene/vitabene_betreuung.webp": {
+  "w": 1400,
+  "v": "/images/case-studies/vitabene/vitabene_betreuung-800.webp",
+  "vw": 800
+ },
+ "/images/case-studies/vitabene/vitabene_mockup_1080x1080.webp": {
+  "w": 1080,
+  "v": "/images/case-studies/vitabene/vitabene_mockup_1080x1080-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/ecommerce-hero-mobile.webp": {
+  "w": 960,
+  "v": "/images/heroes/ecommerce-hero-mobile-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/ecommerce-hero.webp": {
+  "w": 1600,
+  "v": "/images/heroes/ecommerce-hero-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/geo-ai-search-hero-mobile.webp": {
+  "w": 960,
+  "v": "/images/heroes/geo-ai-search-hero-mobile-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/geo-ai-search-hero.webp": {
+  "w": 1600,
+  "v": "/images/heroes/geo-ai-search-hero-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/growth-engine-hero.webp": {
+  "w": 1600,
+  "v": "/images/heroes/growth-engine-hero-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/leistungen-hero.webp": {
+  "w": 1600,
+  "v": "/images/heroes/leistungen-hero-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/paid-advertising-hero-mobile.webp": {
+  "w": 960,
+  "v": "/images/heroes/paid-advertising-hero-mobile-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/paid-advertising-hero.webp": {
+  "w": 1600,
+  "v": "/images/heroes/paid-advertising-hero-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/referenzen-hero.webp": {
+  "w": 1600,
+  "v": "/images/heroes/referenzen-hero-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/seo-hero-mobile.webp": {
+  "w": 960,
+  "v": "/images/heroes/seo-hero-mobile-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/seo-hero.webp": {
+  "w": 1600,
+  "v": "/images/heroes/seo-hero-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/tracking-analytics-hero-mobile.webp": {
+  "w": 960,
+  "v": "/images/heroes/tracking-analytics-hero-mobile-800.webp",
+  "vw": 800
+ },
+ "/images/heroes/tracking-analytics-hero.webp": {
+  "w": 1600,
+  "v": "/images/heroes/tracking-analytics-hero-800.webp",
+  "vw": 800
+ },
+ "/images/pricing/hero.webp": {
+  "w": 1600,
+  "v": "/images/pricing/hero-800.webp",
+  "vw": 800
+ },
+ "/images/pricing/step-1-analyse.webp": {
+  "w": 1200,
+  "v": "/images/pricing/step-1-analyse-800.webp",
+  "vw": 800
+ },
+ "/images/pricing/step-2-setup.webp": {
+  "w": 1200,
+  "v": "/images/pricing/step-2-setup-800.webp",
+  "vw": 800
+ },
+ "/images/pricing/step-3-betrieb.webp": {
+  "w": 1200,
+  "v": "/images/pricing/step-3-betrieb-800.webp",
+  "vw": 800
+ },
+ "/images/pricing/step-4-review.webp": {
+  "w": 1200,
+  "v": "/images/pricing/step-4-review-800.webp",
+  "vw": 800
+ },
+ "/images/process/step-1-growth-report.webp": {
+  "w": 1600,
+  "v": "/images/process/step-1-growth-report-800.webp",
+  "vw": 800
+ },
+ "/images/process/step-2-growth-engine.webp": {
+  "w": 1600,
+  "v": "/images/process/step-2-growth-engine-800.webp",
+  "vw": 800
+ },
+ "/images/process/step-3-engine-operations.webp": {
+  "w": 1600,
+  "v": "/images/process/step-3-engine-operations-800.webp",
+  "vw": 800
+ },
+ "/images/services/ecommerce-genz-studie.webp": {
+  "w": 1472,
+  "v": "/images/services/ecommerce-genz-studie-800.webp",
+  "vw": 800
+ },
+ "/images/services/geo-ai-search-structured-data.webp": {
+  "w": 1472,
+  "v": "/images/services/geo-ai-search-structured-data-800.webp",
+  "vw": 800
+ },
+ "/images/services/lead-funnel-conversion-tracking.webp": {
+  "w": 1472,
+  "v": "/images/services/lead-funnel-conversion-tracking-800.webp",
+  "vw": 800
+ },
+ "/images/services/paid-advertising-google-ads-ranking.webp": {
+  "w": 1472,
+  "v": "/images/services/paid-advertising-google-ads-ranking-800.webp",
+  "vw": 800
+ },
+ "/images/services/seo-search-console-organic-traffic.webp": {
+  "w": 1472,
+  "v": "/images/services/seo-search-console-organic-traffic-800.webp",
+  "vw": 800
+ }
+}

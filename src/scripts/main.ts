@@ -74,11 +74,15 @@ function setMenu(open: boolean) {
   const top = header!.getBoundingClientRect().bottom;
   menu.style.setProperty('--menu-top', `${top}px`);
   burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
   menu.classList.toggle('open', open);
+  header?.classList.toggle('menue-offen', open);
   document.body.style.overflow = open ? 'hidden' : '';
 }
 burger?.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
 menu?.querySelectorAll('a,button').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', (e) => { if (e.key === 'Escape' && burger?.getAttribute('aria-expanded') === 'true') { setMenu(false); burger.focus(); } });
+matchMedia('(min-width: 1024px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
 
 // ---------- Mobile Sticky-Bar ----------
 const mbar = document.querySelector<HTMLElement>('.mbar');
@@ -232,3 +236,15 @@ if (cookie) {
 }
 document.querySelectorAll('[data-cookie-settings]').forEach((b) => b.addEventListener('click', () => cookie?.classList.add('show')));
 
+
+// ---------- Hero-Video erst laden, wenn sichtbar (spart Daten, v. a. mobil) ----------
+document.querySelectorAll<HTMLVideoElement>('video[data-lazy-video]').forEach((v) => {
+  const sparen = (navigator as any).connection?.saveData || matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (sparen || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e], io) => {
+    if (!e.isIntersecting) return;
+    v.src = (innerWidth < 861 && v.dataset.srcMobil) || v.dataset.src || '';
+    v.play().catch(() => {});
+    io.disconnect();
+  }, { rootMargin: '200px' }).observe(v);
+});

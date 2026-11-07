@@ -114,17 +114,29 @@ const active = (u: string) => (path === u || (u !== '/' && path.startsWith(u)) ?
       </nav>
       <a class="head-tel" href={`tel:${tel}`} data-track="header"><Icon name="phone" />{s.telefon}</a>
       <a class="btn btn-primary head-cta" href="#beratung" data-modal data-track="header_cta">Potenzial analysieren <Icon name="arrow" /></a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü"><span></span><span></span><span></span></button>
+      <a class="btn btn-primary head-cta-m" href="#beratung" data-modal data-track="header_cta_mobil">Anfragen</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen"><span></span><span></span></button>
     </div>
   </header>
-  <div class="mobile-menu" id="mobile-menu">
-    {s.navigation.map((n) => <a class="m-link" href={n.url}>{n.label}</a>)}
-    <a class="m-link" href="/branchen/">Branchen</a>
-    <a class="m-link" href="/ratgeber/">Ratgeber</a>
-    <a class="m-link" href="/kontakt/">Kontakt</a>
-    <a class="btn btn-outline" href={`tel:${tel}`} data-track="menu"><Icon name="phone" /> {s.telefon}</a>
-    <a class="btn btn-primary" href="#beratung" data-modal data-track="menu_cta">Potenzial analysieren <Icon name="arrow" /></a>
-  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile Navigation">
+    <ul class="m-haupt">
+      {s.navigation.map((n) => <li><a href={n.url} aria-current={active(n.url)}>{n.label}</a></li>)}
+      <li><a class="m-beratung" href="#beratung" data-modal data-track="menu_cta">Kostenlose Potenzialanalyse</a></li>
+    </ul>
+    <div class="m-extra">
+      <ul class="m-klein">
+        <li><a href="/branchen/">Branchen</a></li>
+        <li><a href="/ratgeber/">Ratgeber</a></li>
+        <li><a href="/kontakt/">Kontakt</a></li>
+        <li><a href={`tel:${tel}`} data-track="menu">{s.telefon}</a></li>
+      </ul>
+      <a class="m-karte" href="/referenzen/arb-nutrition/">
+        <img src="/images/brand/menue-case-arb.webp" alt="" width="240" height="188" loading="lazy" />
+        <span><small>Case Study</small><strong>ARB Nutrition</strong><em>+24 % Umsatz in der Schweiz →</em></span>
+      </a>
+      <p class="m-herkunft">48° N · Performance Marketing aus Wien</p>
+    </div>
+  </nav>
 
   <main id="main">
     <slot />

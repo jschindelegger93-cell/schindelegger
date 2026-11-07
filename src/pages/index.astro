@@ -37,8 +37,8 @@ const tel = s.telefon.replace(/\s/g, '');
       </div>
       <div class="hero-media">
         <div class="frame">
-          <video autoplay muted loop playsinline preload="metadata" poster={h.hero.poster} aria-label="Einblick in die Arbeit von Schindelegger in Wien">
-            <source src={h.hero.video} type="video/mp4" />
+          <video muted loop playsinline preload="none" poster={h.hero.poster} data-lazy-video data-src={h.hero.video} data-src-mobil="/videos/buero-mobil.mp4" aria-label="Einblick in die Arbeit von Schindelegger in Wien">
+            
           </video>
         </div>
         <div class="float-card tr"><span class="icon-bubble"><Icon name="chart" /></span><span><strong>{h.hero.karteOben.titel}</strong>{h.hero.karteOben.text}</span></div>
