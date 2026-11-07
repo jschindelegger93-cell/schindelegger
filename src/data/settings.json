@@ -3,10 +3,10 @@
   "rechtsform": "Einzelunternehmen",
   "inhaber": "Julian Schindelegger, BA",
   "inhaberKurz": "Julian Schindelegger",
-  "inhaberRolle": "Gründer & Ihr Ansprechpartner",
+  "inhaberRolle": "Gründer · Performance & Data",
   "inhaberBild": "/images/brand/julian-schindelegger.webp",
-  "slogan": "Bereit für Wachstum?",
-  "beschreibung": "Schindelegger ist eine Boutique für Performance Marketing in Wien. Julian Schindelegger betreut ausgewählte Unternehmen im DACH-Raum persönlich: Strategie, Google & Meta Ads, Website, Tracking und Automation aus einer Hand.",
+  "slogan": "Wachstum, das sich nachrechnen lässt.",
+  "beschreibung": "Schindelegger ist ein Performance-Marketing-Partner aus Wien für Unternehmen im DACH-Raum: Tracking, Google & Meta Ads, SEO & GEO, eCommerce und E-Mail-Automation als ein gemeinsam gesteuertes System.",
   "email": "office@schindelegger.at",
   "telefon": "+43 000 0000000",
   "whatsapp": "430000000000",
@@ -20,83 +20,31 @@
   "region": "Wien · Österreich · DACH",
   "seitJahr": "2018",
   "social": [
-    {
-      "name": "LinkedIn",
-      "url": "https://www.linkedin.com/"
-    },
-    {
-      "name": "Instagram",
-      "url": "https://www.instagram.com/"
-    }
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/" },
+    { "name": "Instagram", "url": "https://www.instagram.com/" }
   ],
   "announcement": {
     "aktiv": true,
     "botschaften": [
-      {
-        "text": "Persönliches Erstgespräch: ehrliche Einschätzung innerhalb von 24 Stunden",
-        "link": "#beratung"
-      },
-      {
-        "text": "Boutique statt Agentur-Fließband: ein Ansprechpartner für alles",
-        "link": "/ueber-uns/"
-      },
-      {
-        "text": "Neu: Sichtbar in ChatGPT, Perplexity & Google AI Overviews",
-        "link": "/leistungen/geo-ai-search/"
-      }
+      { "text": "Kostenlose Potenzialanalyse: ehrliche Einschätzung innerhalb von 24 Stunden", "link": "#beratung" },
+      { "text": "Im Schnitt +20 % Umsatz bei −30 % Werbekosten", "link": "/referenzen/" },
+      { "text": "Neu: Sichtbarkeit in ChatGPT, Perplexity & Google AI Overviews", "link": "/leistungen/geo-ai-search/" }
     ]
   },
   "stats": [
-    {
-      "wert": "2,5",
-      "einheit": "Mio. €",
-      "label": "Verwaltetes Werbebudget"
-    },
-    {
-      "wert": "16",
-      "einheit": "Mio. €",
-      "label": "Generierter Kundenumsatz"
-    },
-    {
-      "wert": "120",
-      "einheit": "Mio.",
-      "label": "Erreichte Personen"
-    },
-    {
-      "wert": "7,6",
-      "einheit": "",
-      "label": "Durchschnittlicher ROAS"
-    }
+    { "wert": "2,5", "einheit": "Mio. €", "label": "Verwaltetes Werbebudget" },
+    { "wert": "16", "einheit": "Mio. €", "label": "Generierter Kundenumsatz" },
+    { "wert": "120", "einheit": "Mio.", "label": "Erreichte Personen" },
+    { "wert": "7,6", "einheit": "", "label": "Durchschnittlicher ROAS" }
   ],
-  "ergebnis": {
-    "umsatz": "20",
-    "kosten": "30"
-  },
+  "ergebnis": { "umsatz": "20", "kosten": "30" },
   "partner": [
-    {
-      "name": "Google Partner",
-      "logo": "/images/partners/google-partner.webp"
-    },
-    {
-      "name": "Meta Business Partner",
-      "logo": "/images/partners/meta-business-partner.webp"
-    },
-    {
-      "name": "Shopify Partner",
-      "logo": "/images/partners/shopify-partner.webp"
-    },
-    {
-      "name": "Klaviyo Partner",
-      "logo": "/images/partners/klaviyo-partner.webp"
-    },
-    {
-      "name": "Trusted Shops Partner",
-      "logo": "/images/partners/trusted-shops-partner.webp"
-    },
-    {
-      "name": "WKO KMU Digital",
-      "logo": "/images/partners/wko-kmu-digital.webp"
-    }
+    { "name": "Google Partner", "logo": "/images/partners/google-partner.webp" },
+    { "name": "Meta Business Partner", "logo": "/images/partners/meta-business-partner.webp" },
+    { "name": "Shopify Partner", "logo": "/images/partners/shopify-partner.webp" },
+    { "name": "Klaviyo Partner", "logo": "/images/partners/klaviyo-partner.webp" },
+    { "name": "Trusted Shops Partner", "logo": "/images/partners/trusted-shops-partner.webp" },
+    { "name": "WKO KMU Digital", "logo": "/images/partners/wko-kmu-digital.webp" }
   ],
   "stimmen": [
     {
@@ -120,25 +68,10 @@
   ],
   "verlaengerung": "90 %",
   "navigation": [
-    {
-      "label": "Leistungen",
-      "url": "/leistungen/"
-    },
-    {
-      "label": "Growth System",
-      "url": "/growth-system/"
-    },
-    {
-      "label": "Referenzen",
-      "url": "/referenzen/"
-    },
-    {
-      "label": "Preise",
-      "url": "/preise/"
-    },
-    {
-      "label": "Über mich",
-      "url": "/ueber-uns/"
-    }
+    { "label": "Leistungen", "url": "/leistungen/" },
+    { "label": "Growth System", "url": "/growth-system/" },
+    { "label": "Referenzen", "url": "/referenzen/" },
+    { "label": "Preise", "url": "/preise/" },
+    { "label": "Über mich", "url": "/ueber-uns/" }
   ]
 }
