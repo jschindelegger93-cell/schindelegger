@@ -113,35 +113,34 @@ collections:
               - { label: Video-Vorschaubild, name: poster, widget: image }
               - { label: Karte oben, name: karteOben, widget: object, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: string }] }
               - { label: Karte unten, name: karteUnten, widget: object, fields: [{ label: Titel, name: titel, widget: string }, { label: Text, name: text, widget: string }] }
-          - { label: Über-Sektion, name: ueber, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Text, name: text, widget: text }] }
-          - label: Problem-Sektion
-            name: problem
+          - label: Vergleich (Agentur vs. Schindelegger)
+            name: vergleich
             widget: object
             fields:
               - { label: Eyebrow, name: eyebrow, widget: string }
               - { label: Überschrift, name: h2, widget: string }
               - { label: Einleitung, name: intro, widget: text }
-              - { label: Zwischenüberschrift, name: h3, widget: string }
-              - { label: Absätze, name: text, widget: list, field: { label: Absatz, name: absatz, widget: text } }
-              - { label: "Gemessene Conversions von 100", name: gemessen, widget: number }
-              - { label: Hinweis, name: hinweis, widget: string }
-          - { label: Leistungen-Sektion, name: leistungen, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Einleitung, name: intro, widget: text }] }
-          - { label: Zusammenarbeit-Sektion, name: onboarding, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Einleitung, name: intro, widget: text }] }
-          - label: Branchen
-            name: branchen
+              - { label: Zeilen, name: zeilen, widget: list, fields: [{ label: Thema, name: thema, widget: string }, { label: Klassische Agentur, name: agentur, widget: string }, { label: Schindelegger, name: ich, widget: string }] }
+          - { label: Ergebnisse-Sektion, name: ueber, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Text, name: text, widget: text }] }
+          - label: Leistungen-Sektion
+            name: leistungen
             widget: object
             fields:
               - { label: Eyebrow, name: eyebrow, widget: string }
               - { label: Überschrift, name: h2, widget: string }
               - { label: Einleitung, name: intro, widget: text }
-          - label: Leitfaden
-            name: leitfaden
-            widget: object
-            fields:
-              - { label: Eyebrow, name: eyebrow, widget: string }
-              - { label: Überschrift, name: h2, widget: string }
-              - { label: Einleitung, name: intro, widget: text }
-              - { label: Abschnitte, name: abschnitte, widget: list, fields: [{ label: Überschrift, name: h3, widget: string }, { label: Text, name: text, widget: text }] }
+              - label: Bereiche
+                name: bereiche
+                widget: list
+                fields:
+                  - { label: Titel, name: titel, widget: string }
+                  - { label: Icon, name: icon, widget: select, options: [target, chart, search, layers, cart, mail, gauge, user, sparkles] }
+                  - { label: Text, name: text, widget: text }
+                  - { label: Leistungen, name: links, widget: relation, collection: leistungen, value_field: "{{slug}}", search_fields: [titel], display_fields: [titel], multiple: true }
+          - { label: Ablauf-Sektion, name: onboarding, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Einleitung, name: intro, widget: text }] }
+          - { label: Arbeitsweise, name: werte, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Punkte, name: items, widget: list, fields: [{ label: Titel, name: titel, widget: string }, { label: Icon, name: icon, widget: select, options: [chart, gauge, user, target, shield, clock] }, { label: Text, name: text, widget: text }] }] }
+          - { label: Persönlicher Brief, name: brief, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Absätze, name: absaetze, widget: list, field: { label: Absatz, name: absatz, widget: text } }, { label: Gruß, name: gruss, widget: string }] }
+          - { label: FAQ, name: faq, widget: object, fields: [{ label: Eyebrow, name: eyebrow, widget: string }, { label: Überschrift, name: h2, widget: string }, { label: Fragen, name: items, widget: list, fields: [{ label: Frage, name: frage, widget: string }, { label: Antwort, name: antwort, widget: text }] }] }
           - { label: Kontakt-Sektion, name: kontakt, widget: object, fields: [{ label: Überschrift, name: h2, widget: string }, { label: Text, name: text, widget: text }, { label: Punkte, name: punkte, widget: list }] }
 
       - name: growth

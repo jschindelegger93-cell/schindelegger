@@ -441,3 +441,25 @@ body.modal-open .mbar { transform: translateY(110%); }
 
 .nav a { white-space: nowrap; }
 
+
+/* Startseite: Vergleich, Bereiche, Brief */
+.table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); }
+.compare.vs { min-width: 640px; }
+.compare.vs thead th { background: var(--surface); color: var(--muted); font: 700 .85rem var(--font-body); text-transform: uppercase; letter-spacing: .08em; }
+.compare.vs thead th.me { background: var(--ink); color: var(--paper); font: 800 1.15rem var(--font-head); text-transform: none; letter-spacing: -.03em; }
+.compare.vs tbody th { font-weight: 700; text-align: left; padding: 16px 18px; border-bottom: 1px solid var(--line); background: var(--surface); }
+.compare.vs td { padding: 16px 18px; }
+.compare.vs td.me { font-weight: 600; background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
+.compare.vs td.me .check { margin-right: 10px; vertical-align: -3px; }
+.bereich { display: flex; flex-direction: column; gap: 12px; }
+.bereich h3 { margin: 8px 0 0; }
+.bereich-links { list-style: none; margin: 8px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.bereich-links li { border-bottom: 1px solid var(--line); }
+.bereich-links a { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; min-height: 44px; font-weight: 600; text-decoration: none; color: var(--ink); }
+.bereich-links a:hover { color: var(--accent); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.bereich-links svg { width: 18px; height: 18px; flex: none; }
+.brief { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
+.brief img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: calc(var(--radius) + 6px); }
+.brief .sig { font: 700 1.05rem var(--font-head); margin: 8px 0 24px; }
+@media (max-width: 860px) { .brief { grid-template-columns: minmax(0, 1fr); } .brief img { max-width: 420px; } }

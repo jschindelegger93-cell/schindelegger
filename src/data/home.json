@@ -1,16 +1,16 @@
 {
   "seo": {
-    "title": "Performance Marketing Wien | Schindelegger",
-    "description": "Performance Marketing aus Wien: Google & Meta Ads, SEO & GEO, eCommerce und Tracking als ein System. Im Schnitt +20 % Umsatz bei −30 % Werbekosten."
+    "title": "Performance Marketing Agentur Wien | Schindelegger",
+    "description": "Bereit für Wachstum? Mehr Anfragen. Mehr Kunden. Mehr Umsatz. Performance Marketing aus Wien mit persönlichem Ansprechpartner: Google & Meta Ads, SEO, Tracking und Web."
   },
   "hero": {
-    "eyebrow": "Performance & Growth Marketing · Wien",
+    "eyebrow": "Performance Marketing aus Wien",
     "h1Vor": "Bereit für",
     "h1Mark": "Wachstum?",
     "h1Nach": "",
-    "sub": "Schindelegger verbindet Tracking, Google & Meta Ads, SEO & GEO, Conversion und E-Mail-Automation zu einem System. Ein Ansprechpartner, ein Dashboard, eine Steuerung, statt fünf Dienstleister nebeneinander.",
-    "cta": "Potenzial analysieren",
-    "cta2": "Case Studies ansehen",
+    "sub": "Mehr Anfragen. Mehr Kunden. Mehr Umsatz. Ich plane, steuere und messe Ihr Online-Marketing so, dass jeder Euro Budget nachweisbar arbeitet.",
+    "cta": "Kennenlernen vereinbaren",
+    "cta2": "Cases ansehen",
     "bullets": [
       "Antwort innerhalb von 24 Stunden",
       "Kein Jahresvertrag",
@@ -27,76 +27,167 @@
       "text": "Gründer · Performance & Data"
     }
   },
-  "ueber": {
-    "eyebrow": "Über Schindelegger",
-    "h2": "Wachstum ist kein Glück, sondern eine Kennzahl.",
-    "text": "Ich verbinde technische Performance-Strategie mit der Logik der Werbealgorithmen von Google und Meta. Statt Vermutungen entscheiden saubere Daten, wohin das Budget fließt. Das Ergebnis: planbares Wachstum und eine Marktposition, die sich halten lässt."
+  "vergleich": {
+    "eyebrow": "Der Unterschied",
+    "h2": "Agentur kann jeder. Verantwortung nicht.",
+    "intro": "Was Sie bei mir anders erleben als bei einer klassischen Agentur.",
+    "zeilen": [
+      {
+        "thema": "Ansprechpartner",
+        "agentur": "Wechselnde Account Manager",
+        "ich": "Immer ich, persönlich und direkt erreichbar"
+      },
+      {
+        "thema": "Umsetzung",
+        "agentur": "Junior-Teams und Freelancer",
+        "ich": "Selbst gemacht, mit festem Partnernetzwerk für Spezialfälle"
+      },
+      {
+        "thema": "Vertrag",
+        "agentur": "12 Monate Mindestlaufzeit",
+        "ich": "Ein Quartal, dann entscheidet das Ergebnis"
+      },
+      {
+        "thema": "Reporting",
+        "agentur": "PDF am Monatsende",
+        "ich": "Live-Dashboard und monatliches Gespräch"
+      },
+      {
+        "thema": "Tracking",
+        "agentur": "Wird vorausgesetzt",
+        "ich": "Erster Schritt, bevor Budget fließt"
+      },
+      {
+        "thema": "Werbekonten",
+        "agentur": "Oft im Besitz der Agentur",
+        "ich": "Immer bei Ihnen"
+      }
+    ]
   },
-  "problem": {
-    "eyebrow": "Das Problem",
-    "h2": "Ein großer Teil des Budgets wirkt im Blindflug.",
-    "intro": "Nicht, weil die Kampagnen schlecht wären. Sondern weil kaum noch jemand sauber misst, was sie wirklich auslösen.",
-    "h3": "Viele Conversions kommen nie im Tracking an.",
-    "text": [
-      "Apple ITP und ATT, Adblocker und Consent-Banner sorgen dafür, dass ein beträchtlicher Teil der Käufe und Anfragen in keinem Werbekonto auftaucht. Google und Meta optimieren dann auf ein unvollständiges Bild und verteilen das Budget falsch, während das Dashboard scheinbar normale Zahlen zeigt.",
-      "Die Folge: steigende Klickpreise, Kampagnen ohne belegte Wirkung und Reichweite statt nachweisbarem Umsatz. Ohne sauberes Tracking bleibt Marketing ein teures Ratespiel."
-    ],
-    "gemessen": 36,
-    "hinweis": "Werte illustrativ. Den tatsächlichen Verlust ermittelt das Audit."
+  "ueber": {
+    "eyebrow": "Ergebnisse",
+    "h2": "Zahlen statt Versprechen.",
+    "text": "Gemessen wird, was am Ende bei Ihnen ankommt: Anfragen, Umsatz und Marge. Diese Werte stammen aus den Werbekonten, die ich betreue."
   },
   "leistungen": {
     "eyebrow": "Leistungen",
-    "h2": "Zwölf Leistungen. Ein Fundament.",
-    "intro": "Jede Leistung ist ein Baustein des Growth Systems. Das Fundament ist immer lückenloses Tracking: Erst darauf bauen alle anderen Module auf, und jeder Erfolg ist ab Tag eins messbar."
+    "h2": "Strategie. Kampagnen. Technik.",
+    "intro": "Vier Bereiche, ein Ansprechpartner. Sie bekommen genau die Bausteine, die für Ihr Wachstum den größten Hebel haben.",
+    "bereiche": [
+      {
+        "titel": "Strategie & Tracking",
+        "icon": "target",
+        "text": "Bevor Budget fließt, steht das Fundament: saubere Daten, klare Ziele und ein Plan mit Prioritäten.",
+        "links": [
+          "tracking-analytics"
+        ]
+      },
+      {
+        "titel": "Online-Werbung",
+        "icon": "chart",
+        "text": "Google, Meta, LinkedIn und TikTok. Gesteuert nach Umsatz und Marge, nicht nach Klicks.",
+        "links": [
+          "paid-advertising",
+          "dynamic-ads",
+          "ad-creatives",
+          "programmatic-advertising"
+        ]
+      },
+      {
+        "titel": "Sichtbarkeit",
+        "icon": "search",
+        "text": "Gefunden werden, ohne für jeden Klick zu zahlen: in Google und in Antworten von ChatGPT & Co.",
+        "links": [
+          "seo",
+          "geo-ai-search",
+          "native-advertising"
+        ]
+      },
+      {
+        "titel": "Website, Shop & Automation",
+        "icon": "layers",
+        "text": "Seiten, die verkaufen, und Automationen, die Kunden zurückholen.",
+        "links": [
+          "landingpages",
+          "ecommerce",
+          "email-marketing"
+        ]
+      }
+    ]
   },
   "onboarding": {
-    "eyebrow": "Zusammenarbeit",
-    "h2": "Erst Daten, dann Budget.",
-    "intro": "Kein Kaltstart: Der Einstieg ist standardisiert, damit es wenig Reibung und volle Transparenz gibt, bevor der erste Euro Werbebudget fließt."
+    "eyebrow": "Ablauf",
+    "h2": "Vom ersten Gespräch zur ersten Kampagne.",
+    "intro": "Ein klarer Einstieg in drei Schritten. Sie wissen von Anfang an, was passiert und warum."
   },
-  "branchen": {
-    "eyebrow": "Branchen",
-    "h2": "Messbar besser, in jeder Branche.",
-    "intro": "Jede Branche hat ihre eigene Customer Journey. Das System bleibt gleich, die Hebel werden angepasst."
+  "werte": {
+    "eyebrow": "Arbeitsweise",
+    "h2": "Datengetrieben. Transparent. Persönlich.",
+    "items": [
+      {
+        "titel": "Datengetrieben",
+        "icon": "chart",
+        "text": "Entscheidungen fallen auf Basis Ihrer Zahlen, nicht nach Bauchgefühl oder Trend."
+      },
+      {
+        "titel": "Transparent",
+        "icon": "gauge",
+        "text": "Sie sehen jederzeit, wohin Ihr Budget fließt und was es bringt. Ohne geschönte Reports."
+      },
+      {
+        "titel": "Persönlich",
+        "icon": "user",
+        "text": "Ein Ansprechpartner, der Ihr Geschäft kennt und erreichbar ist, wenn es darauf ankommt."
+      }
+    ]
   },
-  "leitfaden": {
-    "eyebrow": "Leitfaden",
-    "h2": "Performance Marketing in Österreich: kurz erklärt.",
-    "intro": "Was Performance von Growth Marketing unterscheidet, welche Kanäle funktionieren, was es realistisch kostet und wie Schindelegger beides als System betreibt.",
-    "abschnitte": [
+  "brief": {
+    "eyebrow": "Persönlich",
+    "h2": "Hallo, ich bin Julian.",
+    "absaetze": [
+      "Ich habe Schindelegger gegründet, weil gutes Marketing nichts mit Größe zu tun hat, sondern mit Verantwortung. Wer Ihr Budget ausgibt, sollte auch sagen können, was es gebracht hat.",
+      "Deshalb arbeite ich mit wenigen Unternehmen, dafür richtig. Ich kenne jedes Konto, jede Kampagne und jede Zahl. Und wenn etwas nicht funktioniert, hören Sie es zuerst von mir.",
+      "Wenn Sie wissen wollen, wo Ihr Marketing gerade steht: Ich lade Sie auf einen Kaffee in Wien ein oder auf ein kurzes Videogespräch."
+    ],
+    "gruss": "Julian Schindelegger, Gründer"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "h2": "Häufige Fragen.",
+    "items": [
       {
-        "h3": "Was ist Performance Marketing?",
-        "text": "Performance Marketing ist Online-Marketing, bei dem jede Maßnahme an einer messbaren Reaktion hängt: einem Klick, einer Anfrage, einem Kauf. Gesteuert wird über Kennzahlen wie ROAS, CPA und CPL, nicht über Reichweitenversprechen. Budget fließt nur dorthin, wo eine nachweisbare Reaktion zurückkommt, und wird umgeschichtet, sobald die Daten einen besseren Hebel zeigen."
+        "frage": "Für wen arbeiten Sie?",
+        "antwort": "Für Unternehmen im DACH-Raum, die online wachsen wollen: Online-Shops, Dienstleister und B2B-Unternehmen. Entscheidend ist nicht die Größe, sondern ein Angebot, das Kunden wirklich wollen."
       },
       {
-        "h3": "Und was ist Growth Marketing?",
-        "text": "Growth Marketing betrachtet den gesamten Kundenlebenszyklus: Gewinnung, Aktivierung, Wiederkauf und Empfehlung. Gearbeitet wird mit Experimenten und klaren Hypothesen, gemessen an einer zentralen Kennzahl statt an Eitelkeitsmetriken. Performance Marketing liefert die messbaren Abschlüsse, Growth Marketing macht daraus wiederholbares Wachstum. Genau das ist das Growth System."
+        "frage": "Was kostet die Zusammenarbeit?",
+        "antwort": "Zwei Teile: Ihr Werbebudget, das direkt an Google oder Meta geht, und die Betreuung ab 2.400 € pro Monat. Den genauen Rahmen besprechen wir im Erstgespräch."
       },
       {
-        "h3": "Welche Kanäle funktionieren?",
-        "text": "Google Ads fängt kaufbereite Suchanfragen ab, Meta Ads erschließt neue Zielgruppen, LinkedIn und TikTok kommen dazu, wenn die Zielgruppe es rechtfertigt. Parallel baut SEO organische Sichtbarkeit ohne Klickkosten auf, und GEO macht Inhalte für ChatGPT, Perplexity und Google AI Overviews zitierfähig."
+        "frage": "Gibt es eine Mindestlaufzeit?",
+        "antwort": "Ein Quartal. Danach läuft die Zusammenarbeit nur weiter, wenn sie sich für Sie rechnet."
       },
       {
-        "h3": "Warum Tracking an erster Stelle steht",
-        "text": "Der häufigste Fehler ist nicht das Creative, sondern die Messung: Adblocker, Safari-Beschränkungen und iOS lassen einen zweistelligen Prozentsatz der Conversions verschwinden. Deshalb ist Server-Side-Tracking mit Consent Mode v2 das erste Modul jeder Zusammenarbeit, DSGVO-konform und mit eigenem Dashboard."
+        "frage": "Wie schnell sehe ich Ergebnisse?",
+        "antwort": "Werbekampagnen zeigen meist nach wenigen Wochen erste Effekte. SEO und GEO brauchen mehrere Monate. Transparenz gibt es ab dem ersten Tag."
       },
       {
-        "h3": "Was kostet Performance Marketing?",
-        "text": "Zwei Posten: das Werbebudget, das direkt an Google und Meta geht, und die Steuerung. Werden SEO, Ads, Creatives und Tracking einzeln eingekauft, liegt der Marktpreis in Österreich bei 7.000 bis 10.000 Euro pro Monat, ohne Gesamtverantwortung. Bei Schindelegger startet der laufende Betrieb ab 2.400 Euro pro Monat, mit Quartals- statt Jahresvertrag."
+        "frage": "Arbeiten Sie allein?",
+        "antwort": "Strategie, Steuerung und Kampagnen mache ich selbst. Für Design, Video und Entwicklung arbeite ich mit einem festen Netzwerk erfahrener Partner, koordiniert über mich."
       },
       {
-        "h3": "Wie lange dauert es?",
-        "text": "Bezahlte Kampagnen zeigen erste Effekte innerhalb weniger Wochen, belastbares organisches Wachstum braucht drei bis sechs Monate. Zugesagt wird, was kontrollierbar ist: lückenlose Messbarkeit und volle Transparenz, keine Ranking-Versprechen."
+        "frage": "Wem gehören Werbekonten und Daten?",
+        "antwort": "Ihnen. Werbekonten, Tracking und alle Daten laufen auf Ihr Unternehmen. Sie haben jederzeit vollen Zugriff."
       }
     ]
   },
   "kontakt": {
-    "h2": "Ein gutes Gespräch beginnt mit einer Frage.",
-    "text": "Kein Verkaufsgespräch, keine Verpflichtung. Sie bekommen eine ehrliche Einschätzung, auch wenn ich keinen Hebel sehe.",
+    "h2": "Auf einen Kaffee in Wien?",
+    "text": "Erzählen Sie mir, wo Ihr Marketing gerade steht. Persönlich in Wien oder per Video, unverbindlich und mit einer ehrlichen Einschätzung.",
     "punkte": [
       "Antwort innerhalb von 24 Stunden",
-      "Unverbindlich, Ihre Daten bleiben bei mir",
-      "Klare Einschätzung statt Verkaufsmasche"
+      "Unverbindlich und vertraulich",
+      "Ehrliche Einschätzung, auch wenn sie „nein“ lautet"
     ]
   }
 }

@@ -4,20 +4,18 @@ import Icon from '../components/Icon.astro';
 import Partners from '../components/Partners.astro';
 import Stats from '../components/Stats.astro';
 import CaseCard from '../components/CaseCard.astro';
-import Engine from '../components/Engine.astro';
 import Testimonials from '../components/Testimonials.astro';
 import ContactForm from '../components/ContactForm.astro';
 import CtaBand from '../components/CtaBand.astro';
+import Faq from '../components/Faq.astro';
 import { getCollection } from 'astro:content';
 import h from '../data/home.json';
 import g from '../data/growth.json';
 import s from '../data/settings.json';
 
 const leistungen = (await getCollection('leistungen')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
-const fundament = leistungen.find((l) => l.data.fundament);
-const rest = leistungen.filter((l) => !l.data.fundament);
+const lMap = Object.fromEntries(leistungen.map((l) => [l.id, l]));
 const cases = (await getCollection('referenzen')).filter((c) => c.data.featured).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge).slice(0, 2);
-const branchen = (await getCollection('branchen')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
 const artikel = (await getCollection('ratgeber')).sort((a, b) => +b.data.datum - +a.data.datum).slice(0, 3);
 const tel = s.telefon.replace(/\s/g, '');
 ---
@@ -51,6 +49,25 @@ const tel = s.telefon.replace(/\s/g, '');
 
   <Partners />
 
+  <section class="section">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">{h.vergleich.eyebrow}</span>
+        <h2>{h.vergleich.h2}</h2>
+        <p class="lead">{h.vergleich.intro}</p>
+      </div>
+      <div class="table-wrap reveal">
+        <table class="compare vs">
+          <thead><tr><th scope="col"><span class="sr-only">Thema</span></th><th scope="col">Klassische Agentur</th><th scope="col" class="me">schindelegger<span style="color:var(--accent)">.</span></th></tr></thead>
+          <tbody>
+            {h.vergleich.zeilen.map((z) => <tr><th scope="row">{z.thema}</th><td class="muted">{z.agentur}</td><td class="me"><span class="check"><Icon name="check" /></span>{z.ich}</td></tr>)}
+          </tbody>
+        </table>
+      </div>
+      <div class="btn-row" style="margin-top:28px"><a class="btn btn-primary" href="#beratung" data-modal data-track="vergleich_cta">Kennenlernen vereinbaren <Icon name="arrow" /></a></div>
+    </div>
+  </section>
+
   <section class="section dark" id="ueber">
     <div class="wrap">
       <div class="split top">
@@ -61,79 +78,53 @@ const tel = s.telefon.replace(/\s/g, '');
         <p class="lead reveal">{h.ueber.text}</p>
       </div>
       <Stats />
-      <p class="result-band reveal">Kunden von Schindelegger erzielen im Schnitt <span><b>+{s.ergebnis.umsatz} %</b>mehr Umsatz</span><span><b>−{s.ergebnis.kosten} %</b>weniger Werbeausgaben</span></p>
+      <p class="result-band reveal">Im Schnitt erreichen meine Kunden <span><b>+{s.ergebnis.umsatz} %</b>mehr Umsatz</span><span><b>−{s.ergebnis.kosten} %</b>weniger Werbeausgaben</span></p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px">
-        <div><span class="eyebrow">Referenzen</span><h2>Am Ende zählt das Ergebnis.</h2></div>
-        <a class="link-arrow" href="/referenzen/">Alle Case Studies <Icon name="arrow" /></a>
+        <div><span class="eyebrow">Cases</span><h2>Ausgewählte Projekte. Messbare Ergebnisse.</h2></div>
+        <a class="link-arrow" href="/referenzen/">Alle Cases <Icon name="arrow" /></a>
       </div>
-      <div class="grid g2">{cases.map((c) => <CaseCard c={c} />)}</div>
-    </div>
-  </section>
-
-  <section class="section dark">
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="eyebrow">{h.problem.eyebrow}</span>
-        <h2>{h.problem.h2}</h2>
-        <p class="lead">{h.problem.intro}</p>
-        <h3 style="margin-top:28px">{h.problem.h3}</h3>
-        {h.problem.text.map((t) => <p class="muted">{t}</p>)}
-        <a class="link-arrow" href="#system" style="color:var(--accent)">Genau hier setzt das Growth System an <Icon name="arrow" /></a>
-      </div>
-      <div class="leak reveal" aria-label="Illustration: verlorene Conversions">
-        <div class="leak-row"><span>Tatsächliche Conversions</span><span>100</span></div>
-        <div class="leak-bar"><span style="width:100%;background:#4a5060"></span></div>
-        <div class="leak-row"><span>Was der Standard-Pixel misst</span><span>~{h.problem.gemessen}</span></div>
-        <div class="leak-bar"><span style={`width:${h.problem.gemessen}%`}></span></div>
-        <div class="leak-causes"><span>Apple ITP / ATT</span><span>Cookie-Blocking</span><span>DSGVO-Consent</span><span>Adblocker</span></div>
-        <p class="muted" style="font-size:.82rem;margin:12px 0 0">{h.problem.hinweis}</p>
+      <div class="grid g2">
+        {cases.map((c) => <CaseCard c={c} />)}
       </div>
     </div>
   </section>
 
-  <section class="section dark" id="system" style="padding-top:0">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">Das Growth System</span>
-        <h2>Ein System. Fünf Module.</h2>
-        <p class="lead">Ob Hotel, Industriebetrieb oder Online-Shop: Was bisher einzeln eingekauft wurde, läuft bei Schindelegger als ein System, in dem jedes Modul die anderen stärker macht.</p>
-      </div>
-      <Engine />
-      <p class="muted reveal" style="margin-top:32px">Einzeln sind das fünf Dienstleistungen. Zusammen ein System, das jeden Monat effizienter wird. <a href="/growth-system/" style="color:var(--paper)">So greift alles ineinander →</a></p>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="section alt" id="leistungen">
     <div class="wrap">
       <div class="head reveal">
         <span class="eyebrow">{h.leistungen.eyebrow}</span>
         <h2>{h.leistungen.h2}</h2>
         <p class="lead">{h.leistungen.intro}</p>
       </div>
-      {fundament && (
-        <a class="card reveal" href={`/leistungen/${fundament.id}/`} style="margin-bottom:20px;background:var(--ink);color:var(--paper);border-color:var(--ink)">
-          <span class="eyebrow">Das Fundament</span>
-          <h3>{fundament.data.titel}</h3>
-          <p style="color:var(--muted-dark);max-width:70ch">{fundament.data.kurz}</p>
-          <span class="link-arrow">Mehr erfahren <Icon name="arrow" /></span>
-        </a>
-      )}
-      <div class="grid g3">
-        {rest.map((l) => (
-          <a class="card reveal" href={`/leistungen/${l.id}/`}>
-            <h3>{l.data.titel}</h3>
-            <p class="muted">{l.data.kurz}</p>
-            <ul class="chips">{l.data.schwerpunkte.slice(0, 3).map((t) => <li>{t}</li>)}</ul>
-            <span class="link-arrow">Mehr erfahren <Icon name="arrow" /></span>
-          </a>
+      <div class="grid g2">
+        {h.leistungen.bereiche.map((b) => (
+          <div class="card bereich reveal">
+            <span class="icon-bubble"><Icon name={b.icon} /></span>
+            <h3>{b.titel}</h3>
+            <p class="muted">{b.text}</p>
+            <ul class="bereich-links">
+              {b.links.filter((id) => lMap[id]).map((id) => <li><a href={`/leistungen/${id}/`}>{lMap[id].data.titel}<Icon name="arrow" /></a></li>)}
+            </ul>
+          </div>
         ))}
       </div>
-      <div class="btn-row" style="margin-top:32px"><a class="btn btn-primary" href="#beratung" data-modal data-track="leistungen_cta">Jetzt starten <Icon name="arrow" /></a><a class="link-arrow" href="/leistungen/">Alle Leistungen im Überblick <Icon name="arrow" /></a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">{h.werte.eyebrow}</span>
+        <h2>{h.werte.h2}</h2>
+      </div>
+      <div class="grid g3">
+        {h.werte.items.map((w) => <div class="card reveal"><span class="icon-bubble" style="margin-bottom:16px"><Icon name={w.icon} /></span><h3>{w.titel}</h3><p class="muted">{w.text}</p></div>)}
+      </div>
     </div>
   </section>
 
@@ -159,35 +150,40 @@ const tel = s.telefon.replace(/\s/g, '');
   </section>
 
   <section class="section">
+    <div class="wrap brief reveal">
+      <img src={s.inhaberBild} alt="Julian Schindelegger" width="440" height="550" loading="lazy" />
+      <div>
+        <span class="eyebrow">{h.brief.eyebrow}</span>
+        <h2>{h.brief.h2}</h2>
+        {h.brief.absaetze.map((a) => <p class="lead" style="font-size:1.08rem">{a}</p>)}
+        <p class="sig">{h.brief.gruss}</p>
+        <a class="btn btn-primary" href="#beratung" data-modal data-track="brief_cta">Kennenlernen vereinbaren <Icon name="arrow" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
     <div class="wrap">
       <div class="head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px">
-        <div><span class="eyebrow">Kundenstimmen</span><h2>Was Kunden sagen.</h2><p class="lead">Die wichtigste Kennzahl ist der tatsächliche Unternehmenserfolg.</p></div>
+        <div><span class="eyebrow">Kundenstimmen</span><h2>Kunden, die bleiben.</h2></div>
         <div style="font:800 2.6rem/1 var(--font-head)">{s.verlaengerung}<span class="muted" style="display:block;font:600 .9rem var(--font-body)">verlängerte Mandate</span></div>
       </div>
       <Testimonials />
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">{h.branchen.eyebrow}</span>
-        <h2>{h.branchen.h2}</h2>
-        <p class="lead">{h.branchen.intro}</p>
-      </div>
-      <div class="grid g3">
-        {branchen.map((b) => (
-          <a class="card reveal" href={`/branchen/${b.id}/`}><span class="icon-bubble" style="margin-bottom:16px"><Icon name={b.data.icon} /></span><h3>{b.data.titel}</h3><p class="muted">{b.data.kurz}</p><span class="link-arrow">Zum Playbook <Icon name="arrow" /></span></a>
-        ))}
-      </div>
+  <section class="section" id="faq">
+    <div class="wrap split top">
+      <div class="head reveal"><span class="eyebrow">{h.faq.eyebrow}</span><h2>{h.faq.h2}</h2><p class="lead">Ihre Frage ist nicht dabei? Fragen Sie mich einfach direkt.</p></div>
+      <div class="reveal"><Faq items={h.faq.items} /></div>
     </div>
   </section>
 
   {artikel.length > 0 && (
-    <section class="section">
+    <section class="section alt">
       <div class="wrap">
         <div class="head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px">
-          <div><span class="eyebrow">Ratgeber</span><h2>Neu im Ratgeber.</h2></div>
+          <div><span class="eyebrow">Ratgeber</span><h2>Wissen, das weiterbringt.</h2></div>
           <a class="link-arrow" href="/ratgeber/">Alle Artikel <Icon name="arrow" /></a>
         </div>
         <div class="grid g3">
@@ -201,19 +197,6 @@ const tel = s.telefon.replace(/\s/g, '');
       </div>
     </section>
   )}
-
-  <section class="section alt">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">{h.leitfaden.eyebrow}</span>
-        <h2>{h.leitfaden.h2}</h2>
-        <p class="lead">{h.leitfaden.intro}</p>
-      </div>
-      <div class="grid g2">
-        {h.leitfaden.abschnitte.map((a) => <article class="reveal"><h3>{a.h3}</h3><p class="muted">{a.text}</p></article>)}
-      </div>
-    </div>
-  </section>
 
   <section class="section" id="kontakt">
     <div class="wrap split top">
@@ -230,5 +213,5 @@ const tel = s.telefon.replace(/\s/g, '');
     </div>
   </section>
 
-  <CtaBand />
+  <CtaBand h2="Bereit für Wachstum?" text="Ein kurzes Gespräch zeigt, wo Ihr größter ungenutzter Hebel liegt. Kostenlos, unverbindlich und ehrlich." />
 </Base>
