@@ -1,38 +1,62 @@
 {
   "seo": {
     "title": "Über mich: Julian Schindelegger | Schindelegger Wien",
-    "description": "Julian Schindelegger, BA: Performance-Marketing-Spezialist aus Wien für Google & Meta Ads, Tracking und datengetriebenes Wachstum im DACH-Raum."
+    "description": "Julian Schindelegger führt Schindelegger, eine Boutique für Performance Marketing in Wien. Persönliche Betreuung statt Agentur-Fließband."
   },
   "hero": {
     "eyebrow": "Über mich",
-    "h1": "Hinter jeder Kennzahl steht jemand, der dafür einsteht.",
-    "intro": "Ich verbinde technische Performance-Strategie mit der Logik moderner Werbealgorithmen, damit aus Marketingbudget planbarer Ertrag wird."
+    "h1": "Ich bin Julian. Und ich nehme Ihr Wachstum persönlich.",
+    "intro": "Hinter Schindelegger steht kein anonymes Team, sondern ich. Jedes Projekt läuft über meinen Tisch, jede Entscheidung trage ich mit."
   },
   "geschichte": {
-    "h2": "Marketing ist in zu vielen Unternehmen eine Black Box.",
+    "h2": "Warum eine Boutique?",
     "text": [
-      "Budgets fließen, Reports sehen gut aus, aber niemand kann sagen, welcher Euro tatsächlich Umsatz gebracht hat. Ich habe diese Intransparenz in vielen Projekten erlebt und mir eine einfache Frage gestellt: Warum wird ausgerechnet einer der größten Kostenblöcke vieler Unternehmen am wenigsten genau gemessen?",
-      "Aus dieser Frage ist Schindelegger entstanden. Die Überzeugung dahinter: Erfolg im Marketing ist kein Zufall, sondern eine Kennzahl. Was man messen kann, kann man steuern. Und was man steuern kann, wird von der Kostenstelle zur Investition."
+      "In vielen Agenturen habe ich gesehen, wie es läuft: Verkauft wird vom Senior, gearbeitet wird von wechselnden Juniors, und der Kunde erfährt im Monatsreport, was passiert ist. Gute Arbeit entsteht so selten.",
+      "Deshalb habe ich Schindelegger bewusst klein aufgebaut. Ich betreue nur so viele Unternehmen, wie ich selbst wirklich gut betreuen kann. Für Spezialaufgaben wie Design, Video oder Entwicklung arbeite ich mit einem festen Netzwerk erfahrener Partner, die Steuerung bleibt immer bei mir."
     ]
   },
   "person": {
     "name": "Julian Schindelegger, BA",
-    "rolle": "Gründer · Performance & Data",
+    "rolle": "Gründer & Ihr Ansprechpartner",
     "bild": "/images/brand/julian-schindelegger.webp",
     "bio": "Ich verantworte Performance-Kampagnen auf Google und Meta sowie deren algorithmische Steuerung, von der Kontostruktur über Server-Side-Tracking bis zum Dashboard. Mein Ziel ist, dass jeder Euro Werbebudget nachvollziehbar wird.",
     "zitat": "Ich arbeite nur dort, wo ich einen echten Hebel sehe. Alles andere wäre verbranntes Geld, für Sie und für meinen Ruf.",
-    "fakten": ["Studium: [PLATZHALTER Studienrichtung]", "Performance Marketing seit [PLATZHALTER Jahr]", "Google Ads, Meta Ads, GA4, GTM Server-Side, Shopify, Klaviyo", "Sitz in Wien, Kunden in Österreich, Deutschland und der Schweiz"]
+    "fakten": [
+      "Studium: [PLATZHALTER Studienrichtung]",
+      "Performance Marketing seit [PLATZHALTER Jahr]",
+      "Google Ads, Meta Ads, GA4, GTM Server-Side, Shopify, Klaviyo",
+      "Sitz in Wien, Kunden in Österreich, Deutschland und der Schweiz"
+    ]
   },
-  "video": { "src": "/videos/buero.mp4", "poster": "/videos/buero-poster.webp" },
+  "video": {
+    "src": "/videos/buero.mp4",
+    "poster": "/videos/buero-poster.webp"
+  },
   "prinzipien": [
-    { "titel": "Messbarkeit vor Meinung", "text": "Entscheidungen fallen auf Basis von Daten. Wo andere vom Bauchgefühl sprechen, zeige ich Zahlen." },
-    { "titel": "Radikale Transparenz", "text": "Sie sehen im Live-Dashboard jederzeit, wohin Ihr Budget fließt und was es bewirkt. Keine geschönten Reports." },
-    { "titel": "Mut zum Nein", "text": "Zeigt ein Audit kein echtes Wachstumspotenzial, lehne ich das Mandat ab. Ich arbeite nur dort, wo nachweisbar Mehrwert entsteht." },
-    { "titel": "Ethik & Datenschutz", "text": "Daten werden präzise, aber sauber genutzt. Vertrauen ist die wichtigste Währung, gleich nach dem Ergebnis." }
+    {
+      "titel": "Messbarkeit vor Meinung",
+      "text": "Entscheidungen fallen auf Basis von Daten. Wo andere vom Bauchgefühl sprechen, zeige ich Zahlen."
+    },
+    {
+      "titel": "Radikale Transparenz",
+      "text": "Sie sehen im Live-Dashboard jederzeit, wohin Ihr Budget fließt und was es bewirkt. Keine geschönten Reports."
+    },
+    {
+      "titel": "Mut zum Nein",
+      "text": "Zeigt ein Audit kein echtes Wachstumspotenzial, lehne ich das Mandat ab. Ich arbeite nur dort, wo nachweisbar Mehrwert entsteht."
+    },
+    {
+      "titel": "Ethik & Datenschutz",
+      "text": "Daten werden präzise, aber sauber genutzt. Vertrauen ist die wichtigste Währung, gleich nach dem Ergebnis."
+    }
   ],
   "lokal": {
     "h2": "In Wien zu Hause. Persönlich erreichbar.",
     "text": "Schindelegger ist kein anonymes Online-Setup. Sie haben einen Namen, ein Gesicht und eine Adresse, und auf Wunsch einen Termin vor Ort.",
-    "punkte": ["Termine vor Ort in Wien möglich", "Österreichisches Unternehmen", "Antwort innerhalb von 24 Stunden"]
+    "punkte": [
+      "Termine vor Ort in Wien möglich",
+      "Österreichisches Unternehmen",
+      "Antwort innerhalb von 24 Stunden"
+    ]
   }
 }

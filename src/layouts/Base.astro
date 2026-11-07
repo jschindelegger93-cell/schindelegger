@@ -113,7 +113,7 @@ const active = (u: string) => (path === u || (u !== '/' && path.startsWith(u)) ?
         {s.navigation.map((n) => <a href={n.url} aria-current={active(n.url)}>{n.label}</a>)}
       </nav>
       <a class="head-tel" href={`tel:${tel}`} data-track="header"><Icon name="phone" />{s.telefon}</a>
-      <a class="btn btn-primary head-cta" href="#beratung" data-modal data-track="header_cta">Potenzial analysieren <Icon name="arrow" /></a>
+      <a class="btn btn-primary head-cta" href="#beratung" data-modal data-track="header_cta">Gespräch vereinbaren <Icon name="arrow" /></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -123,7 +123,7 @@ const active = (u: string) => (path === u || (u !== '/' && path.startsWith(u)) ?
     <a class="m-link" href="/ratgeber/">Ratgeber</a>
     <a class="m-link" href="/kontakt/">Kontakt</a>
     <a class="btn btn-outline" href={`tel:${tel}`} data-track="menu"><Icon name="phone" /> {s.telefon}</a>
-    <a class="btn btn-primary" href="#beratung" data-modal data-track="menu_cta">Potenzial analysieren <Icon name="arrow" /></a>
+    <a class="btn btn-primary" href="#beratung" data-modal data-track="menu_cta">Gespräch vereinbaren <Icon name="arrow" /></a>
   </div>
 
   <main id="main">
@@ -165,7 +165,7 @@ const active = (u: string) => (path === u || (u !== '/' && path.startsWith(u)) ?
               <li>{s.inhaber}</li>
               <li>{s.strasse}</li>
               <li>{s.plz} {s.ort}, {s.land}</li>
-              <li><a href="#beratung" data-modal data-track="footer_cta">Potenzialanalyse anfragen →</a></li>
+              <li><a href="#beratung" data-modal data-track="footer_cta">Erstgespräch anfragen →</a></li>
             </ul>
           </details>
         </div>

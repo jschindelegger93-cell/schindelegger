@@ -61,14 +61,14 @@ const tel = s.telefon.replace(/\s/g, '');
         <p class="lead reveal">{h.ueber.text}</p>
       </div>
       <Stats />
-      <p class="result-band reveal">Kunden von Schindelegger erzielen im Schnitt <span><b>+{s.ergebnis.umsatz} %</b>mehr Umsatz</span><span><b>−{s.ergebnis.kosten} %</b>weniger Werbeausgaben</span></p>
+      <p class="result-band reveal">Im Schnitt erreichen meine Kunden <span><b>+{s.ergebnis.umsatz} %</b>mehr Umsatz</span><span><b>−{s.ergebnis.kosten} %</b>weniger Werbeausgaben</span></p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px">
-        <div><span class="eyebrow">Referenzen</span><h2>Am Ende zählt das Ergebnis.</h2></div>
+        <div><span class="eyebrow">Ausgewählte Arbeiten</span><h2>Projekte, auf die ich stolz bin.</h2></div>
         <a class="link-arrow" href="/referenzen/">Alle Case Studies <Icon name="arrow" /></a>
       </div>
       <div class="grid g2">{cases.map((c) => <CaseCard c={c} />)}</div>
@@ -99,9 +99,9 @@ const tel = s.telefon.replace(/\s/g, '');
   <section class="section dark" id="system" style="padding-top:0">
     <div class="wrap">
       <div class="head reveal">
-        <span class="eyebrow">Das Growth System</span>
-        <h2>Ein System. Fünf Module.</h2>
-        <p class="lead">Ob Hotel, Industriebetrieb oder Online-Shop: Was bisher einzeln eingekauft wurde, läuft bei Schindelegger als ein System, in dem jedes Modul die anderen stärker macht.</p>
+        <span class="eyebrow">Mein Ansatz</span>
+        <h2>Alles greift ineinander.</h2>
+        <p class="lead">Strategie, Kampagnen, Website und Automation entstehen bei mir nicht nebeneinander, sondern als ein System, das ich selbst steuere. So verstärkt jeder Baustein den nächsten.</p>
       </div>
       <Engine />
       <p class="muted reveal" style="margin-top:32px">Einzeln sind das fünf Dienstleistungen. Zusammen ein System, das jeden Monat effizienter wird. <a href="/growth-system/" style="color:var(--paper)">So greift alles ineinander →</a></p>
@@ -161,7 +161,7 @@ const tel = s.telefon.replace(/\s/g, '');
   <section class="section">
     <div class="wrap">
       <div class="head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px">
-        <div><span class="eyebrow">Kundenstimmen</span><h2>Was Kunden sagen.</h2><p class="lead">Die wichtigste Kennzahl ist der tatsächliche Unternehmenserfolg.</p></div>
+        <div><span class="eyebrow">Kundenstimmen</span><h2>In den Worten meiner Kunden.</h2><p class="lead">Vertrauen entsteht durch Ergebnisse und durch Zusammenarbeit auf Augenhöhe.</p></div>
         <div style="font:800 2.6rem/1 var(--font-head)">{s.verlaengerung}<span class="muted" style="display:block;font:600 .9rem var(--font-body)">verlängerte Mandate</span></div>
       </div>
       <Testimonials />
@@ -187,7 +187,7 @@ const tel = s.telefon.replace(/\s/g, '');
     <section class="section">
       <div class="wrap">
         <div class="head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px">
-          <div><span class="eyebrow">Ratgeber</span><h2>Neu im Ratgeber.</h2></div>
+          <div><span class="eyebrow">Wissen</span><h2>Gedanken &amp; Ratgeber.</h2></div>
           <a class="link-arrow" href="/ratgeber/">Alle Artikel <Icon name="arrow" /></a>
         </div>
         <div class="grid g3">
