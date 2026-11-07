@@ -121,20 +121,12 @@ const active = (u: string) => (path === u || (u !== '/' && path.startsWith(u)) ?
   <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile Navigation">
     <ul class="m-haupt">
       {s.navigation.map((n) => <li><a href={n.url} aria-current={active(n.url)}>{n.label}</a></li>)}
-      <li><a class="m-beratung" href="#beratung" data-modal data-track="menu_cta">Kostenlose Potenzialanalyse</a></li>
+      <li><a href="/branchen/" aria-current={active('/branchen/')}>Branchen</a></li>
+      <li><a href="/ratgeber/" aria-current={active('/ratgeber/')}>Ratgeber</a></li>
+      <li><a href="/kontakt/" aria-current={active('/kontakt/')}>Kontakt</a></li>
     </ul>
     <div class="m-extra">
-      <ul class="m-klein">
-        <li><a href="/branchen/">Branchen</a></li>
-        <li><a href="/ratgeber/">Ratgeber</a></li>
-        <li><a href="/kontakt/">Kontakt</a></li>
-        <li><a href={`tel:${tel}`} data-track="menu">{s.telefon}</a></li>
-      </ul>
-      <a class="m-karte" href="/referenzen/arb-nutrition/">
-        <img src="/images/brand/menue-case-arb.webp" alt="" width="240" height="188" loading="lazy" />
-        <span><small>Case Study</small><strong>ARB Nutrition</strong><em>+24 % Umsatz in der Schweiz →</em></span>
-      </a>
-      <p class="m-herkunft">48° N · Performance Marketing aus Wien</p>
+      <a class="btn btn-primary" href="#beratung" data-modal data-track="menu_cta">Kostenlose Potenzialanalyse <Icon name="arrow" /></a>
     </div>
   </nav>
 
